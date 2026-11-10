@@ -413,15 +413,21 @@ def run(cmd): subprocess.run(cmd, check=True)
 def cmd_cut(spec_f, work):
     spec = json.loads(Path(spec_f).read_text()); work = Path(work); work.mkdir(exist_ok=True)
     src = spec["source"]; segs = spec["segments"]; sp = float(spec.get("speed", 1.0))
-    v, a = [], []
+    # one small ffmpeg per segment (bounded memory: 14 trims of one 4K input got SIGKILLed on 8 GB), then concat
+    tmp = work / "segs"; tmp.mkdir(exist_ok=True); n = len(segs); ins = []
     for i, (s, e) in enumerate(segs):
-        v.append(f"[0:v]trim={s}:{e},setpts=PTS-STARTPTS[v{i}];")
-        a.append(f"[0:a]atrim={s}:{e},asetpts=PTS-STARTPTS,afade=t=in:d=0.008,afade=t=out:st={e - s - 0.012:.3f}:d=0.012[a{i}];")
-    n = len(segs)
-    fc = "".join(v) + "".join(a) + "".join(f"[v{i}]" for i in range(n)) + f"concat=n={n}:v=1:a=0," + \
+        vf, af = tmp / f"s{i:02d}.mp4", tmp / f"s{i:02d}.wav"
+        run(["ffmpeg", "-y", "-v", "error", "-ss", f"{s}", "-t", f"{e - s:.3f}", "-i", src, "-map", "0:v:0",
+             "-vf", f"scale={W}:{H},setsar=1", "-c:v", "libx264", "-preset", "ultrafast", "-crf", "12",
+             "-pix_fmt", "yuv420p", "-an", str(vf),
+             "-map", "0:a:0", "-af", f"afade=t=in:d=0.008,afade=t=out:st={e - s - 0.012:.3f}:d=0.012",
+             "-ar", "48000", "-ac", "1", str(af)])
+        ins += ["-i", str(vf), "-i", str(af)]
+    fc = "".join(f"[{2 * i}:v]trim=duration={e - s:.4f},setpts=PTS-STARTPTS[v{i}];" for i, (s, e) in enumerate(segs)) + \
+         "".join(f"[v{i}]" for i in range(n)) + f"concat=n={n}:v=1:a=0," + \
          f"setpts=PTS/{sp},fps={FPS},scale={W}:{H},setsar=1" + (("," + spec["grade"]) if spec.get("grade") else "") + "[vo];" + \
-         "".join(f"[a{i}]" for i in range(n)) + f"concat=n={n}:v=0:a=1,atempo={sp}[ao]"
-    run(["ffmpeg", "-y", "-v", "error", "-i", src, "-filter_complex", fc, "-map", "[vo]", "-c:v", "libx264",
+         "".join(f"[{2 * i + 1}:a]" for i in range(n)) + f"concat=n={n}:v=0:a=1,atempo={sp}[ao]"
+    run(["ffmpeg", "-y", "-v", "error", *ins, "-filter_complex", fc, "-map", "[vo]", "-c:v", "libx264",
          "-preset", "ultrafast", "-crf", "12", "-pix_fmt", "yuv420p", str(work / "cut.mp4"),
          "-map", "[ao]", "-ar", "48000", "-ac", "1", str(work / "voice_raw.wav")])
     clean = spec.get("voice_filter", "highpass=f=80,afftdn=nr=8:nf=-40,equalizer=f=250:t=q:w=1:g=-1.5,"
