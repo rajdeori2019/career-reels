@@ -1,0 +1,422 @@
+{
+ "speed": 1.2,
+ "time_base": "source",
+ "look": {
+  "brightness": 0.045,
+  "contrast": 1.12,
+  "saturation": 1.15,
+  "vibrance": 0.2,
+  "gamma": 1.05,
+  "warm": 0.03,
+  "vignette": 0.2
+ },
+ "caption_style": {
+  "style": "minimal",
+  "y": 1480,
+  "size": 52,
+  "max_words": 5
+ },
+ "lufs": -14,
+ "sfx_db": -22,
+ "source": "/sessions/rcw-018c3cvmrtgmvcfyhjvd26xo/mnt/Career Reels/Raw Videos/VID_20261107_202936.mp4",
+ "segments": [
+  [
+   0.75,
+   2.03
+  ],
+  [
+   2.38,
+   4.07
+  ],
+  [
+   14.27,
+   16.5
+  ],
+  [
+   16.75,
+   22.45
+  ],
+  [
+   38.19,
+   41.62
+  ],
+  [
+   43.65,
+   47.31
+  ],
+  [
+   47.58,
+   48.53
+  ],
+  [
+   57.24,
+   60.58
+  ],
+  [
+   61.23,
+   62.98
+  ],
+  [
+   77.9,
+   82.01
+  ],
+  [
+   94.31,
+   95.47
+  ],
+  [
+   95.68,
+   98.47
+  ],
+  [
+   111.56,
+   115.07
+  ],
+  [
+   118.34,
+   123.9
+  ]
+ ],
+ "captions": [
+  {
+   "from": 0.85,
+   "to": 1.93,
+   "text": "\"We have candidates.\""
+  },
+  {
+   "from": 2.48,
+   "to": 3.97,
+   "text": "Ye client pitch hai?"
+  },
+  {
+   "from": 14.37,
+   "to": 16.4,
+   "text": "Agar aap agency recruiter ho"
+  },
+  {
+   "from": 16.85,
+   "to": 22.35,
+   "text": "aur cold DM mein ye line bhejoge, toh client ki actual hiring problem kaise samjhoge?"
+  },
+  {
+   "from": 38.29,
+   "to": 41.52,
+   "text": "Maan lo company data engineering hire kar rahi hai."
+  },
+  {
+   "from": 43.75,
+   "to": 47.21,
+   "text": "Pehle vacancy aur decision maker verify karo."
+  },
+  {
+   "from": 47.68,
+   "to": 48.43,
+   "text": "Phir poocho:"
+  },
+  {
+   "from": 57.34,
+   "to": 60.48,
+   "text": "\"Is role mein relevant shortlist banana challenging hai,"
+  },
+  {
+   "from": 61.33,
+   "to": 62.88,
+   "text": "ya candidate availability?\""
+  },
+  {
+   "from": 78.0,
+   "to": 81.91,
+   "text": "\"Agar gap hai, main apna search approach share kar sakta hoon.\""
+  },
+  {
+   "from": 94.41,
+   "to": 95.37,
+   "text": "Agar interest aaya,"
+  },
+  {
+   "from": 95.78,
+   "to": 98.37,
+   "text": "tab services aur terms discuss karo."
+  },
+  {
+   "from": 111.66,
+   "to": 114.97,
+   "text": "Bina permission random CVs mat bhejo."
+  },
+  {
+   "from": 118.44,
+   "to": 123.16,
+   "text": "Aur ye video useful lage toh apne agency recruiter doston ke saath share karo."
+  }
+ ],
+ "elements": [
+  {
+   "type": "pop_bg",
+   "pattern": "stripes",
+   "from": 0.75,
+   "to": 2.03
+  },
+  {
+   "type": "typing_box",
+   "label": "Cold DM",
+   "text": "We have candidates.",
+   "from": 0.75,
+   "to": 2.03,
+   "y": 300,
+   "type_dur": 0.9
+  },
+  {
+   "type": "keyword",
+   "small": "ye",
+   "big": "CLIENT PITCH?",
+   "at": 2.5,
+   "dur": 1.45
+  },
+  {
+   "type": "keyword",
+   "small": "agar aap",
+   "big": "AGENCY RECRUITER",
+   "at": 14.4,
+   "dur": 1.9,
+   "size": 110
+  },
+  {
+   "type": "typing_box",
+   "label": "Cold DM",
+   "text": "We have candidates.",
+   "from": 16.9,
+   "to": 19.6,
+   "y": 300,
+   "type_dur": 0.9
+  },
+  {
+   "type": "keyword",
+   "small": "kaise samjhoge",
+   "big": "HIRING PROBLEM?",
+   "at": 20.5,
+   "dur": 1.8,
+   "size": 120
+  },
+  {
+   "type": "header",
+   "items": [
+    {
+     "num": "#1",
+     "text": "Verify",
+     "from": 43.65,
+     "to": 48.45
+    },
+    {
+     "num": "#2",
+     "text": "Ask the gap",
+     "from": 48.5,
+     "to": 62.98
+    },
+    {
+     "num": "#3",
+     "text": "Offer your approach",
+     "from": 77.9,
+     "to": 82.0
+    },
+    {
+     "num": "#4",
+     "text": "Discuss terms",
+     "from": 94.31,
+     "to": 98.47
+    }
+   ],
+   "y": 150
+  },
+  {
+   "type": "build_card",
+   "title": "Data Engineering",
+   "subtitle": "Open role",
+   "icon": "D",
+   "chips": [
+    {
+     "text": "Vacancy",
+     "at": 44.4
+    },
+    {
+     "text": "Decision maker",
+     "at": 45.6
+    }
+   ],
+   "badge": {
+    "text": "Verified",
+    "at": 46.6
+   },
+   "from": 43.65,
+   "to": 47.5,
+   "y": 300
+  },
+  {
+   "type": "typing_box",
+   "label": "Your DM",
+   "text": "Is role mein relevant shortlist banana challenging hai, ya candidate availability?",
+   "from": 57.3,
+   "to": 62.9,
+   "y": 300,
+   "type_dur": 3.6
+  },
+  {
+   "type": "keyword",
+   "small": "agar gap hai",
+   "big": "SEARCH APPROACH",
+   "at": 79.4,
+   "dur": 2.0,
+   "size": 110
+  },
+  {
+   "type": "keyword",
+   "small": "agar interest aaya",
+   "big": "TERMS DISCUSS",
+   "at": 96.0,
+   "dur": 2.0,
+   "size": 120
+  },
+  {
+   "type": "keyword",
+   "small": "bina permission",
+   "big": "NO RANDOM CVs",
+   "at": 112.0,
+   "dur": 2.6,
+   "size": 120,
+   "color": "white"
+  },
+  {
+   "type": "pop_bg",
+   "pattern": "stripes",
+   "from": 118.4,
+   "to": 123.9
+  }
+ ],
+ "bigwords": [
+  {
+   "text": "PHIR POOCHO",
+   "at": 47.6,
+   "dur": 0.9,
+   "behind": true,
+   "size": 125,
+   "y": 390
+  }
+ ],
+ "stickers": [],
+ "broll": [
+  {
+   "start": 38.3,
+   "end": 40.6,
+   "clip": "/sessions/rcw-018c3cvmrtgmvcfyhjvd26xo/cr/r2/broll/clips/shot01.mp4"
+  },
+  {
+   "start": 112.0,
+   "end": 114.0,
+   "clip": "/sessions/rcw-018c3cvmrtgmvcfyhjvd26xo/cr/r2/broll/clips/shot02.mp4"
+  }
+ ],
+ "shakes": [
+  47.6
+ ],
+ "save": {
+  "at": 123.25,
+  "text": "Save & Share",
+  "share_icon": true,
+  "handle": "@i.am.a.recruiter"
+ },
+ "sfx": [
+  [
+   "whoosh",
+   0.75
+  ],
+  [
+   "tick",
+   1.0
+  ],
+  [
+   "pop",
+   2.5
+  ],
+  [
+   "pop",
+   14.4
+  ],
+  [
+   "tick",
+   17.0
+  ],
+  [
+   "pop",
+   20.5
+  ],
+  [
+   "whoosh",
+   38.3
+  ],
+  [
+   "whoosh",
+   43.65
+  ],
+  [
+   "tick",
+   44.4
+  ],
+  [
+   "tick",
+   45.6
+  ],
+  [
+   "pop",
+   46.6
+  ],
+  [
+   "pop",
+   47.6
+  ],
+  [
+   "tick",
+   57.4
+  ],
+  [
+   "whoosh",
+   77.9
+  ],
+  [
+   "pop",
+   79.4
+  ],
+  [
+   "whoosh",
+   94.31
+  ],
+  [
+   "pop",
+   96.0
+  ],
+  [
+   "whoosh",
+   112.0
+  ],
+  [
+   "pop",
+   112.0
+  ],
+  [
+   "whoosh",
+   118.4
+  ],
+  [
+   "chime",
+   123.25
+  ]
+ ],
+ "zoom_levels": [
+  [
+   1.08,
+   1.1
+  ],
+  [
+   1.1,
+   1.12
+  ]
+ ]
+}

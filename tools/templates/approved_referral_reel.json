@@ -1,0 +1,432 @@
+{
+ "source": "<CAREER_REELS>/Raw Videos/VID_20261107_203240.mp4",
+ "speed": 1.2,
+ "time_base": "source",
+ "segments": [
+  [
+   0.89,
+   2.82
+  ],
+  [
+   11.06,
+   13.06
+  ],
+  [
+   13.72,
+   14.45
+  ],
+  [
+   15.28,
+   18.97
+  ],
+  [
+   20.88,
+   23.64
+  ],
+  [
+   23.81,
+   25.18
+  ],
+  [
+   28.66,
+   33.25
+  ],
+  [
+   35.17,
+   38.14
+  ],
+  [
+   45.25,
+   50.22
+  ],
+  [
+   50.46,
+   54.35
+  ],
+  [
+   54.74,
+   55.67
+  ],
+  [
+   55.92,
+   58.52
+  ],
+  [
+   58.76,
+   60.56
+  ],
+  [
+   60.88,
+   63.21
+  ],
+  [
+   63.44,
+   66.37
+  ],
+  [
+   74.54,
+   80.42
+  ],
+  [
+   82.44,
+   90.12
+  ],
+  [
+   96.12,
+   100.9
+  ]
+ ],
+ "captions": [
+  {
+   "from": 0.99,
+   "to": 2.74,
+   "text": "Referral maang rahe ho,"
+  },
+  {
+   "from": 11.16,
+   "to": 12.96,
+   "text": "Lekin job ka link nahi hai?"
+  },
+  {
+   "from": 13.82,
+   "to": 14.35,
+   "text": "Maan lo,"
+  },
+  {
+   "from": 15.38,
+   "to": 18.87,
+   "text": "LinkedIn par kisi employee ko message bhejte ho:"
+  },
+  {
+   "from": 20.98,
+   "to": 23.54,
+   "text": "\"Hi sir, please refer me. I have"
+  },
+  {
+   "from": 23.91,
+   "to": 25.08,
+   "text": "7 years of experience.\""
+  },
+  {
+   "from": 28.76,
+   "to": 33.15,
+   "text": "Unhe kaise pata chalega ki kis opening ke liye refer karna hai?"
+  },
+  {
+   "from": 35.27,
+   "to": 38.04,
+   "text": "Iske badle ye short message bhejo:"
+  },
+  {
+   "from": 45.35,
+   "to": 50.12,
+   "text": "\"I saw a backend engineering opening, Job ID so-and-so, and this is the job link."
+  },
+  {
+   "from": 50.56,
+   "to": 54.25,
+   "text": "I have 7 years of experience in Java Spring Boot,"
+  },
+  {
+   "from": 54.84,
+   "to": 55.57,
+   "text": "etc.,"
+  },
+  {
+   "from": 56.02,
+   "to": 58.42,
+   "text": "including API development as well."
+  },
+  {
+   "from": 58.86,
+   "to": 60.46,
+   "text": "My resume is attached."
+  },
+  {
+   "from": 60.98,
+   "to": 63.11,
+   "text": "If you think my profile is fit,"
+  },
+  {
+   "from": 63.54,
+   "to": 66.27,
+   "text": "would you be comfortable referring me?\""
+  },
+  {
+   "from": 74.64,
+   "to": 80.32,
+   "text": "Job ID sirf example hai. Actual opening ka link bhejna zaroori hai."
+  },
+  {
+   "from": 82.54,
+   "to": 90.02,
+   "text": "Referral guarantee nahi, lekin saamne waale ke liye tumhara fit check karna easy ho jaata hai."
+  },
+  {
+   "from": 96.22,
+   "to": 99.48,
+   "text": "Aur video useful lage toh save and share karna."
+  }
+ ],
+ "caption_style": {
+  "style": "pop",
+  "y": 1420,
+  "size": 76,
+  "max_words": 3,
+  "emphasis": [
+   "referral",
+   "link",
+   "link...",
+   "opening",
+   "resume",
+   "short",
+   "guarantee",
+   "fit",
+   "fit,",
+   "zaroori",
+   "share",
+   "save",
+   "share"
+  ]
+ },
+ "bigwords": [
+  {
+   "text": "ISKE BADLE",
+   "at": 35.27,
+   "dur": 0.9,
+   "behind": true,
+   "size": 180,
+   "y": 390
+  }
+ ],
+ "chips": {
+  "chips": [
+   {
+    "text": "Job ID",
+    "at": 47.4
+   },
+   {
+    "text": "Job link",
+    "at": 49.4
+   },
+   {
+    "text": "Skills",
+    "at": 52.2
+   },
+   {
+    "text": "Resume",
+    "at": 59.2
+   }
+  ],
+  "to": 66.27,
+  "size": 44,
+  "gap": 46,
+  "y": 215
+ },
+ "broll": [
+  {
+   "start": 15.4,
+   "end": 17.6,
+   "clip": "<WORK>/broll/clips/shot01.mp4"
+  },
+  {
+   "start": 28.8,
+   "end": 30.9,
+   "clip": "<WORK>/broll/clips/shot02.mp4"
+  },
+  {
+   "start": 50.6,
+   "end": 52.8,
+   "clip": "<WORK>/broll/clips/shot03.mp4"
+  },
+  {
+   "start": 58.9,
+   "end": 60.45,
+   "clip": "<WORK>/broll/clips/shot04.mp4"
+  },
+  {
+   "start": 82.6,
+   "end": 84.9,
+   "clip": "<WORK>/broll/clips/shot05.mp4"
+  }
+ ],
+ "save": {
+  "at": 99.6,
+  "text": "Save & Share",
+  "share_icon": true,
+  "handle": "@iamprafz"
+ },
+ "sfx": [
+  [
+   "whoosh",
+   0.89
+  ],
+  [
+   "pop",
+   35.27
+  ],
+  [
+   "whoosh",
+   15.4
+  ],
+  [
+   "whoosh",
+   28.8
+  ],
+  [
+   "whoosh",
+   50.6
+  ],
+  [
+   "whoosh",
+   58.9
+  ],
+  [
+   "whoosh",
+   82.6
+  ],
+  [
+   "tick",
+   47.4
+  ],
+  [
+   "tick",
+   49.4
+  ],
+  [
+   "tick",
+   52.2
+  ],
+  [
+   "tick",
+   59.2
+  ],
+  [
+   "chime",
+   99.6
+  ],
+  [
+   "pop",
+   20.98
+  ],
+  [
+   "pop",
+   30.9
+  ],
+  [
+   "pop",
+   48.0
+  ],
+  [
+   "pop",
+   58.9
+  ],
+  [
+   "pop",
+   77.0
+  ],
+  [
+   "pop",
+   82.6
+  ],
+  [
+   "pop",
+   86.5
+  ]
+ ],
+ "lufs": -14,
+ "behind_titles": [
+  {
+   "lines": [
+    {
+     "text": "JOB LINK KE BINA",
+     "size": 96
+    },
+    {
+     "text": "REFERRAL?",
+     "size": 180,
+     "color": "yellow"
+    }
+   ],
+   "from": 0.89,
+   "to": 12.96,
+   "y": 170
+  }
+ ],
+ "punches": [
+  2.2,
+  12.0,
+  21.6,
+  31.6,
+  37.0,
+  46.8,
+  61.6,
+  76.6,
+  78.8,
+  86.6,
+  97.6
+ ],
+ "shakes": [
+  35.27
+ ],
+ "sfx_db": -22,
+ "look": {
+  "brightness": 0.04,
+  "contrast": 1.1,
+  "saturation": 1.15,
+  "gamma": 1.05,
+  "warm": 0.03,
+  "vignette": 0.25
+ },
+ "stickers": [
+  {
+   "kind": "chat",
+   "from": 20.98,
+   "to": 25.08,
+   "x": 150,
+   "y": 1170
+  },
+  {
+   "kind": "question",
+   "from": 30.9,
+   "to": 33.15,
+   "x": 930,
+   "y": 1170
+  },
+  {
+   "kind": "link",
+   "from": 48.0,
+   "to": 50.12,
+   "x": 150,
+   "y": 1170
+  },
+  {
+   "kind": "doc",
+   "from": 58.9,
+   "to": 61.0,
+   "x": 930,
+   "y": 1170
+  },
+  {
+   "kind": "link",
+   "from": 77.0,
+   "to": 80.32,
+   "x": 930,
+   "y": 1170
+  },
+  {
+   "kind": "cross",
+   "from": 82.6,
+   "to": 84.8,
+   "x": 930,
+   "y": 1170
+  },
+  {
+   "kind": "check",
+   "from": 86.5,
+   "to": 90.02,
+   "x": 150,
+   "y": 1170
+  }
+ ]
+}
