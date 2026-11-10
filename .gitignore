@@ -1,0 +1,14 @@
+*.env
+broll.env
+github.env
+__pycache__/
+*.mp4
+*.mov
+*.wav
+*.onnx
+Raw Videos/
+Finished/
+B-roll/
+Proof/
+References/
+Screen Recordings/
