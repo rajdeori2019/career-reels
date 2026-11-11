@@ -822,7 +822,7 @@ def mix_audio(spec, work):
         env = np.convolve(env, np.ones(k) / k, mode="same")
         duck = np.where(env > 0.01, spec.get("music_under", 0.05), spec.get("music_gap", 0.10))
         duck = np.convolve(duck, np.ones(k) / k, mode="same")
-        out += bed * duck
+        n = min(len(out), len(bed), len(duck)); out[:n] += bed[:n] * duck[:n]   # lengths can differ by 1 sample
     path = Path(work) / "mix_pre.wav"
     with wave.open(str(path), "wb") as w:
         w.setnchannels(1); w.setsampwidth(2); w.setframerate(sr)
