@@ -449,6 +449,7 @@ class Mattes:
 
 
 def behind_windows(spec):
+    if spec.get("bg_replace"): return [(0.0, 1e9)]          # background swap needs a matte on every frame
     win = []
     for b in spec.get("behind_titles", []): win.append((b["from"], b["to"] + 0.3))
     for b in spec.get("bigwords", []):
@@ -635,6 +636,39 @@ def apply_look(frame, look):
     return np.clip(out * vig, 0, 255).astype(np.uint8)
 
 
+_BG = {}
+def bg_replace(base, matte, cfg):
+    """Swap the room behind the person. cfg: mode image|dim, image, clip [lo,hi], feather px, band px, spill_ratio."""
+    lo, hi = cfg.get("clip", [0.4, 0.85])
+    m = np.asarray(matte, np.float32) / 255.0
+    m = np.clip((m - lo) / max(1e-3, hi - lo), 0, 1)
+    mi = Image.fromarray((m * 255).astype(np.uint8))
+    if cfg.get("feather", 2): mi = mi.filter(ImageFilter.GaussianBlur(cfg.get("feather", 2)))
+    rgb = np.asarray(base.convert("RGB"), np.float32)
+    if cfg.get("band"):                                    # spill removal on the edge band, computed at 1/4 res (MaxFilter is slow)
+        q = mi.resize((W // 4, H // 4), Image.BILINEAR)
+        k = max(3, (cfg["band"] // 4) | 1)
+        inner = np.asarray(q.filter(ImageFilter.MinFilter(k)), np.float32) / 255
+        band = np.clip(np.asarray(q, np.float32) / 255 - inner, 0, 1)
+        band = np.asarray(Image.fromarray((band * 255).astype(np.uint8)).resize((W, H), Image.BILINEAR), np.float32)[..., None] / 255
+        r, g, b_ = rgb[..., 0], rgb[..., 1], rgb[..., 2]
+        cap = np.maximum(g, b_) * cfg.get("spill_ratio", 1.5)
+        rgb[..., 0] = r - band[..., 0] * np.clip(r - cap, 0, None)
+    if cfg.get("mode", "image") == "dim":
+        bg = rgb * cfg.get("dim", 0.35)
+    else:
+        key = cfg["image"]
+        if key not in _BG:
+            im = Image.open(key).convert("RGB"); sc = max(W / im.width, H / im.height)
+            im = im.resize((int(im.width * sc + 1), int(im.height * sc + 1)), Image.LANCZOS)
+            l, t0 = (im.width - W) // 2, (im.height - H) // 2
+            _BG[key] = np.asarray(im.crop((l, t0, l + W, t0 + H)), np.float32)
+        bg = _BG[key]
+    a = np.asarray(mi, np.float32)[..., None] / 255
+    out = rgb * a + bg * (1 - a)
+    return Image.fromarray(out.clip(0, 255).astype(np.uint8)).convert("RGBA")
+
+
 def compose(spec, els, t, frame):
     frame = apply_look(frame, spec.get("look"))
     z = zoom_at(spec, t); ox, oy = spec.get("zoom_origin", [0.5, 1.0])
@@ -654,7 +688,15 @@ def compose(spec, els, t, frame):
                 arr = (arr * (1 - a) + 255 * a).astype(np.uint8); break
     base = Image.fromarray(arr).convert("RGBA")
     behind = [e for e in els if getattr(e, "behind", False)]
+    behind.sort(key=lambda e: 0 if type(e).__name__ == "PopBackground" else 1)   # pop_bg first, titles on top of it
     front = [e for e in els if not getattr(e, "behind", False)]
+    bgr = spec.get("bg_replace")
+    if bgr and br is None and spec.get("_mattes"):
+        m0 = spec["_mattes"].get(t)
+        if m0 is not None:
+            m0 = Image.fromarray(apply_zoom(np.stack([np.asarray(m0)] * 3, -1), z, ox, oy)[..., 0])
+            if dx or dy: m0 = m0.transform((W, H), Image.AFFINE, (1, 0, -dx, 0, 1, -dy), Image.BILINEAR)
+            base = bg_replace(base, m0, bgr)
     if behind and br is None:
         mt = spec["_mattes"].get(t) if spec.get("_mattes") else None
         if mt is not None:
