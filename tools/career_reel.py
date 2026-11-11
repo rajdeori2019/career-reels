@@ -441,8 +441,11 @@ def cmd_cut(spec_f, work):
 class Mattes:
     def __init__(self, work): self.d = Path(work) / "matte"
     def get(self, t):
-        p = self.d / f"{int(round(t * FPS)):05d}.png"
-        return Image.open(p).convert("L").resize((W, H), Image.BILINEAR) if p.exists() else None
+        i = int(round(t * FPS))
+        for j in (i, i - 1, i + 1, i - 2, i + 2):      # tolerate a skipped frame instead of dropping the person
+            p = self.d / f"{j:05d}.png"
+            if p.exists(): return Image.open(p).convert("L").resize((W, H), Image.BILINEAR)
+        return None
 
 
 def behind_windows(spec):
@@ -769,7 +772,8 @@ def mix_audio(spec, work):
     out = v.copy()
     for kind, at in spec.get("sfx", []):
         s = synth(kind, sr) * 10 ** ((spec.get("sfx_db", -24) - (7 if kind == "swish" else 0)) / 20)
-        i = int(at * sr); j = min(len(out), i + len(s)); out[i:j] += s[:j - i]
+        i = int(at * sr); j = min(len(out), i + len(s))
+        if i < j: out[i:j] += s[:j - i]                     # skip SFX past the end of the voice
     if spec.get("music", True):
         bed = music_bed(len(out) / sr, sr, spec.get("music_bpm", 96))[:len(out)]
         env = np.abs(v); k = int(0.25 * sr)
