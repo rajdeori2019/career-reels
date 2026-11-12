@@ -31,12 +31,13 @@ If you ever set this up on a new account, repeat 3, 6 and 7. Everything else is 
    `make reel <paste link>`
    Or just `make reel` to use your newest video in `Raw Videos`.
 5. Claude replies with **one confirmation**: caption lines, cuts, speed (1.2x), design and handle. Reply **OK** or send corrections.
-6. You get stills or the finished reel in the chat. If the laptop is on, it is also saved in `Finished`.
+6. Claude sends the **full storyboard**: one panel for every graphic moment and every line, with time, caption and what's on screen. Reply **OK**, or point to a panel number to change (e.g. "panel 7: smaller keyword").
+7. Only after your OK, Claude renders the reel and sends it in the chat. If the laptop is on, it is also saved in `Finished`.
 
 ### From the laptop
 1. Put the video in `Raw Videos`.
 2. In a Claude task linked to your laptop: `make reel <file name>`.
-3. Same confirmation step, then the reel lands in `Finished`.
+3. Same confirmation step, then the storyboard, then the reel lands in `Finished`.
 
 ### Adding proof
 Put screenshots in `Proof` and screen recordings in `Screen Recordings`, then say which line they belong to (e.g. "show Proof/naukri.png on line 9"). Blur names, CTC and contact details of anyone else.
@@ -60,7 +61,8 @@ Put screenshots in `Proof` and screen recordings in `Screen Recordings`, then sa
 |---|---|
 | Video over 30 MB | Don't attach it in chat. Upload to Drive and send the link. |
 | Laptop off | Works: Claude edits in the cloud and sends the reel in chat. Copy it to `Finished` later. |
-| Wrong word in captions | Correct it in the confirmation table before the render. |
+| Wrong word in captions | Correct it in the confirmation table or on the storyboard, before the render. |
+| Don't like a graphic | Say the storyboard panel number and what to change. Nothing is rendered until you OK the storyboard. |
 | Wall too red/busy | Say "navy background". |
 | Want a different look | Name it: "Referral look", or style codes from the Style Guide. |
 | A Drive copy named `_tmp_cloud_…` in Trash | That's the temporary copy Claude downloads from. Safe to empty Trash. |

@@ -6,7 +6,7 @@ Pick a reel type, or pick single styles by code. Then tell Claude: "Make a caree
 
 **Tags:** **Proven** = used in Prafulla's approved reels · **Ready** = built into the Career Reels editor and tested, not in a posted reel yet
 
-**Every edit:** Claude first sends your caption lines and planned cuts to confirm and asks the speed · your face is never covered by graphics (proof cutaways P2/P4 cover you for a moment, like B-roll) · text stays inside Instagram and LinkedIn safe zones · your own voice is kept · preview stills (or a preview video) before the final export · one Showpiece effect per reel at most.
+**Every edit:** Claude first sends your caption lines and planned cuts to confirm and asks the speed · your face is never covered by graphics (proof cutaways P2/P4 cover you for a moment, like B-roll) · text stays inside Instagram and LinkedIn safe zones · your own voice is kept · a full storyboard (every graphic moment, with time and caption) to approve before the final render · one Showpiece effect per reel at most.
 
 ---
 
