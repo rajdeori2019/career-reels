@@ -4,6 +4,8 @@
   python3 career_reel.py cut     SPEC.json WORK          # cut + clean voice -> WORK/cut.mp4, WORK/voice.wav
   python3 career_reel.py matte   SPEC.json WORK u2net_human_seg.onnx [--from A --to B]  # person mattes for behind-you text
   python3 career_reel.py stills  SPEC.json WORK t1,t2,..  # preview frames -> WORK/stills.png
+  python3 career_reel.py storyboard SPEC.json WORK      # FULL storyboard before render: one panel per line + ending
+                                                        #   -> WORK/storyboard_1.png, _2.png ... (send to Prafulla, get OK, then render)
   python3 career_reel.py render  SPEC.json WORK OUT.mp4 [--from A --to B]   # chunk = video only
   python3 career_reel.py join    SPEC.json WORK OUT.mp4 C1.mp4 C2.mp4 ...   # chunks + voice/sfx/music mix, loudnorm
 
@@ -733,6 +735,123 @@ def cmd_stills(spec_f, work, times):
     sheet.save(Path(work) / "stills.png"); print(f"wrote {Path(work) / 'stills.png'}")
 
 
+def _sb_desc(e):
+    """Short human label for an on-screen element (storyboard)."""
+    t = e.get("type", "")
+    if t == "keyword": return f"Keyword slam: {e.get('small','')} {e['big']}".strip()
+    if t == "header":  return "Header"
+    if t == "typing_box": return f"Typing box: \"{e.get('text','')[:38]}\""
+    if t == "build_card": return f"Build card: {e.get('title','')}"
+    if t == "pop_bg": return f"Pop-out background ({e.get('pattern','stripes')})"
+    if t == "number_slam": return f"Number slam: {e.get('prefix','')}{e.get('value','')}{e.get('suffix','')}"
+    if t == "number": return f"Number roll: {e.get('value','')}"
+    if t == "stamp": return f"Stamp: {e.get('text','')}"
+    if t == "myth": return "Myth crossed out"
+    for k, v in (("skit_label", "Skit label"), ("phone_alert", "Phone alert"), ("tick_list", "Tick list"),
+                 ("message_card", "Message card"), ("before_after", "Before/after wipe"), ("insights", "Insights zoom"),
+                 ("side_column", "Product side column"), ("float_card", "Floating card"), ("jd_fan", "JD cards"),
+                 ("resume_split", "Resume split"), ("scissors", "Scissors"), ("steps", "Step tracker"),
+                 ("rising_headline", "Rising headline"), ("comment_keyword", "Comment keyword"), ("part_two", "Part 2 card"),
+                 ("serif_title", "Serif title behind"), ("shop_button", "Shop button")):
+        if t == k: return v + (f": {e['text']}" if isinstance(e.get("text"), str) and t != "part_two" else "")
+    return t
+
+
+def _sb_active(spec, t):
+    """Everything on screen at output time t (elements, effects, b-roll, stickers, big words, save pill)."""
+    out = []
+    for e in spec.get("elements", []):
+        if e.get("type") == "header":
+            for it in e["items"]:
+                if it["from"] <= t <= it["to"]: out.append(f"Header {it.get('num','')} {it['text']}")
+            continue
+        a = e.get("at", e.get("from"))
+        if a is None: continue
+        b = e.get("to", a + e.get("dur", 1.2) if "at" in e else 1e9)
+        if a <= t <= b: out.append(_sb_desc(e))
+    for fx in spec.get("effects", []):
+        a = fx.get("at", fx.get("from")); b = fx.get("to", a + fx.get("dur", 0.4))
+        if a <= t <= b: out.append({"split": "Screen top / you below", "spotlight": "Spotlight", "glitch": "Glitch",
+                                    "grid": "Grid to one"}.get(fx["type"], fx["type"]))
+    for r in spec.get("broll", []):
+        if r["start"] <= t < r["end"]: out.append("B-roll cutaway")
+    for st in spec.get("stickers", []):
+        if st["from"] <= t <= st["to"]: out.append(f"Clip-art: {st['kind']}")
+    for bw in spec.get("bigwords", []):
+        if bw["at"] <= t <= bw["at"] + bw.get("dur", 0.8): out.append(f"Big word behind: {bw['text']}")
+    if spec.get("bg_replace"): out.append("Navy background")
+    if spec.get("save") and t >= spec["save"]["at"]: out.append(f"Save & Share {spec['save'].get('handle','')}")
+    return out
+
+
+def cmd_storyboard(spec_f, work, per_page=12):
+    """Full storyboard BEFORE the render: one panel per spoken line (frame with all graphics, time, caption,
+    what is on screen) plus the ending. Writes WORK/storyboard_1.png, _2.png ... (4 x 3 panels per page)."""
+    spec = load_spec(spec_f, work); els = build(spec); spec["_mattes"] = Mattes(work)
+    caps = spec.get("captions", []); dur = spec["_dur"]
+    events = []
+    for e in spec.get("elements", []):
+        if e.get("type") == "header": events += [it["from"] for it in e["items"]]
+        elif e.get("at", e.get("from")) is not None: events.append(e.get("at", e.get("from")))
+    events += [fx.get("at", fx.get("from")) for fx in spec.get("effects", [])]
+    events += [r["start"] for r in spec.get("broll", [])] + [st["from"] for st in spec.get("stickers", [])]
+    events += [b["at"] for b in spec.get("bigwords", [])]
+    beats, used = [], set()
+    def line_at(t):
+        for i, g in enumerate(caps):
+            if g["from"] - 0.3 <= t <= g["to"] + 0.3: return i
+        return None
+    for x in sorted(set(round(v, 2) for v in events if v is not None and v < dur)):
+        t = min(dur - 0.3, x + 0.6)
+        if beats and t - beats[-1][0] < 0.8: continue          # same moment, one panel
+        i = line_at(t); used.add(i)
+        beats.append((t, "", caps[i]["text"] if i is not None else "", t, t))
+    for i, g in enumerate(caps):
+        if i not in used: beats.append(((g["from"] + g["to"]) / 2, "", g["text"], g["from"], g["to"]))
+    beats.sort(key=lambda z: z[0])
+    beats = [(t, str(k + 1), txt, a, b) for k, (t, _, txt, a, b) in enumerate(beats)]
+    end_t = max(0.0, dur - 0.25)
+    beats.append((end_t, "END", "(ending)", end_t, dur))
+    PW, PH, TH = 300, 533, 190
+    fb, fs = font(22), font(19, "semi")
+    def fmt(x): return f"{int(x // 60)}:{x % 60:04.1f}"
+    def wrap(txt, f, w, d):
+        words, lines, cur = txt.split(), [], ""
+        for wd in words:
+            nxt = (cur + " " + wd).strip()
+            if d.textlength(nxt, font=f) <= w: cur = nxt
+            else: lines.append(cur); cur = wd
+        if cur: lines.append(cur)
+        return lines
+    panels = []
+    for t, tag, text, a, b in beats:
+        fr = next(frames(work, t, t + 0.2))[1]
+        im = compose(spec, els, t, fr).resize((PW, PH))
+        card = Image.new("RGB", (PW, PH + TH), (250, 249, 246)); card.paste(im, (0, 0)); d = ImageDraw.Draw(card)
+        d.rounded_rectangle([8, PH - 42, 8 + d.textlength(f" {tag}  {fmt(t)} ", font=fb) + 8, PH - 10], 8, fill=(17, 17, 17))
+        d.text((14, PH - 39), f"{tag}  {fmt(t)}", font=fb, fill=(255, 200, 61))
+        y = PH + 8
+        for ln in wrap(text, fs, PW - 16, d)[:3]:
+            d.text((8, y), ln, font=fs, fill=(20, 20, 24)); y += 24
+        y += 4
+        for item in _sb_active(spec, t)[:4]:
+            for ln in wrap("• " + item, font(17, "semi"), PW - 16, d)[:2]:
+                d.text((8, y), ln, font=font(17, "semi"), fill=(47, 111, 237)); y += 21
+        panels.append(card)
+    name = Path(spec.get("source", "reel")).stem
+    head = (f"STORYBOARD · {name} · {fmt(dur)} at {spec.get('speed', 1)}x · "
+            f"{spec.get('save', {}).get('handle', '')} · {'navy background' if spec.get('bg_replace') else 'real room'}")
+    cols, rows = 4, math.ceil(per_page / 4); outs = []
+    for pg in range(math.ceil(len(panels) / per_page)):
+        chunk = panels[pg * per_page:(pg + 1) * per_page]
+        r = math.ceil(len(chunk) / cols)
+        sheet = Image.new("RGB", (cols * (PW + 10) + 10, 70 + r * (PH + TH + 10)), (236, 233, 226))
+        d = ImageDraw.Draw(sheet); d.text((14, 20), head + f" · page {pg + 1}", font=font(26), fill=(17, 17, 17))
+        for i, c in enumerate(chunk): sheet.paste(c, (10 + (i % cols) * (PW + 10), 70 + (i // cols) * (PH + TH + 10)))
+        o = Path(work) / f"storyboard_{pg + 1}.png"; sheet.save(o); outs.append(str(o))
+    print("wrote " + " ".join(outs))
+
+
 def cmd_render(spec_f, work, out, t0=None, t1=None):
     spec = load_spec(spec_f, work); els = build(spec); spec["_mattes"] = Mattes(work)
     t0 = float(t0 or 0); t1 = float(t1) if t1 is not None else spec["_dur"]
@@ -855,6 +974,7 @@ if __name__ == "__main__":
     c = a[0]
     if c == "cut": cmd_cut(a[1], a[2])
     elif c == "stills": cmd_stills(a[1], a[2], a[3])
+    elif c == "storyboard": cmd_storyboard(a[1], a[2])
     elif c == "render":
         t0 = a[a.index("--from") + 1] if "--from" in a else None
         t1 = a[a.index("--to") + 1] if "--to" in a else None
