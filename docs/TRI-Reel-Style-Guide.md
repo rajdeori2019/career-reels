@@ -32,8 +32,8 @@ Stops the scroll. On screen from the very first frame.
 | Code | Style | What it does | Best for | Status |
 |---|---|---|---|---|
 | **H1** | Question Pill | The hook question in short bold capitals on a dark pill at the top, from frame 0. Plain white text, no name intro. | Any tip or question reel | Proven |
-| **H2** | Recruiter Skit | A short Recruiter → Candidate exchange, then you to camera. Small yellow RECRUITER / CANDIDATE labels during the exchange. | Interview answers, recruiter POV | Ready |
-| **H3** | Rising Headline | The headline rises in letter by letter from a mask, then a thin line sweeps under the key word. | Stories, showcases, ads | Ready |
+| **H2** | Recruiter Skit | A short Recruiter → Candidate exchange, then you to camera. Small yellow RECRUITER / CANDIDATE labels during the exchange. | Interview answers, recruiter POV | Proven |
+| **H3** | Rising Headline | The headline rises in letter by letter from a mask, then a thin line sweeps under the key word. | Stories, showcases, ads | Proven |
 | **H4** | Myth Crossed Out | The wrong belief appears, a red line strikes through it, and the truth replaces it. | Myth-busting, resume mistakes | Proven |
 | **H5** | Title Behind You | A big title sits behind your head while you stay in front of it. Works in a normal room, no green screen. | Hooks, big claims | Proven |
 | **H6** | Pop-Out Background | The wall behind you swaps to a bold striped or paper pattern, with a white cut-out outline around you and small doodles. | Hook and the ending | Proven |
@@ -62,9 +62,9 @@ How you and your proof share the screen.
 | Code | Style | What it does | Best for | Status |
 |---|---|---|---|---|
 | **L1** | Talking Head Push | Your normal shot, gently pushed in and anchored at the bottom so your hands stay in frame. Small punch-in on each jump cut. | Every talking reel | Proven |
-| **L2** | Screen Top, You Below | Your screen recording fills the top half (LinkedIn, Naukri, resume, code) and you explain it in the bottom half. | Profile fixes, tutorials | Ready |
-| **L3** | Product Side Column | The product or document sits on one side, text goes in the opposite column. Nothing touches your face. | Showing a resume, book, offer | Ready |
-| **L4** | Floating Proof Card | Your normal shot with one small card floating in the space above your head. | One proof point while talking | Ready |
+| **L2** | Screen Top, You Below | Your screen recording fills the top half (LinkedIn, Naukri, resume, code) and you explain it in the bottom half. | Profile fixes, tutorials | Proven |
+| **L3** | Product Side Column | The product or document sits on one side, text goes in the opposite column. Nothing touches your face. | Showing a resume, book, offer | Proven |
+| **L4** | Floating Proof Card | Your normal shot with one small card floating in the space above your head. | One proof point while talking | Proven |
 
 ---
 
@@ -75,10 +75,10 @@ Real results only. Blur names, numbers and company details unless you have permi
 | Code | Style | What it does | Best for | Status |
 |---|---|---|---|---|
 | **P1** | Recruiter Message Card | A real recruiter message or interview invite slides in, names blurred, one line highlighted in yellow. | Hire-me reels, win stories | Proven |
-| **P2** | Resume Before / After | A wipe moves from your old resume to the new one. It covers you for a moment, like a cutaway. | Resume and LinkedIn fixes | Ready |
-| **P3** | Number Roll-Up | A real number rolls up to its final value as you say it: profile views, interview calls, hike %. | Results you can show | Ready |
-| **P4** | Profile Insights Pointer | Your LinkedIn or Naukri insights screenshot zooms in and an arrow lands on the number. It covers you for a moment, like a cutaway. | Profile growth proof | Ready |
-| **P5** | Offer Stamp | A stamp lands on the screen with a ring, for the moment you got the offer or cleared the round. | Offer and win stories | Ready |
+| **P2** | Resume Before / After | A wipe moves from your old resume to the new one. It covers you for a moment, like a cutaway. | Resume and LinkedIn fixes | Proven |
+| **P3** | Number Roll-Up | A real number rolls up to its final value as you say it: profile views, interview calls, hike %. | Results you can show | Proven |
+| **P4** | Profile Insights Pointer | Your LinkedIn or Naukri insights screenshot zooms in and an arrow lands on the number. It covers you for a moment, like a cutaway. | Profile growth proof | Proven |
+| **P5** | Offer Stamp | A stamp lands on the screen with a ring, for the moment you got the offer or cleared the round. | Offer and win stories | Proven |
 | **P6** | Typing Message Box | The message you are quoting types out in a chat box, letter by letter, and the send button turns green. | DM, email and pitch lines | Proven |
 
 ---
@@ -90,12 +90,12 @@ Help people follow along. Use two or three, not one on every line.
 | Code | Style | What it does | Best for | Status |
 |---|---|---|---|---|
 | **B1** | Framework Chips | PROBLEM → DECISION → RESULT chips spring in at the top as you say each word. The last one stays bright. | Interview answers (STAR-style) | Proven |
-| **B2** | JD Cards Fan Out | Job description cards fan out across the top of the screen. | Job search tips | Ready |
-| **B3** | One Resume, Three Versions | One resume card splits into three coloured versions, each with a tick. | Tailoring your resume | Ready |
-| **B4** | Scissors Tailor | Scissors cut along a dashed line and the key words are revealed. | Tailor, cut, shorten tips | Ready |
-| **B5** | Tick List | A small card beside you ticks off each point as you finish it. | Checklists, mistakes | Ready |
+| **B2** | JD Cards Fan Out | Job description cards fan out across the top of the screen. | Job search tips | Proven |
+| **B3** | One Resume, Three Versions | One resume card splits into three coloured versions, each with a tick. | Tailoring your resume | Proven |
+| **B4** | Scissors Tailor | Scissors cut along a dashed line and the key words are revealed. | Tailor, cut, shorten tips | Proven |
+| **B5** | Tick List | A small card beside you ticks off each point as you finish it. | Checklists, mistakes | Proven |
 | **B6** | Big Word Behind You | One big word lands behind your head with a small camera shake, like LEKIN or ISKE BADLE. | The turn in your reel | Proven |
-| **B7** | Interview Invite Alert | A phone notification slides down: a new interview invite or a recruiter reply. | Results, outreach tips | Ready |
+| **B7** | Interview Invite Alert | A phone notification slides down: a new interview invite or a recruiter reply. | Results, outreach tips | Proven |
 | **B8** | Step Tracker | A row of steps stays at the top and lights up as you move through them. | Any numbered process | Proven |
 | **B9** | Keyword Slam | The key phrase of a line slams in two-tone, a small word above a BIG word, in yellow or white. | The key phrase on each beat | Proven |
 | **B10** | Section Header | A numbered header at the top changes as you move through the steps: #1 Verify, #2 Ask the gap… | Numbered methods | Proven |
@@ -110,8 +110,8 @@ Claude checks your own B-roll folder first, then free stock sites.
 | Code | Style | What it does | Best for | Status |
 |---|---|---|---|---|
 | **R1** | Auto Stock B-Roll | Claude finds vertical clips on Pexels and Pixabay that match your line, shows you the picks, then cuts them in with a flash. | When you have no clips of your own | Proven |
-| **R2** | Office & Commute | Walking into an office, metro, lobby, ID card moments. | Career switch, first job | Ready |
-| **R3** | Screen Recording | Your portfolio, GitHub, dashboard or certificate, recorded on your phone or laptop. | Project showcase | Ready |
+| **R2** | Office & Commute | Walking into an office, metro, lobby, ID card moments. | Career switch, first job | Proven |
+| **R3** | Screen Recording | Your portfolio, GitHub, dashboard or certificate, recorded on your phone or laptop. | Project showcase | Proven |
 | **R4** | AI B-Roll | Short generated clips when you have no footage. Generated without any text burned in. | Concepts, metaphors | Ready |
 
 ---
@@ -123,9 +123,9 @@ One per reel at most. Check the plain wall note first.
 | Code | Style | What it does | Best for | Status |
 |---|---|---|---|---|
 | **X1** | Whip Flash Transition | A fast whip blur, white flash and warm light leak into the big reveal. | The reveal moment | Proven |
-| **X2** | Number Slam | A number lands with rays, a ring and a short camera shake. | Price, salary hike, big stat | Ready |
-| **X3** | Spotlight | The room goes dark and one soft light finds you on the big line. | Emotional turning point | Ready |
-| **X4** | Quick Glitch | One second of glitch, then a clean frame on the next idea. | Topic change | Ready |
+| **X2** | Number Slam | A number lands with rays, a ring and a short camera shake. | Price, salary hike, big stat | Proven |
+| **X3** | Spotlight | The room goes dark and one soft light finds you on the big line. | Emotional turning point | Proven |
+| **X4** | Quick Glitch | One second of glitch, then a clean frame on the next idea. | Topic change | Proven |
 | **X5** | Grid To One | A grid of your clips snaps together into one full frame. | Openers and recaps | Ready |
 
 ---
@@ -142,8 +142,8 @@ Small icons pop in beside you at shoulder height, never over your face. One per 
 | **K4** | Resume Page | A resume page with a clip pops in when you mention your resume or CV. | Resume tips | Proven |
 | **K5** | Green Tick | A green tick for the right way to do it. | Do this | Proven |
 | **K6** | Red Cross | A red cross for the wrong way. | Don't do this | Proven |
-| **K7** | Briefcase | A briefcase pops in on jobs, offers and roles. | Job and offer talk | Ready |
-| **K8** | Share Icon | A share icon for share, send or forward. | Calls to share | Ready |
+| **K7** | Briefcase | A briefcase pops in on jobs, offers and roles. | Job and offer talk | Proven |
+| **K8** | Share Icon | A share icon for share, send or forward. | Calls to share | Proven |
 
 ---
 
@@ -154,8 +154,8 @@ Tell people exactly what to do next.
 | Code | Style | What it does | Best for | Status |
 |---|---|---|---|---|
 | **E1** | Save & Share Pill | A yellow "Save & Share" pill with bookmark and share icons and your handle, after your last line. | Useful tips | Proven |
-| **E2** | Comment Keyword | A card types your keyword, like RESUME, and holds to the end. | Freebies and checklists | Ready |
-| **E3** | Follow For Part 2 | A clean card says "Part 2 tomorrow" with your handle. | Series content | Ready |
+| **E2** | Comment Keyword | A card types your keyword, like RESUME, and holds to the end. | Freebies and checklists | Proven |
+| **E3** | Follow For Part 2 | A clean card says "Part 2 tomorrow" with your handle. | Series content | Proven |
 | **E4** | Shop Now Button | A button springs in, a cursor taps it, ripple and shine. | Ads only | Ready |
 
 ---
@@ -184,4 +184,4 @@ Put reels you want to copy (pace, caption look, hook style) in the `References` 
 
 Some style ideas build on public creator style packs by @brand.nat and @meghanachandani_.
 
-*61 styles (31 Proven, 30 Ready) · 8 reel types*
+*61 styles (54 Proven, 7 Ready) · 8 reel types*
