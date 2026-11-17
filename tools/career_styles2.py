@@ -202,6 +202,13 @@ def fx_split(arr, t, s, ctx):
     fy = s.get("face_y", 0.42)                     # where the face sits in the full frame (fraction)
     ph = H_ - top_h; y0 = int(max(0, min(H_ - ph, fy * H_ - ph * 0.35)))
     bottom = person.crop((0, y0, W, y0 + ph))
+    z = s.get("person_zoom", 1.0)                 # <1 = zoom out so a close-up face fits (blur fills the sides)
+    if z < 1.0:
+        from PIL import ImageFilter
+        ch = int(ph / z); cy0 = int(max(0, min(H_ - ch, fy * H_ - ch * 0.42)))
+        reg = person.crop((0, cy0, W, cy0 + ch)); nw = int(W * z)
+        bottom = reg.resize((W, ph)).filter(ImageFilter.GaussianBlur(30))
+        bottom.paste(reg.resize((nw, ph), Image.LANCZOS), ((W - nw) // 2, 0))
     out = Image.new("RGB", (W, H_)); out.paste(clip, (0, 0)); out.paste(bottom, (0, top_h))
     d = ImageDraw.Draw(out); d.rectangle([0, top_h - 4, W, top_h + 4], fill=YELLOW[:3])
     k = clamp((t - s["from"]) / 0.15)
@@ -605,14 +612,15 @@ class Ctx:                # caches clip frames for split/grid effects
     def clip_frame(self, path, t, w, h):
         if path not in self.clips:
             import subprocess
+            self.clips.clear()   # keep one clip in memory (4 split clips OOM-killed 8 GB)
             raw = subprocess.run(["ffmpeg", "-v", "quiet", "-i", path, "-vf", f"fps={FPS},scale={w}:{h}:force_original_aspect_ratio=increase,crop={w}:{h}",
                                   "-frames:v", "450", "-f", "rawvideo", "-pix_fmt", "rgb24", "-"], capture_output=True).stdout
             n = len(raw) // (w * h * 3)
             if n == 0:   # a still image
                 self.clips[path] = [load_image(path, w, h).convert("RGB")]
             else:
-                arr = np.frombuffer(raw[:n * w * h * 3], np.uint8).reshape(n, h, w, 3)
-                self.clips[path] = [Image.fromarray(a) for a in arr]
+                arr = np.frombuffer(raw[:n * w * h * 3], np.uint8).reshape(n, h, w, 3); del raw
+                self.clips[path] = [Image.fromarray(a) for a in arr]; del arr
         fr = self.clips[path]; im = fr[min(len(fr) - 1, max(0, int(t * FPS)))]
         return im if im.size == (w, h) else im.resize((w, h))
 

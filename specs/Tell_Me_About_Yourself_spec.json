@@ -1,0 +1,571 @@
+{
+ "speed": 1.2,
+ "time_base": "source",
+ "look": {
+  "brightness": 0.045,
+  "contrast": 1.12,
+  "saturation": 1.15,
+  "vibrance": 0.2,
+  "gamma": 1.05,
+  "warm": 0.03,
+  "vignette": 0.2
+ },
+ "caption_style": {
+  "style": "minimal",
+  "y": 520,
+  "size": 52,
+  "max_words": 5
+ },
+ "lufs": -14,
+ "sfx_db": -22,
+ "source": "/root/cr/tmay/raw_c.mp4",
+ "segments": [
+  [
+   1.05,
+   10.85
+  ],
+  [
+   11.25,
+   14.35
+  ],
+  [
+   14.71,
+   28.22
+  ],
+  [
+   28.61,
+   35.77
+  ],
+  [
+   36.18,
+   46.23
+  ],
+  [
+   46.59,
+   50.17
+  ],
+  [
+   50.76,
+   64.41
+  ],
+  [
+   64.73,
+   67.3
+  ]
+ ],
+ "captions": [
+  {
+   "from": 1.18,
+   "to": 3.61,
+   "text": "Memorised intro hai?"
+  },
+  {
+   "from": 4.06,
+   "to": 7.11,
+   "text": "Ye very dangerous weakness hai."
+  },
+  {
+   "from": 7.3999999999999995,
+   "to": 8.56,
+   "text": "Aur candidate reply karta hai:"
+  },
+  {
+   "from": 8.83,
+   "to": 9.66,
+   "text": "\"My name is Rahul,"
+  },
+  {
+   "from": 10.15,
+   "to": 10.75,
+   "text": "B.Tech kiya hai,"
+  },
+  {
+   "from": 11.38,
+   "to": 12.63,
+   "text": "aath saal ka experience hai"
+  },
+  {
+   "from": 13.0,
+   "to": 14.25,
+   "text": "and I am very hardworking.\""
+  },
+  {
+   "from": 14.84,
+   "to": 16.09,
+   "text": "Ruko! Aath saal ke baad bhi"
+  },
+  {
+   "from": 16.41,
+   "to": 18.83,
+   "text": "introduction college pass-out jaisa lag raha hai."
+  },
+  {
+   "from": 19.2,
+   "to": 21.7,
+   "text": "Tumhari relevant value sunai nahi de rahi."
+  },
+  {
+   "from": 22.080000000000002,
+   "to": 23.29,
+   "text": "Uske badle ye line bolo:"
+  },
+  {
+   "from": 23.54,
+   "to": 26.53,
+   "text": "\"I am a Java backend engineer with 8 years of experience."
+  },
+  {
+   "from": 27.01,
+   "to": 29.67,
+   "text": "Recently, I diagnosed slow API queries"
+  },
+  {
+   "from": 29.970000000000002,
+   "to": 32.85,
+   "text": "and validated improvements through repeatable load tests.\""
+  },
+  {
+   "from": 33.099999999999994,
+   "to": 35.67,
+   "text": "Aur ye line add karo ki next role mein kya chahiye:"
+  },
+  {
+   "from": 36.309999999999995,
+   "to": 39.0,
+   "text": "\"Now I'm exploring senior backend engineer roles"
+  },
+  {
+   "from": 39.37,
+   "to": 42.12,
+   "text": "where I can contribute to performance and reliability.\""
+  },
+  {
+   "from": 42.419999999999995,
+   "to": 46.13,
+   "text": "Bas: current role, one real proof, next role fit."
+  },
+  {
+   "from": 46.72,
+   "to": 47.91,
+   "text": "Ye line bahut important hai:"
+  },
+  {
+   "from": 48.4,
+   "to": 50.07,
+   "text": "current role, one genuine example,"
+  },
+  {
+   "from": 50.89,
+   "to": 53.93,
+   "text": "why this role. Apna intro 30 second record karke suno"
+  },
+  {
+   "from": 54.16,
+   "to": 58.55,
+   "text": "aur jo mention kiya, uske follow-up question ke liye ready raho."
+  },
+  {
+   "from": 58.839999999999996,
+   "to": 61.31,
+   "text": "Agar aap interview answers ko better banana chahte ho,"
+  },
+  {
+   "from": 61.559999999999995,
+   "to": 64.31,
+   "text": "toh maine ek practical Interview Answer Playbook banaya hai."
+  },
+  {
+   "from": 64.86,
+   "to": 67.2,
+   "text": "Link profile mein hai. Please jao aur check karo."
+  }
+ ],
+ "elements": [
+  {
+   "type": "pop_bg",
+   "pattern": "stripes",
+   "from": 1.05,
+   "to": 3.7
+  },
+  {
+   "type": "keyword",
+   "small": "memorised",
+   "big": "INTRO?",
+   "at": 1.3,
+   "dur": 2.2,
+   "size": 150,
+   "y": 330
+  },
+  {
+   "type": "keyword",
+   "small": "ye",
+   "big": "VERY DANGEROUS",
+   "at": 4.3,
+   "dur": 1.6,
+   "size": 110,
+   "color": "white",
+   "y": 330
+  },
+  {
+   "type": "typing_box",
+   "label": "Interviewer",
+   "text": "Tell me about yourself?",
+   "from": 5.9,
+   "to": 8.6,
+   "y": 300,
+   "type_dur": 1.0
+  },
+  {
+   "type": "typing_box",
+   "label": "WEAK ANSWER",
+   "text": "My name is Rahul. B.Tech kiya hai. 8 saal ka experience. I am very hardworking.",
+   "from": 8.7,
+   "to": 14.4,
+   "y": 300,
+   "type_dur": 4.5
+  },
+  {
+   "type": "keyword",
+   "small": "8 saal ke baad bhi",
+   "big": "COLLEGE PASS-OUT?",
+   "at": 16.4,
+   "dur": 2.4,
+   "size": 105,
+   "y": 960
+  },
+  {
+   "type": "keyword",
+   "small": "tumhari",
+   "big": "VALUE KAHAN HAI?",
+   "at": 19.2,
+   "dur": 2.4,
+   "size": 105,
+   "color": "white",
+   "y": 960
+  },
+  {
+   "type": "header",
+   "items": [
+    {
+     "num": "#1",
+     "text": "Current role",
+     "from": 22.0,
+     "to": 26.6
+    },
+    {
+     "num": "#2",
+     "text": "One real proof",
+     "from": 26.9,
+     "to": 32.9
+    },
+    {
+     "num": "#3",
+     "text": "Next role fit",
+     "from": 33.0,
+     "to": 42.2
+    }
+   ],
+   "y": 150
+  },
+  {
+   "type": "typing_box",
+   "label": "STRONG ANSWER",
+   "text": "I am a Java backend engineer with 8 years of experience.",
+   "from": 23.4,
+   "to": 26.6,
+   "y": 330,
+   "type_dur": 2.0
+  },
+  {
+   "type": "typing_box",
+   "label": "PROOF",
+   "text": "Recently, I diagnosed slow API queries and validated improvements through repeatable load tests.",
+   "from": 26.9,
+   "to": 32.9,
+   "y": 330,
+   "type_dur": 3.8
+  },
+  {
+   "type": "typing_box",
+   "label": "NEXT ROLE FIT",
+   "text": "Now I'm exploring senior backend engineer roles where I can contribute to performance and reliability.",
+   "from": 36.2,
+   "to": 42.2,
+   "y": 330,
+   "type_dur": 3.8
+  },
+  {
+   "type": "build_card",
+   "title": "Intro Formula",
+   "subtitle": "30 seconds",
+   "icon": "F",
+   "chips": [
+    {
+     "text": "Current role",
+     "at": 43.0
+    },
+    {
+     "text": "One real proof",
+     "at": 43.8
+    },
+    {
+     "text": "Next role fit",
+     "at": 45.3
+    }
+   ],
+   "badge": {
+    "text": "Strong intro",
+    "at": 46.6
+   },
+   "from": 42.4,
+   "to": 50.2,
+   "y": 230
+  },
+  {
+   "type": "keyword",
+   "small": "record karke suno",
+   "big": "30 SEC TEST",
+   "at": 51.8,
+   "dur": 2.2,
+   "size": 130,
+   "y": 960
+  },
+  {
+   "type": "keyword",
+   "small": "ready raho",
+   "big": "FOLLOW-UP Qs",
+   "at": 55.9,
+   "dur": 2.4,
+   "size": 125,
+   "color": "white",
+   "y": 960
+  },
+  {
+   "type": "keyword",
+   "small": "practical",
+   "big": "ANSWER PLAYBOOK",
+   "at": 62.2,
+   "dur": 2.1,
+   "size": 105,
+   "y": 885
+  },
+  {
+   "type": "pop_bg",
+   "pattern": "stripes",
+   "from": 64.75,
+   "to": 67.3
+  },
+  {
+   "type": "keyword",
+   "small": "link",
+   "big": "IN PROFILE",
+   "at": 64.85,
+   "dur": 1.4,
+   "size": 140,
+   "y": 330
+  }
+ ],
+ "bigwords": [],
+ "stickers": [],
+ "broll": [
+  {
+   "start": 16.3,
+   "end": 18.9,
+   "clip": "/root/cr/tmay/br/work/clips/shot02.mp4"
+  },
+  {
+   "start": 19.1,
+   "end": 21.8,
+   "clip": "/root/cr/tmay/br/work/clips/shot03.mp4"
+  },
+  {
+   "start": 51.6,
+   "end": 54.0,
+   "clip": "/root/cr/tmay/br/work/clips/shot06.mp4"
+  },
+  {
+   "start": 54.5,
+   "end": 57.3,
+   "clip": "/root/cr/tmay/br/work/clips/shot07.mp4"
+  }
+ ],
+ "shakes": [
+  16.4
+ ],
+ "save": {
+  "at": 66.9,
+  "text": "Save & Share",
+  "share_icon": true,
+  "handle": "@iamprafz"
+ },
+ "sfx": [
+  [
+   "whoosh",
+   1.13
+  ],
+  [
+   "pop",
+   1.3
+  ],
+  [
+   "pop",
+   4.3
+  ],
+  [
+   "tick",
+   5.95
+  ],
+  [
+   "tick",
+   8.75
+  ],
+  [
+   "pop",
+   16.4
+  ],
+  [
+   "pop",
+   19.2
+  ],
+  [
+   "whoosh",
+   22.0
+  ],
+  [
+   "tick",
+   23.5
+  ],
+  [
+   "whoosh",
+   26.9
+  ],
+  [
+   "whoosh",
+   33.0
+  ],
+  [
+   "tick",
+   36.3
+  ],
+  [
+   "whoosh",
+   42.4
+  ],
+  [
+   "tick",
+   43.0
+  ],
+  [
+   "tick",
+   43.8
+  ],
+  [
+   "tick",
+   45.3
+  ],
+  [
+   "pop",
+   46.6
+  ],
+  [
+   "pop",
+   51.8
+  ],
+  [
+   "pop",
+   55.9
+  ],
+  [
+   "pop",
+   62.2
+  ],
+  [
+   "whoosh",
+   64.75
+  ],
+  [
+   "chime",
+   66.9
+  ],
+  [
+   "whoosh",
+   5.9
+  ],
+  [
+   "whoosh",
+   16.3
+  ],
+  [
+   "whoosh",
+   19.1
+  ],
+  [
+   "whoosh",
+   23.4
+  ],
+  [
+   "whoosh",
+   36.2
+  ],
+  [
+   "whoosh",
+   51.6
+  ],
+  [
+   "whoosh",
+   54.5
+  ],
+  [
+   "whoosh",
+   58.8
+  ]
+ ],
+ "zoom_levels": [
+  [
+   1.0,
+   1.02
+  ],
+  [
+   1.02,
+   1.04
+  ]
+ ],
+ "effects": [
+  {
+   "type": "split",
+   "clip": "/root/cr/tmay/br/work/clips/shot01.mp4",
+   "from": 5.9,
+   "to": 14.4,
+   "top": 0.46,
+   "face_y": 0.55,
+   "person_zoom": 0.72
+  },
+  {
+   "type": "split",
+   "clip": "/root/cr/tmay/br/work/clips/shot04.mp4",
+   "from": 23.4,
+   "to": 33.0,
+   "top": 0.46,
+   "face_y": 0.55,
+   "person_zoom": 0.72
+  },
+  {
+   "type": "split",
+   "clip": "/root/cr/tmay/br/work/clips/shot05.mp4",
+   "from": 36.2,
+   "to": 42.3,
+   "top": 0.46,
+   "face_y": 0.55,
+   "person_zoom": 0.72
+  },
+  {
+   "type": "split",
+   "clip": "/root/cr/tmay/br/work/clips/shot08.mp4",
+   "from": 58.8,
+   "to": 64.4,
+   "top": 0.46,
+   "face_y": 0.55,
+   "person_zoom": 0.72
+  }
+ ]
+}

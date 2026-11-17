@@ -14,7 +14,8 @@ Private. Separate from every other project.
 | `tools/templates/approved_energy_v3.json` | Default look (approved 10 Nov 2026) |
 | `tools/templates/approved_referral_reel.json` | Referral look (approved 9 Nov 2026) |
 | `skills/` | Text of the `career-reels-editor` and `career-reels-broll` skills |
-| `docs/` | Setup guide, style guide (61 styles), final checklist |
+| `docs/` | Daily Reel SOP, setup guide, style guide (61 styles), final checklist |
+| `specs/` | Specs of posted reels, to copy or re-render |
 
 ## Not in this repo
 `broll.env`, `github.env`, raw videos, B-roll, proof screens, references, finished reels, models (`~/asr`, `~/seg`).
