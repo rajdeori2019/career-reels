@@ -1,9 +1,11 @@
 ---
 name: "career-reels-editor"
-description: "Career Reels: use whenever Prafulla says \"make reel\" (or edit/make a reel, career reel) with a Google Drive link, a Drive file name, or a video in his Career Reels folder; edits it into an energetic 1080x1920 reel (Hinglish captions, Energy v3 graphics, text behind him, grade, SFX), on his laptop or in the cloud."
+description: "Career Reels project only: edit Prafulla's own phone-recorded talking-head reels into 1080x1920 Energy v3 reels with Hinglish captions, graphics, B-roll, proof, SFX and a storyboard approval before every render."
 ---
 
 # Career Reels Editor
+
+**FIRST THING IN EVERY CHAT (17 Nov 2026):** before any reel work, read the Daily Reel SOP (live doc https://claude.ai/artifact/Q9nk8WzEYTDwwWRhdr9KwU, repo copy `docs/Daily-Reel-SOP.md`) and the repo's `CLAUDE.md` in `rajdeori2019/career-reels`. The laptop folder `D:\Prafulla Goal\Career Reels` and that repo are the only home of this project. Follow the SOP's 13 steps in order.
 
 Part of the **Career Reels** project: Prafulla's personal system to record, upload and auto-edit his own reels. Keep it separate: don't use other projects' skills, templates, memory or folders. B-roll comes from the sibling skill **career-reels-broll**.
 
@@ -25,13 +27,28 @@ Design: do NOT ask before the transcript. Pick it yourself and show it in the co
 - Switch the content-tied pieces to the script: numbered steps -> `header`; a message/DM/email he quotes -> `typing_box`; a list of items -> `build_card`; myth vs truth -> H4 `myth`; before/after -> P2; a number or result -> P3/X2; a recruiter message -> P1. If he names a style or reel type, use that instead.
 - In the confirmation reply add one line: `Design: Energy v3 (+ header, typing box, ...) at 1.2x. Reply OK, or name another look (Referral look / Calm / codes from the Style Guide).` One confirmation covers captions, cuts, speed and design.
 
+**HARD RULE (12 Nov 2026): full storyboard before every render.** After the confirmation and after `cut` + `matte`, run `python3 career_reel.py storyboard spec.json w` and send every page (`w/storyboard_1.png`, `_2.png` ...). It has one panel per graphic moment, every line without a graphic, and the ending, each with time, caption and what is on screen. Fix anything he flags on the storyboard (re-run it), and only after he replies OK run `render`. Never render the full reel without an approved storyboard, on the laptop or in the cloud.
+
+**Daily SOP v2 (17 Nov 2026):** follow the doc "Career Reels — Daily Reel SOP" (https://claude.ai/artifact/Q9nk8WzEYTDwwWRhdr9KwU) step by step for every reel: 13 steps, Gate 1 = one confirmation reply (captions, cuts, speed, styles, handle, background, asset plan), Gate 2 = full storyboard + B-roll picks sheet. Run its storyboard self-check before sending.
+
+**Style from the recording (step 5):** pick the reel type and style codes yourself from the raw recording (topic, script, framing, wall, available proof), using only Proven styles from the TRI Reel Style Guide, always on top of Energy v3 (the SOP has the recording -> reel type table). Before using a style, look at its real reference frame in the repo `docs/style-frames/<CODE>.jpg` (overview `docs/Style-Reference.md`, contact sheet `_all-proven-styles.jpg`) and match that look. In Gate 1 name the reel type, every code, and the approved reel each reference frame comes from.
+
+**Background is automatic (step 6):** switch to the navy studio without asking when the wall is a loud colour (red/pink), busy or dark, when text is hard to read on the stills, or when a picked style needs a plain light wall. Say which background and why in Gate 1.
+
+**GitHub after EVERY render (step 13, not optional):** right after a render, attach `rajdeori2019/career-reels` with push access (add_repo), clone it, bring in the Career Reels files (staged copies when the laptop is linked; the laptop has no GitHub login), run `python3 tools/repo_sync.py "<Career Reels copy>" <clone> --reel <Name> --date <YYYY-MM-DD> --handle <@...> --styles "<codes>" --bg "<Real room|Navy studio>" --status Delivered`, commit, push to `main`, and give him the commit link with the reel. Save the spec as `tools/incoming/<Name>_spec.json` so the log links it. Never commit videos, `broll.env` or any `.env`.
+
+**Lessons from 16 Nov (Tell Me About Yourself reel):**
+- Words landed on his face in storyboard v1. Before placing anything, check stills of THIS video at the strongest zoom and find the face box. If text has no room, lower `zoom_levels` to [[1.0,1.02],[1.02,1.04]] or use a split screen.
+- He expects B-roll and reference-reel-style cutaways on talking reels over ~30 s: plan 3-5 B-roll moments (proof first, then own clips, then stock) and split screens (`effects` type `split`, `top` 0.46, `face_y` 0.55, `person_zoom` 0.72) in the Gate 1 asset plan.
+- When he sends a thumbnail, save it as `Finished/<Name>_cover.png`; save stock credits as `<Name>_credits.txt` and the spec in `tools/incoming/`.
+
 ## Laptop-off (cloud) mode
 Use when no computer is linked (no mcp__remote-devices tools, or they report no device). Tested 11 Nov 2026. He records on the phone and uploads to Google Drive `Career Reels/Raw Videos` (Drive folder id 102hHw5VzKai7Jt-KOgBh-CIty28maPJ8), then says "Make a career reel from <file> in Drive".
 1. Code: PUBLIC repo `rajdeori2019/career-reels` (no keys or videos in it). `git clone https://github.com/rajdeori2019/career-reels.git ~/cr/repo` (codeload tarballs are blocked by the proxy; git clone and raw.githubusercontent.com work). Tools are in `~/cr/repo/tools`, templates in `tools/templates`.
 2. Video from Drive (the phone app caps attachments at 30 MB; his raw videos are 190-600 MB, so never ask him to attach them). The Drive tools cannot remove a sharing link, so never share the original. Steps: `search_files` for the title -> `copy_file` to `_tmp_cloud_<name>.mp4` -> `share_file` the COPY with permissionId `anyoneWithLink`, role reader -> `curl -L -o v.mp4 "https://drive.usercontent.google.com/download?id=<copyId>&export=download&confirm=t"` (370 MB took 14 s) -> immediately `update_file` the copy with downloadRestriction {restrictedReader: true} -> `trash_file` the copy. Check the download is a real video with ffprobe. Tell him a temp copy sits in Drive Trash (no preview, no download) until Trash empties.
    Needs domains `drive.google.com` and `drive.usercontent.google.com` allowed (done). A short clip under 30 MB attached in the chat also works.
 3. Setup once per session: `pip install --break-system-packages sherpa-onnx onnxruntime soundfile`; models with curl from GitHub releases into `~/asr` (sherpa-onnx `asr-models/sherpa-onnx-whisper-small.tar.bz2`, extract) and `~/seg/human.onnx` (danielgatis/rembg `v0.0.0/u2net_human_seg.onnx`).
-4. Same workflow below (caption table + cuts + speed first, then stills, then render), with paths in the cloud. No 175 s limit here (10 min per command): render in 8-10 s chunks. 4 s of Energy v3 hook renders in ~63 s.
+4. Same workflow below (caption table + cuts + speed first, then the full storyboard, then render), with paths in the cloud. No 175 s limit here (10 min per command): render in 8-10 s chunks. 4 s of Energy v3 hook renders in ~63 s.
 5. Deliver with SendUserFile (he watches on the phone). Say the reel is not on the laptop yet; next time the laptop is linked, copy it to `Finished`.
 6. Never run `cut` with one ffmpeg over many trims of the 4K/HEVC source: it was OOM-killed on 8 GB. The current engine cuts per segment with `-ss/-t` before `-i`.
 
@@ -54,7 +71,7 @@ Use when no computer is linked (no mcp__remote-devices tools, or they report no 
 5. **Spec** (copy the template; all times in SOURCE seconds with `"time_base": "source"`): `segments`, `speed`, `look`, `behind_titles` (hook), `captions` + `caption_style` (`style: pop`, size 76, max 3 words, `emphasis` words), `bigwords` (`behind: true`, y 390), `chips` (B1 steps at the top), `broll`, `stickers`, `punches`, `shakes`, `sfx`, `save` (`text: "Save & Share"`, `share_icon: true`, handle), `lufs: -14`.
 6. `python3 career_reel.py cut spec.json w` (ultrafast intermediate, speed + atempo, cleaned voice).
 7. `python3 career_reel.py matte spec.json w ~/seg/u2net_human_seg.onnx --from A --to B` in chunks of ~2 s output (only frames inside behind-you windows). Re-run mattes whenever segments or speed change (frame numbers shift).
-8. `python3 career_reel.py stills spec.json w t1,...,t8` -> show 8 stills (hook, each big word, B-roll entry, stickers, chips, ending). **Get OK** before the full render.
+8. **Storyboard:** `python3 career_reel.py storyboard spec.json w` -> send all `w/storyboard_N.png` pages (12 panels per page; ~20 s on 2 cores). **Get OK** before the full render. (`stills spec.json w t1,...` still exists for checking single moments while fixing.)
 9. `render spec.json w w/cN.mp4 --from A --to B` in 12-13 s chunks, then `join spec.json w "<Career Reels>/Finished/<Name>.mp4" w/c1.mp4 ...` (voice + SFX + ducked music bed, two-pass loudnorm to -14 LUFS).
 10. QA: ffprobe, ebur128 (I about -14 to -15, peak <= -1.5), contact sheet of frames at every chunk join and key beat. Report in a few lines; offer the next step.
 
@@ -88,11 +105,11 @@ All go in the spec; times are SOURCE seconds with `time_base: source` (keys from
   - X2 `number_slam` (P3 + rays/ring; add the slam time to `shakes`) · E2 `comment_keyword` {keyword, from, y 1430} · E3 `part_two` {text, handle, from} · E4 `shop_button` {text, from, tap_at, y}
 - `effects` (frame level, under overlays): L2 `split` {clip (video or image), from, to, top 0.46, face_y 0.42, clip_start} · X3 `spotlight` {from, to, x, y} · X4 `glitch` {at, dur 0.4} · X5 `grid` {clips [4], from, to, snap_at, speaker_last}
 - Captions: `caption_style.style` = `pop` (default, approved), `karaoke` (C3 frosted pill) or `accent` (C4 serif italic on `accents` words, max_words 4). M2: `"pace": "calm"` (zoom 1.03-1.06, no cut punch).
-- Placement: face sits roughly x 280-800, y 450-1250 at 1.10 zoom. Side elements (L3, B5, stickers) only at shoulder height and screen edges; P2/P4 cover the speaker briefly like a cutaway (say so in the stills). Proof images come from `Proof/` or `Screen Recordings/`; blur names first.
+- Placement: face sits roughly x 280-800, y 450-1250 at 1.10 zoom. Side elements (L3, B5, stickers) only at shoulder height and screen edges; P2/P4 cover the speaker briefly like a cutaway (say so in the storyboard). Proof images come from `Proof/` or `Screen Recordings/`; blur names first.
 - After a Ready style appears in a reel Prafulla approves, mark it Proven in the Style Guide data and docs.
 
 ## Rules
-- Never put text or graphics over the face; check stills at the strongest zoom.
+- Never put text or graphics over the face; check the storyboard panels at the strongest zoom.
 - Captions only from his confirmed words; mark guesses ⚠ and ask.
 - Cut false starts and repeated takes; ask which take when unsure.
 - Real proof (his screens) beats stock B-roll; no logos/brand marks in clip-art.
