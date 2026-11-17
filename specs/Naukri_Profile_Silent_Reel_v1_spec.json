@@ -1,0 +1,776 @@
+{
+ "speed": 1.2,
+ "time_base": "source",
+ "source": "/home/claude/cr/reel/raw.mp4",
+ "look": {
+  "brightness": 0.045,
+  "contrast": 1.12,
+  "saturation": 1.15,
+  "vibrance": 0.2,
+  "gamma": 1.05,
+  "warm": 0.03,
+  "vignette": 0.2
+ },
+ "caption_style": {
+  "style": "minimal",
+  "y": 1480,
+  "size": 52,
+  "max_words": 5
+ },
+ "lufs": -14,
+ "sfx_db": -22,
+ "segments": [
+  [
+   0,
+   2.79
+  ],
+  [
+   3.12,
+   5.57
+  ],
+  [
+   5.83,
+   6.35
+  ],
+  [
+   6.54,
+   7.45
+  ],
+  [
+   7.66,
+   11.91
+  ],
+  [
+   12.09,
+   16.82
+  ],
+  [
+   17.03,
+   19.61
+  ],
+  [
+   19.83,
+   32.56
+  ],
+  [
+   32.77,
+   38.48
+  ],
+  [
+   38.82,
+   39.87
+  ],
+  [
+   40.06,
+   51.11
+  ],
+  [
+   51.27,
+   53.69
+  ],
+  [
+   53.9,
+   56.89
+  ],
+  [
+   57.09,
+   63.66
+  ],
+  [
+   63.87,
+   66.16
+  ],
+  [
+   66.37,
+   69.4
+  ],
+  [
+   69.75,
+   71.32
+  ],
+  [
+   71.64,
+   72.08
+  ],
+  [
+   72.24,
+   78.08
+  ],
+  [
+   78.34,
+   80.84
+  ],
+  [
+   81.05,
+   83.46
+  ],
+  [
+   83.86,
+   86.78
+  ],
+  [
+   87.11,
+   119.86
+  ]
+ ],
+ "captions": [
+  {
+   "from": 0.0,
+   "to": 2.69,
+   "text": "Naukri profile 100% complete aur recruiters silent?"
+  },
+  {
+   "from": 3.22,
+   "to": 5.47,
+   "text": "Tum roz Naukri refresh karte ho,"
+  },
+  {
+   "from": 5.93,
+   "to": 7.35,
+   "text": "lekin relevant calls nahi aa rahe hain."
+  },
+  {
+   "from": 7.76,
+   "to": 11.1,
+   "text": "Main dikhata hoon recruiter search mein kya check karte hain."
+  },
+  {
+   "from": 11.36,
+   "to": 13.83,
+   "text": "Maan lo Senior Java Backend Engineer role hai"
+  },
+  {
+   "from": 14.11,
+   "to": 17.98,
+   "text": "aur recruiter search karta hai Java, Spring Boot,"
+  },
+  {
+   "from": 18.25,
+   "to": 22.52,
+   "text": "5-10 years of experience, location aur notice period wala filter use kar sakte hain."
+  },
+  {
+   "from": 22.79,
+   "to": 25.92,
+   "text": "Ab maan lo Naukri mein tumhara headline IT Professional hai"
+  },
+  {
+   "from": 26.18,
+   "to": 29.12,
+   "text": "aur responsibilities mein generic bullet points mentioned hain,"
+  },
+  {
+   "from": 29.37,
+   "to": 32.46,
+   "text": "to tumhara actual skills aur evidence clear nahi hai,"
+  },
+  {
+   "from": 32.87,
+   "to": 35.97,
+   "text": "aur recruiter ke search mein tumhara profile show hi nahi hoga."
+  },
+  {
+   "from": 36.14,
+   "to": 38.38,
+   "text": "Tumhare profile mein koi recruiter view nahi kar raha,"
+  },
+  {
+   "from": 38.92,
+   "to": 41.34,
+   "text": "to iska matlab discoverability ka problem hai."
+  },
+  {
+   "from": 41.61,
+   "to": 44.7,
+   "text": "To usko aap kaise resolve kar sakte ho? Usko keywords,"
+  },
+  {
+   "from": 44.93,
+   "to": 48.96,
+   "text": "roles and responsibilities wagera add karke update kar sakte ho."
+  },
+  {
+   "from": 49.21,
+   "to": 51.01,
+   "text": "Aapka profile recruiter view kar raha hai,"
+  },
+  {
+   "from": 51.37,
+   "to": 53.59,
+   "text": "lekin calls nahi aa rahe hain,"
+  },
+  {
+   "from": 54.0,
+   "to": 56.79,
+   "text": "iska matlab search mein aapka profile dikhai de raha hai,"
+  },
+  {
+   "from": 57.19,
+   "to": 59.17,
+   "text": "lekin jo roles and responsibilities hai"
+  },
+  {
+   "from": 59.34,
+   "to": 62.19,
+   "text": "woh convincing nahi hai taaki recruiter aapko call kare."
+  },
+  {
+   "from": 62.46,
+   "to": 64.44,
+   "text": "To ismein aap kya kar sakte ho?"
+  },
+  {
+   "from": 64.73,
+   "to": 68.38,
+   "text": "Roles and responsibilities ko teen different types mein likh sakte ho:"
+  },
+  {
+   "from": 68.63,
+   "to": 74.07,
+   "text": "kya problem tha, aapne exactly kya kiya, aur finally outcome kya tha."
+  },
+  {
+   "from": 74.24,
+   "to": 76.49,
+   "text": "Agar aap roles and responsibilities ko aise likhoge,"
+  },
+  {
+   "from": 76.77,
+   "to": 79.82,
+   "text": "to aapke paas calls aana start ho jayenge."
+  },
+  {
+   "from": 80.01,
+   "to": 82.4,
+   "text": "Agar aapke paas wrong calls aa rahe hain,"
+  },
+  {
+   "from": 82.73,
+   "to": 85.52,
+   "text": "iska matlab job preference mein kuch issue hai."
+  },
+  {
+   "from": 85.68,
+   "to": 88.65,
+   "text": "Bahut saare job preference select kar rakha hoga."
+  },
+  {
+   "from": 88.86,
+   "to": 91.29,
+   "text": "Main aapko recommend karta hoon ki 2-3"
+  },
+  {
+   "from": 91.61,
+   "to": 93.85,
+   "text": "specific role jismein aap move karna chahte ho, woh role target karo."
+  },
+  {
+   "from": 94.05,
+   "to": 97.59,
+   "text": "Agar review mein accha laga to recruiter aapko zaroor call karenge."
+  },
+  {
+   "from": 97.83,
+   "to": 101.61,
+   "text": "Call mein role wagera matching hota hai, then interview schedule hoga."
+  },
+  {
+   "from": 101.81,
+   "to": 104.79,
+   "text": "Random profiles update mat karo, aur koi bhi guarantee"
+  },
+  {
+   "from": 104.96,
+   "to": 107.15,
+   "text": "call, hack, pay blindly trust mat karo."
+  },
+  {
+   "from": 107.46,
+   "to": 109.48,
+   "text": "Yeh sirf ek practical example tha."
+  },
+  {
+   "from": 109.63,
+   "to": 114.72,
+   "text": "Real experience ko real time practice karne ke liye maine ek practical resource banaya hai,"
+  },
+  {
+   "from": 114.94,
+   "to": 119.39,
+   "text": "complete details website mein hai, website ka link bio mein hai, please check kar lena."
+  }
+ ],
+ "elements": [
+  {
+   "type": "pop_bg",
+   "pattern": "ink",
+   "from": 0.0,
+   "to": 2.75
+  },
+  {
+   "type": "keyword",
+   "small": "100% complete, phir bhi",
+   "big": "RECRUITERS SILENT?",
+   "at": 0.05,
+   "dur": 2.5,
+   "size": 100,
+   "color": "yellow",
+   "y": 1330
+  },
+  {
+   "type": "keyword",
+   "small": "relevant",
+   "big": "CALLS NAHI",
+   "at": 5.95,
+   "dur": 1.4,
+   "size": 140,
+   "color": "yellow",
+   "y": 1330
+  },
+  {
+   "type": "keyword",
+   "small": "maan lo",
+   "big": "JAVA BACKEND",
+   "at": 11.9,
+   "dur": 1.9,
+   "size": 130,
+   "color": "yellow",
+   "y": 1330
+  },
+  {
+   "type": "typing_box",
+   "label": "Recruiter search",
+   "text": "Java, Spring Boot | 5-10 yrs | Location | Notice period",
+   "from": 14.1,
+   "to": 22.6,
+   "y": 1290,
+   "type_dur": 3.0
+  },
+  {
+   "type": "typing_box",
+   "label": "Your Naukri headline",
+   "text": "IT Professional",
+   "from": 22.8,
+   "to": 26.1,
+   "y": 1290,
+   "type_dur": 0.8
+  },
+  {
+   "type": "keyword",
+   "small": "responsibilities mein",
+   "big": "GENERIC BULLETS",
+   "at": 26.3,
+   "dur": 2.1,
+   "size": 110,
+   "color": "white",
+   "y": 1330
+  },
+  {
+   "type": "keyword",
+   "small": "skills aur",
+   "big": "EVIDENCE?",
+   "at": 29.5,
+   "dur": 1.9,
+   "size": 140,
+   "color": "yellow",
+   "y": 1330
+  },
+  {
+   "type": "keyword",
+   "small": "search mein profile",
+   "big": "SHOW HI NAHI",
+   "at": 33.4,
+   "dur": 2.0,
+   "size": 115,
+   "color": "yellow",
+   "y": 1330
+  },
+  {
+   "type": "header",
+   "items": [
+    {
+     "num": "#1",
+     "text": "Discoverability",
+     "from": 38.92,
+     "to": 48.96
+    },
+    {
+     "num": "#2",
+     "text": "Profile dikha, call nahi",
+     "from": 52.8,
+     "to": 74.07
+    },
+    {
+     "num": "#3",
+     "text": "Wrong calls",
+     "from": 80.01,
+     "to": 93.85
+    }
+   ],
+   "y": 150
+  },
+  {
+   "type": "keyword",
+   "small": "fix",
+   "big": "KEYWORDS ADD KARO",
+   "at": 42.3,
+   "dur": 2.3,
+   "size": 105,
+   "color": "yellow",
+   "y": 1330
+  },
+  {
+   "type": "keyword",
+   "small": "profile search mein",
+   "big": "DIKH RAHA HAI",
+   "at": 54.4,
+   "dur": 1.9,
+   "size": 115,
+   "color": "white",
+   "y": 1330
+  },
+  {
+   "type": "keyword",
+   "small": "roles & responsibilities",
+   "big": "CONVINCING NAHI",
+   "at": 59.5,
+   "dur": 2.1,
+   "size": 105,
+   "color": "yellow",
+   "y": 1330
+  },
+  {
+   "type": "build_card",
+   "title": "R&R Formula",
+   "subtitle": "har bullet aise likho",
+   "icon": "R",
+   "chips": [
+    {
+     "text": "Problem",
+     "at": 68.75
+    },
+    {
+     "text": "Action",
+     "at": 70.0
+    },
+    {
+     "text": "Outcome",
+     "at": 72.6
+    }
+   ],
+   "badge": {
+    "text": "Calls",
+    "at": 77.0
+   },
+   "from": 64.7,
+   "to": 79.8,
+   "y": 1260
+  },
+  {
+   "type": "keyword",
+   "small": "issue hai",
+   "big": "JOB PREFERENCE",
+   "at": 82.9,
+   "dur": 2.1,
+   "size": 110,
+   "color": "yellow",
+   "y": 1330
+  },
+  {
+   "type": "keyword",
+   "small": "sirf",
+   "big": "2-3 ROLES TARGET",
+   "at": 90.0,
+   "dur": 2.3,
+   "size": 105,
+   "color": "yellow",
+   "y": 1330
+  },
+  {
+   "type": "keyword",
+   "small": "recruiter",
+   "big": "ZAROOR CALL",
+   "at": 95.6,
+   "dur": 1.7,
+   "size": 130,
+   "color": "white",
+   "y": 1330
+  },
+  {
+   "type": "keyword",
+   "small": "phir",
+   "big": "INTERVIEW SCHEDULE",
+   "at": 100.25,
+   "dur": 1.4,
+   "size": 95,
+   "color": "yellow",
+   "y": 1330
+  },
+  {
+   "type": "myth",
+   "myth": "Guaranteed calls\nhacks & paid tricks",
+   "truth": "Blindly trust mat karo",
+   "from": 101.81,
+   "to": 107.3,
+   "strike_at": 105.0,
+   "truth_at": 105.6,
+   "y": 1290,
+   "size": 56
+  },
+  {
+   "type": "keyword",
+   "small": "sirf ek",
+   "big": "PRACTICAL EXAMPLE",
+   "at": 107.5,
+   "dur": 1.8,
+   "size": 110,
+   "color": "white",
+   "y": 1330
+  },
+  {
+   "type": "pop_bg",
+   "pattern": "ink",
+   "from": 109.63,
+   "to": 119.86
+  },
+  {
+   "type": "keyword",
+   "small": "maine banaya",
+   "big": "PRACTICAL RESOURCE",
+   "at": 111.3,
+   "dur": 2.6,
+   "size": 100,
+   "color": "yellow",
+   "y": 1330
+  },
+  {
+   "type": "keyword",
+   "small": "website ka",
+   "big": "LINK IN BIO",
+   "at": 116.2,
+   "dur": 2.2,
+   "size": 135,
+   "color": "yellow",
+   "y": 1330
+  }
+ ],
+ "bigwords": [
+  {
+   "text": "LEKIN",
+   "at": 51.37,
+   "dur": 0.95,
+   "behind": true,
+   "size": 200,
+   "y": 175
+  }
+ ],
+ "stickers": [],
+ "broll": [
+  {
+   "start": 3.2,
+   "end": 5.5,
+   "clip": "/home/claude/cr/work/br/clips/shot01.mp4"
+  },
+  {
+   "start": 7.8,
+   "end": 10.3,
+   "clip": "/home/claude/cr/work/br/clips/shot02.mp4"
+  },
+  {
+   "start": 32.87,
+   "end": 35.5,
+   "clip": "/home/claude/cr/work/br/clips/proof.mp4"
+  },
+  {
+   "start": 76.7,
+   "end": 79.2,
+   "clip": "/home/claude/cr/work/br/clips/shot03.mp4"
+  },
+  {
+   "start": 97.8,
+   "end": 100.2,
+   "clip": "/home/claude/cr/work/br/clips/shot04.mp4"
+  }
+ ],
+ "shakes": [
+  51.37
+ ],
+ "save": {
+  "at": 118.7,
+  "text": "Save & Share",
+  "share_icon": true,
+  "handle": "@iamprafz"
+ },
+ "sfx": [
+  [
+   "whoosh",
+   0.02
+  ],
+  [
+   "pop",
+   0.05
+  ],
+  [
+   "whoosh",
+   3.2
+  ],
+  [
+   "pop",
+   5.95
+  ],
+  [
+   "whoosh",
+   7.8
+  ],
+  [
+   "pop",
+   11.9
+  ],
+  [
+   "tick",
+   14.15
+  ],
+  [
+   "tick",
+   22.85
+  ],
+  [
+   "pop",
+   26.3
+  ],
+  [
+   "pop",
+   29.5
+  ],
+  [
+   "whoosh",
+   32.87
+  ],
+  [
+   "pop",
+   33.4
+  ],
+  [
+   "whoosh",
+   38.92
+  ],
+  [
+   "pop",
+   42.3
+  ],
+  [
+   "pop",
+   51.37
+  ],
+  [
+   "whoosh",
+   52.4
+  ],
+  [
+   "pop",
+   54.4
+  ],
+  [
+   "pop",
+   59.5
+  ],
+  [
+   "whoosh",
+   64.7
+  ],
+  [
+   "tick",
+   68.75
+  ],
+  [
+   "tick",
+   70.0
+  ],
+  [
+   "tick",
+   72.6
+  ],
+  [
+   "whoosh",
+   76.7
+  ],
+  [
+   "pop",
+   77.0
+  ],
+  [
+   "whoosh",
+   80.01
+  ],
+  [
+   "pop",
+   82.9
+  ],
+  [
+   "pop",
+   90.0
+  ],
+  [
+   "pop",
+   95.6
+  ],
+  [
+   "whoosh",
+   97.8
+  ],
+  [
+   "pop",
+   100.25
+  ],
+  [
+   "tick",
+   101.85
+  ],
+  [
+   "pop",
+   105.0
+  ],
+  [
+   "pop",
+   107.5
+  ],
+  [
+   "whoosh",
+   109.63
+  ],
+  [
+   "pop",
+   111.3
+  ],
+  [
+   "pop",
+   116.2
+  ],
+  [
+   "chime",
+   118.7
+  ]
+ ],
+ "zoom_levels": [
+  [
+   1.0,
+   1.02
+  ],
+  [
+   1.02,
+   1.04
+  ]
+ ],
+ "effects": [],
+ "bg_replace": {
+  "mode": "image",
+  "image": "/home/claude/cr/work/tools/templates/bgA.png",
+  "clip": [
+   0.4,
+   0.85
+  ],
+  "feather": 2,
+  "band": 71,
+  "spill_ratio": 1.5
+ }
+}

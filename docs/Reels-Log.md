@@ -4,6 +4,7 @@ Every rendered reel gets a row here, pushed to GitHub right after the render (SO
 
 | Date | Reel | Handle | Base + extra styles | Background | Status | Spec |
 | --- | --- | --- | --- | --- | --- | --- |
+| 2026-11-17 | Naukri_Profile_Silent_Reel_v1 | @iamprafz | Energy v3 (H6 C5 L1 P6 B6 B9 B10 B11 E1 M3 S1 S2 G1 A1) + H4 R1 proof cutaway | Navy studio | Delivered | `specs/Naukri_Profile_Silent_Reel_v1_spec.json` |
 | 2026-11-16 | Tell_Me_About_Yourself_Reel_v1 | @iamprafz | Energy v3 + split screen (L2-style with B-roll), full-screen B-roll (R1), typing boxes, build card | Real room | Posted | `specs/Tell_Me_About_Yourself_spec.json` |
 | 2026-11-11 | Proxy_Interview_Verify_Reel_v3_navy | @iamprafz | Energy v3 + header, typing box | Navy studio + ink | Approved | — |
 | 2026-11-11 | Proof_Reel_Resume_No_Calls | @iamprafz | Energy v3 + P2, P3, P4, L2, L3, R3 | Real room | Posted | — |
