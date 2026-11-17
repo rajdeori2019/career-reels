@@ -4,26 +4,37 @@
 
 One fixed process for every daily reel: you record and send, Claude edits on the Energy v3 base, and nothing renders until you approve the storyboard.
 
+## Start of every chat
+
+The first thing any new chat does for a reel is load this SOP. The Career Reels folder and the GitHub repo are the only home of this project.
+
+1. Read this SOP (the GitHub copy is `docs/Daily-Reel-SOP.md`; the live doc wins if they differ), the repo's `CLAUDE.md`, and the `career-reels-editor` and `career-reels-broll` skills.
+2. Open `D:\Prafulla Goal\Career Reels` (laptop on) or clone `rajdeori2019/career-reels` (laptop off).
+3. Look at the style reference frames (`docs/style-frames/`) before choosing any style.
+4. Run the steps below in order, with both gates.
+5. After every render, update GitHub (step 13). No exceptions.
+
 ## The daily run
 
-Every reel goes through the same 12 steps and two approval gates. Claude never moves past a gate without your OK.
+Every reel goes through the same 13 steps and two approval gates. Claude never moves past a gate without your OK.
 
 | # | Step | Who | What comes out |
 | --- | --- | --- | --- |
 | 1 | Record the video (checklist below) | You | Raw video, 30–90 s of content |
 | 2 | Upload and send `make reel <link or file name>` + thumbnail, proof or screen recording if any | You | The request |
-| 3 | Load the system: read the `career-reels-editor` and `career-reels-broll` skills, open `D:\Prafulla Goal\Career Reels`, start from `tools/templates/approved_energy_v3.json` | Claude | Same base every day |
+| 3 | Load the system (Start of every chat), start from `tools/templates/approved_energy_v3.json` | Claude | Same base every day |
 | 4 | Inspect, find pauses, transcribe (Hindi + English pass), write Roman Hinglish captions | Claude | Timed caption lines |
-| 5 | Plan cuts, design, handle, background, proof and B-roll moments | Claude | Draft plan |
-| 6 | **Gate 1: confirmation reply.** Captions, cuts, speed, design, handle, background, asset plan | You approve | "OK" or corrections |
-| 7 | Find and fetch assets: proof, screen recordings, own B-roll, then Pexels/Pixabay | Claude | B-roll picks sheet |
-| 8 | Build the spec, run `cut`, then `matte` | Claude | Working files |
-| 9 | **Gate 2: full storyboard.** Every page, plus the B-roll picks sheet | You approve | "OK" or panel fixes |
-| 10 | Render in chunks, join, loudness to −14 LUFS | Claude | Final MP4 |
-| 11 | QA: format, loudness, chunk joins, face check | Claude | Pass/fail report |
-| 12 | Deliver to `Finished`, plus cover and credits; push any engine change to GitHub | Claude | Reel ready to post |
+| 5 | **Pick the styles from the recording**: reel type and style codes from the TRI Reel Style Guide (Proven only), checked against the reference frames | Claude | Style codes |
+| 6 | **Check the background**: if the wall doesn't fit, switch to the navy studio automatically | Claude | Background choice |
+| 7 | Plan cuts, handle, proof and B-roll moments | Claude | Draft plan |
+| 8 | **Gate 1: confirmation reply.** Captions, cuts, speed, styles, handle, background, asset plan | You approve | "OK" or corrections |
+| 9 | Find and fetch assets: proof, screen recordings, own B-roll, then Pexels/Pixabay; build the spec; run `cut` and `matte` | Claude | Working files + B-roll picks sheet |
+| 10 | **Gate 2: full storyboard.** Every page, plus the B-roll picks sheet | You approve | "OK" or panel fixes |
+| 11 | Render in chunks, join, loudness to −14 LUFS, then QA | Claude | Final MP4 that passed QA |
+| 12 | Deliver to `Finished` with cover, credits and the spec in `tools/incoming/` | Claude | Reel ready to post |
+| 13 | **Update GitHub**: run `tools/repo_sync.py`, commit and push to `rajdeori2019/career-reels`, report the commit | Claude | Repo up to date |
 
-**The one hard rule:** no full render without an approved storyboard, on the laptop or in the cloud. A fix you ask for on the storyboard is shown again as a new storyboard before rendering.
+**Two hard rules:** no full render without an approved storyboard, on the laptop or in the cloud; and no render ends without the GitHub update in step 13. A fix you ask for on the storyboard is shown again as a new storyboard before rendering.
 
 ## Your part
 
@@ -58,9 +69,9 @@ Claude picks the design itself after the transcript and sends one reply that cov
 | Caption table | Every line with its source time, Roman Hinglish exactly as spoken | Unsure words marked ⚠. Captions only from words you confirm |
 | Cuts | False starts, repeated takes, repeated phrases, pauses over ~0.35 s | If two takes exist, Claude asks which one to keep |
 | Speed | 1.2x | Change only if you say so |
-| Design line | `Design: Energy v3 (+ header, typing box, …) at 1.2x` | Reply OK, or name another look or style codes |
+| Design line | `Design: Energy v3 (+ header, typing box, …) at 1.2x` | Reel type, every style code picked from the recording and the reel its reference frame comes from. Reply OK, or name other codes |
 | Handle | `@iamprafz` or `@i.am.a.recruiter` | Job-seeker topic → @iamprafz; recruiter topic → @i.am.a.recruiter |
-| Background | Real room or navy studio | Navy only when the wall hurts text contrast (see Background change) |
+| Background | Real room or navy studio | Chosen automatically from the wall, with the reason (see Background change) |
 | Asset plan | Which line gets proof, a screen recording, B-roll or a split screen | Proof first, stock last |
 
 Correct any wrong caption word here. It is the cheapest point to fix it.
@@ -105,6 +116,42 @@ Energy v3 is the base of every reel, including tests. Any other style goes on to
 
 Full catalogue: TRI Reel Style Guide, 61 styles (54 Proven, 7 Ready). A style moves from Ready to Proven once it appears in a reel you approve.
 
+## Choosing the style from the recording
+
+Claude decides the styles itself from the raw recording. You don't pick codes unless you want to. Every pick comes from the TRI Reel Style Guide, which is tested and proven on your own reels, and always sits on the Energy v3 base.
+
+**How Claude decides (step 5)**
+
+1. **Watch the recording:** stills from the start, middle and end, plus the transcript.
+2. **Read the content:** what kind of reel it is, and which lines hold a quote, steps, a list, a number, a before/after or a turn.
+3. **Read the frame:** room above your head, how much of the frame your face fills, hands in shot, and the wall (see Background change).
+4. **Check what proof exists** in `Proof/` and `Screen Recordings/` for this topic.
+5. **Pick the reel type** from the table below and add its extra styles on top of Energy v3. Where a preset style clashes with Energy v3 (C1 vs C5, M1 vs M3, H5 vs H6), the Energy v3 one stays.
+6. **Match the look** to each style's reference frame (below) so it renders like the approved version.
+
+| The recording is… | Reel type | Extra styles on top of Energy v3 |
+| --- | --- | --- |
+| One job-search tip or mistake | Job Search Tip | B1 framework chips, K clip-art at shoulder height, R1 B-roll |
+| An interview question and how to answer it | Interview Answer | H2 skit labels, P6 typing boxes for weak vs strong answer, B1 chips, B-roll split screen |
+| A resume, LinkedIn or Naukri fix with screens | Resume Fix | L2 screen top, H4 myth, P2 before/after, B3 or B4 |
+| Who you are and the role you want | Hire-Me Intro | P1 message card, B5 tick list, E2 comment keyword |
+| A result first, then how it happened | Offer Win Story | P5 stamp, P3 roll-up or X2 slam |
+| A career switch story | Career Switch Story | R2 office B-roll, P3, X3 spotlight |
+| A recruiter topic (clients, candidates, sourcing) | Energy v3 + recruiter beats | H2 skit labels, B7 WhatsApp alert, B5 tick list, handle @i.am.a.recruiter |
+| A walkthrough of something built | Project Showcase | L2, R3 screen recording, B8 step tracker |
+
+**Frame rules:** no room above your head → no behind-you title (H5/H7), use a keyword slam. Face fills the frame → lower zoom or a split screen. Hands out of shot → keep the bottom-anchored zoom low. Only Proven styles by default; Ready ones (H7, C3, C4, M2, R4, E4, X5) only when you ask.
+
+**In the Gate 1 reply** Claude names the reel type and every code it picked, and for each extra style the approved reel its reference frame comes from (e.g. "P2 → Resume No Calls proof reel").
+
+### Style reference frames
+
+Every Proven style has a real frame from one of your approved reels, 47 in all. Claude looks at the frame before using a style. Each frame is its own file in `docs/style-frames/<CODE>.jpg`, listed in `docs/Style-Reference.md`, and in the interactive guide `TRI Reel Style Guide.html` in your folder (online: https://claude.ai/artifact/NSN1Ha3ok3r7VCqg7hCPg5).
+
+![All 47 proven styles, each with a real frame from an approved reel](style-frames/_all-proven-styles.jpg)
+
+Frames come from ten approved reels: Referral Job Link, Recruiter Cold DM, Budget vs CTC, Resume No Calls proof, 8+ yrs Resume Evidence, Naukri Headline, Tell Me About Your Project, Friday Backout, No Update and Shortlist Bharosa. Proven styles without a frame yet: H1, C2, X1, K4 (drawings in the guide) and the sound-only S1, S2, A1.
+
 ## Placement: words never on your face
 
 No text or graphic ever covers your face. On 16 Nov the first storyboard put words on your face and had to be redone, so Claude now measures the face area on stills of each new video, at the strongest zoom, before placing anything.
@@ -145,7 +192,9 @@ Real proof beats stock every time. Claude fills each visual moment in this order
 
 ## Background change
 
-Keep your real room by default. Switch to the navy studio only when the wall hurts text contrast: a strong red, pink or busy wall, or keywords hard to read on the stills.
+Claude checks the wall on the stills in step 6 and changes the background automatically when it doesn't fit. You don't need to ask; the Gate 1 reply says which background it chose and why.
+
+**Switch to the navy studio when any of these is true:** the wall is a strong red, pink or another loud colour; it is busy (shelves, posters, clutter) or dark; keywords or captions are hard to read on the stills; or a picked style needs a plain, light wall (the Style Guide marks these, mostly the Showpiece effects). Otherwise keep your real room.
 
 | Setting | Real room (default) | Navy studio |
 | --- | --- | --- |
@@ -155,7 +204,7 @@ Keep your real room by default. Switch to the navy studio only when the wall hur
 | Render cost | Normal | About 0.4 s per frame extra |
 | Approved example | `Recruiter_Cold_DM_Reel_v3.mp4` | `Proxy_Interview_Verify_Reel_v3_navy.mp4` |
 
-Spec for the switch: `"bg_replace": {"mode":"image","image":"<tools>/templates/bgA.png","clip":[0.4,0.85],"feather":2,"band":71,"spill_ratio":1.5}`. Claude says in the Gate 1 reply when it switches. You can force it any time with "navy background".
+Spec for the switch: `"bg_replace": {"mode":"image","image":"<tools>/templates/bgA.png","clip":[0.4,0.85],"feather":2,"band":71,"spill_ratio":1.5}`. You can still force it with "navy background", or keep the real room with "keep my room".
 
 Open decision: whether navy + ink becomes the default for every reel.
 
@@ -217,9 +266,21 @@ Only after the storyboard OK. Claude renders in chunks (laptop: a few seconds of
 - `<Topic>_Reel_v1.mp4` (the reel), also sent in chat so you can watch it on the phone
 - `<Topic>_Reel_v1_cover.png` when you sent a thumbnail. Set it as the Reel cover in Instagram
 - `<Topic>_Reel_v1_credits.txt` when stock B-roll was used
-- The spec saved in `tools/incoming/` so the reel can be re-rendered
+- The spec saved as `tools/incoming/<Topic>_Reel_v1_spec.json` (same name as the reel) so it can be re-rendered and is linked in the reels log
 
-After posting, move the file to `Finished/Posted`. A fix after delivery (one wrong word, one graphic) re-renders only that chunk. Any engine change Claude makes is copied to `tools/` on the laptop and pushed to the `rajdeori2019/career-reels` repo the same day.
+After posting, move the file to `Finished/Posted`. A fix after delivery (one wrong word, one graphic) re-renders only that chunk.
+
+### Step 13: GitHub update after every render
+
+The GitHub repo `rajdeori2019/career-reels` is updated automatically after every render, approved or not yet posted, in the same chat. The laptop has no GitHub login, so Claude always pushes from its own session.
+
+1. Attach the repo with push access and clone it.
+2. Copy the Career Reels folder's `tools/`, `tools/incoming/*_spec.json` and the SOP and Style Guide files in (staged copies when the laptop is linked, the cloud working copy when it is off).
+3. Run `python3 tools/repo_sync.py "<Career Reels copy>" <clone> --reel <Name> --date <YYYY-MM-DD> --handle <@handle> --styles "<codes>" --bg "<Real room or Navy studio>" --status Delivered`. It copies the engine, templates, the reel's spec and the docs, and adds a row to `docs/Reels-Log.md`.
+4. Commit and push to `main`, then send you the commit link with the reel.
+5. When you say a reel is posted, its log row changes to Posted in the next update.
+
+Never pushed: videos, raw footage, `broll.env` or any `.env` file, and other people's private details. The repo is public.
 
 ## Proven reels and rejected looks
 
@@ -261,11 +322,12 @@ The real working folder is `D:\Prafulla Goal\Career Reels`. The `Video editing w
 | Own B-roll | `B-roll/` |
 | Reference reels | `References/` |
 | Finished and posted reels | `Finished/`, `Finished/Posted/` |
-| Engine | `tools/career_reel.py`, `tools/career_styles2.py`, `tools/broll.py`, `tools/hinglish_asr.py` |
+| Engine | `tools/career_reel.py`, `tools/career_styles2.py`, `tools/broll.py`, `tools/hinglish_asr.py`, `tools/repo_sync.py` |
 | Approved looks | `tools/templates/approved_energy_v3.json`, `approved_referral_reel.json`, `bgA.png` |
-| Style Guide | `TRI Reel Style Guide - all styles.pdf`, `TRI Reel Style Guide.md`, interactive copy at `docs/TRI-Reel-Style-Guide-interactive.html` and https://claude.ai/artifact/NSN1Ha3ok3r7VCqg7hCPg5 |
+| Style Guide (proven, with reference frames) | Folder: `TRI Reel Style Guide.html`, `TRI Reel Style Guide.md`, `TRI Reel Style Guide - all styles.pdf`. GitHub: `docs/TRI-Reel-Style-Guide-interactive.html`, `docs/Style-Reference.md`, `docs/style-frames/`. Online: https://claude.ai/artifact/NSN1Ha3ok3r7VCqg7hCPg5 |
+| Reels log | GitHub `docs/Reels-Log.md`, one row per rendered reel |
 | Stock API keys | `broll.env` (never shared, never in GitHub) |
-| Code + SOP backup | GitHub `rajdeori2019/career-reels` (public; no keys, no videos; this SOP at `docs/Daily-Reel-SOP.md`) |
+| Code + SOP home | GitHub https://github.com/rajdeori2019/career-reels (public; no keys, no videos). Start-here rules for new chats: `CLAUDE.md`; this SOP: `docs/Daily-Reel-SOP.md` |
 | Claude's instructions | Skills `career-reels-editor` and `career-reels-broll` |
 
 **Laptop off:** the same SOP runs in the cloud from the Drive link and the GitHub code. The reel arrives in chat; it is copied to `Finished` the next time the laptop is linked.
