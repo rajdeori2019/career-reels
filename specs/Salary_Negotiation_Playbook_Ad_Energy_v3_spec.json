@@ -1,9 +1,9 @@
 {
   "reel": "Salary Negotiation Playbook ad",
   "date": "2026-11-18",
-  "status": "Delivered — source voice restored; original FINAL.mp4 superseded; not published",
+  "status": "Delivered — original voice and room tone, inspiring original music and transition SFX; not published",
   "source": "Five user-owned clips, combined in order, source master Salary_Negotiation_Ads_Reel.mp4",
-  "delivered_filename": "Salary_Negotiation_Playbook_Ad_Energy_v3_VOICE_RESTORED.mp4",
+  "delivered_filename": "Salary_Negotiation_Playbook_Ad_Energy_v3_INSPIRING_MUSIC_SFX_FINAL.mp4",
   "output": {
     "duration_seconds": 28,
     "width": 720,
@@ -78,11 +78,12 @@
   ],
   "qa": {
     "full_decode": "PASS",
-    "eight_keyframe_visual_review": "PASS",
-    "original_video_stream_unchanged": "SHA256 bff9fd58981ea63229de10ddca43863a8c12a70bb9d93ca921ca974a854c3be3 identical before/after",
-    "source_voice_present": "PASS; audio correlation ~0.96 with source",
-    "measured_integrated_lufs": -15.22,
-    "measured_true_peak_dbtp": -1.82
+    "original_video_stream_unchanged": "PASS SHA256 8dbdfc3bb9f1e68d3f390113d7b34b950574aba086687a9cbe1fdc4bdf482fca",
+    "source_voice_present": "PASS: 0.93–0.96 signal correlation in speech excerpts",
+    "measured_integrated_lufs": -15.42,
+    "measured_true_peak_dbtp": -1.94,
+    "original_room_ambience_preserved": "YES",
+    "custom_music_and_transition_fx_present": "YES"
   },
   "copyright": {
     "music": "Original synthesized instrumental/effects",
@@ -90,8 +91,10 @@
   },
   "privacy": "No raw videos, finished videos, private screenshots, credentials or env files are included in this public spec",
   "audio_correction": {
-    "reason": "Initial MP4 accidentally omitted original spoken audio",
-    "resolution": "Original 28-second source soundtrack restored with quiet synthesized bed/SFX; remux without re-encoding the approved video",
-    "date": "2026-11-18"
+    "reason": "Follow-up user feedback: original voice was restored but effects and motivating background music were inaudible or missing",
+    "resolution": "Preserved original source dialogue and room ambience; composed a new 120-BPM original music cue and synthesized synced whooshes/pops/ticks/price impact/chimes; ducked music under speech; copied approved H264 video without re-encoding",
+    "date": "2026-11-18",
+    "music_provenance": "Original custom oscillator/noise synthesis, no third-party music samples",
+    "audio_credits_file": "Salary_Negotiation_Playbook_Ad_Energy_v3_AUDIO_CREDITS.txt"
   }
 }
