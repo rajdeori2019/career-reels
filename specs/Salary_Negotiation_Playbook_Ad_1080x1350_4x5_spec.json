@@ -17,5 +17,13 @@
   "audio": "AAC stream copied unchanged from source; bitstream SHA256 a6899a954de85c9ed11a2b466d5f6a10aec0347540ea6f61ca350bc13fa81512",
   "visuals": "Approved Energy v3 graphics remain, no secondary captions or @iamprafz overlay, original room remains within centered full frame",
   "qa": "H264/AAC confirmed; exact dimensions and duration ffprobe verified; full video decoded with no errors; visual sample inspected; audio streamhash source=target",
-  "status": "Delivered in chat, not published; no MP4 uploaded to public repo"
+  "status": "Approved final 4:5 video master; delivered in chat; not published",
+  "approval": {
+    "date": "2026-11-18",
+    "decision": "Explicitly approved by owner as final video version",
+    "approval_cutoff": "Completion of the 1080 x 1350 (4:5) conversion and its GitHub log commit 763bd509474444e0f5aff08213309378e752d35b",
+    "locked_output_filename": "Salary_Negotiation_Playbook_Ad_1080x1350_4x5.mp4",
+    "no_changes_authorized": "No changes to visuals, voice, music, transitions, 4:5 framing, or approved edits after the stated cutoff",
+    "scope": "Only the video production history up to the 4:5 conversion is authoritative for this approval. Later conversation topics and decisions are outside this video milestone."
+  }
 }
