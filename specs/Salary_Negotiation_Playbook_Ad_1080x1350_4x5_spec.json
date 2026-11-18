@@ -1,0 +1,21 @@
+{
+  "date": "2026-11-18",
+  "purpose": "4:5 social feed format conversion of approved Salary Negotiation Playbook Ad",
+  "source_filename": "Salary_Negotiation_Playbook_Ad_Energy_v3_INSPIRING_MUSIC_SFX_FINAL.mp4",
+  "source_dimensions": [
+    720,
+    1280
+  ],
+  "output_filename": "Salary_Negotiation_Playbook_Ad_1080x1350_4x5.mp4",
+  "output_dimensions": [
+    1080,
+    1350
+  ],
+  "fps": 24,
+  "duration_seconds": 28,
+  "conversion": "Preserve full portrait frame scaled to 760x1350, centered; use a softened darkened blurred repeat of the original footage behind to fill 1080x1350 without cropping approved content",
+  "audio": "AAC stream copied unchanged from source; bitstream SHA256 a6899a954de85c9ed11a2b466d5f6a10aec0347540ea6f61ca350bc13fa81512",
+  "visuals": "Approved Energy v3 graphics remain, no secondary captions or @iamprafz overlay, original room remains within centered full frame",
+  "qa": "H264/AAC confirmed; exact dimensions and duration ffprobe verified; full video decoded with no errors; visual sample inspected; audio streamhash source=target",
+  "status": "Delivered in chat, not published; no MP4 uploaded to public repo"
+}
