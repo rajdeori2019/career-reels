@@ -1,0 +1,90 @@
+{
+  "reel": "Salary Negotiation Playbook ad",
+  "date": "2026-11-18",
+  "status": "Delivered (not published)",
+  "source": "Five user-owned clips, combined in order, source master Salary_Negotiation_Ads_Reel.mp4",
+  "delivered_filename": "Salary_Negotiation_Playbook_Ad_Energy_v3_FINAL.mp4",
+  "output": {
+    "duration_seconds": 28,
+    "width": 720,
+    "height": 1280,
+    "fps": 24,
+    "video_codec": "H.264",
+    "audio_codec": "AAC",
+    "aspect_ratio": "9:16"
+  },
+  "approvals": {
+    "gate_1": "Approved",
+    "gate_2": "Approved after corrections"
+  },
+  "visual_constraints": {
+    "background": "Original room throughout",
+    "bottom_caption_line": "Removed throughout",
+    "visible_handle": "None",
+    "voice": "Original",
+    "product": "Source filmed product kept",
+    "cta": "BUY NOW / Save & Share"
+  },
+  "proven_styles": "Energy v3-derived H6 P6 H4 B9 B10 B11 L3 X2 E1 M3 S1 S2 G1 A1 (C5 secondary captions explicitly removed)",
+  "timeline": [
+    {
+      "from": 0,
+      "to": 3.42,
+      "text": "HR ASKS… EXPECTED CTC?",
+      "styles": "H6/B9"
+    },
+    {
+      "from": 3.43,
+      "to": 6.45,
+      "text": "Whatever the company offers; red cross",
+      "styles": "P6"
+    },
+    {
+      "from": 6.43,
+      "to": 8.4,
+      "text": "FIRST MISTAKE",
+      "styles": "H4/B9"
+    },
+    {
+      "from": 8.39,
+      "to": 11.18,
+      "text": "PREPARE 3 NUMBERS",
+      "styles": "B10/B9"
+    },
+    {
+      "from": 11.17,
+      "to": 16.21,
+      "text": "MINIMUM / TARGET / IDEAL",
+      "styles": "B11"
+    },
+    {
+      "from": 16.2,
+      "to": 20.2,
+      "text": "SCRIPTS + WORKSHEETS",
+      "styles": "L3"
+    },
+    {
+      "from": 20.18,
+      "to": 22.64,
+      "text": "₹149",
+      "styles": "X2"
+    },
+    {
+      "from": 22.62,
+      "to": 28,
+      "text": "BUY NOW; Save & Share",
+      "styles": "B9/E1"
+    }
+  ],
+  "qa": {
+    "full_decode": "PASS",
+    "eight_keyframe_visual_review": "PASS",
+    "measured_integrated_lufs": -14.46,
+    "measured_true_peak_dbtp": -1.78
+  },
+  "copyright": {
+    "music": "Original synthesized instrumental/effects",
+    "third_party_footage": "None"
+  },
+  "privacy": "No raw videos, finished videos, private screenshots, credentials or env files are included in this public spec"
+}
