@@ -1,9 +1,9 @@
 {
   "reel": "Salary Negotiation Playbook ad",
   "date": "2026-11-18",
-  "status": "Delivered (not published)",
+  "status": "Delivered — source voice restored; original FINAL.mp4 superseded; not published",
   "source": "Five user-owned clips, combined in order, source master Salary_Negotiation_Ads_Reel.mp4",
-  "delivered_filename": "Salary_Negotiation_Playbook_Ad_Energy_v3_FINAL.mp4",
+  "delivered_filename": "Salary_Negotiation_Playbook_Ad_Energy_v3_VOICE_RESTORED.mp4",
   "output": {
     "duration_seconds": 28,
     "width": 720,
@@ -79,12 +79,19 @@
   "qa": {
     "full_decode": "PASS",
     "eight_keyframe_visual_review": "PASS",
-    "measured_integrated_lufs": -14.46,
-    "measured_true_peak_dbtp": -1.78
+    "original_video_stream_unchanged": "SHA256 bff9fd58981ea63229de10ddca43863a8c12a70bb9d93ca921ca974a854c3be3 identical before/after",
+    "source_voice_present": "PASS; audio correlation ~0.96 with source",
+    "measured_integrated_lufs": -15.22,
+    "measured_true_peak_dbtp": -1.82
   },
   "copyright": {
     "music": "Original synthesized instrumental/effects",
     "third_party_footage": "None"
   },
-  "privacy": "No raw videos, finished videos, private screenshots, credentials or env files are included in this public spec"
+  "privacy": "No raw videos, finished videos, private screenshots, credentials or env files are included in this public spec",
+  "audio_correction": {
+    "reason": "Initial MP4 accidentally omitted original spoken audio",
+    "resolution": "Original 28-second source soundtrack restored with quiet synthesized bed/SFX; remux without re-encoding the approved video",
+    "date": "2026-11-18"
+  }
 }
