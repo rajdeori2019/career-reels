@@ -1,0 +1,470 @@
+{
+  "speed": 1.2,
+  "time_base": "source",
+  "look": {
+    "brightness": 0.045,
+    "contrast": 1.12,
+    "saturation": 1.15,
+    "vibrance": 0.2,
+    "gamma": 1.05,
+    "warm": 0.03,
+    "vignette": 0.2
+  },
+  "caption_style": {
+    "style": "pop",
+    "y": 1480,
+    "size": 76,
+    "max_words": 3,
+    "emphasis": [
+      "90",
+      "days",
+      "immediate",
+      "rejected",
+      "wait",
+      "joining",
+      "notice",
+      "period",
+      "flexible",
+      "save",
+      "share"
+    ]
+  },
+  "lufs": -14,
+  "sfx_db": -22,
+  "source": "Raw Videos/19th Nov - Notice Period.mp4",
+  "segments": [
+    [
+      0.22,
+      74.35
+    ]
+  ],
+  "captions": [
+    {
+      "from": 0.221,
+      "to": 3.622,
+      "text": "Notice period 90 days hai aur HR ko chahiye immediate joining."
+    },
+    {
+      "from": 3.862,
+      "to": 8.602,
+      "text": "Mere recruitment career mein ek candidate tha jiska notice period 90 days tha."
+    },
+    {
+      "from": 8.661,
+      "to": 12.942,
+      "text": "Aap soch rahe honge ki recruiter ne reject kar diya hoga. Nahi."
+    },
+    {
+      "from": 13.022,
+      "to": 15.681,
+      "text": "Actually humne us candidate ke liye exactly 90 days wait kiya. Kyun?"
+    },
+    {
+      "from": 16.341,
+      "to": 21.041,
+      "text": "Kyunki candidate aur recruiter ke beech mein bilkul clear communication tha."
+    },
+    {
+      "from": 21.182,
+      "to": 25.262,
+      "text": "Achha understanding tha aur maine hiring manager se baat ki joining date negotiate kiya."
+    },
+    {
+      "from": 25.562,
+      "to": 29.862,
+      "text": "Aur company ne candidate ke liye wait kiya aur after 90 days candidate ne joining bhi kar li."
+    },
+    {
+      "from": 29.902,
+      "to": 34.162,
+      "text": "Ab ek bahut important baat samjho. Recruiter khaali aapka resume forward nahi karta."
+    },
+    {
+      "from": 34.202,
+      "to": 38.402,
+      "text": "Aap right fit ho aur recruiter ke saath achha relation maintain kar rahe ho."
+    },
+    {
+      "from": 38.422,
+      "to": 42.302,
+      "text": "Communicate kar rahe ho, recruiter actually aapke liye baat kar sakta hai."
+    },
+    {
+      "from": 42.342,
+      "to": 46.382,
+      "text": "Joining date push kar sakta hai hiring manager ko convince kar sakta hai."
+    },
+    {
+      "from": 46.402,
+      "to": 50.122,
+      "text": "Aur hiring process mein aapko guide bhi kar sakta hai. Next time koi recruiter aapko notice period poochhe."
+    },
+    {
+      "from": 50.462,
+      "to": 54.902,
+      "text": "Toh jhootha promise mat karna. Apna actual notice period batao aur poochho."
+    },
+    {
+      "from": 54.962,
+      "to": 59.362,
+      "text": "Mera actual notice period 90 days hai, but kya joining date flexible ho sakta hai?"
+    },
+    {
+      "from": 59.502,
+      "to": 62.882,
+      "text": "Aap ye bhi bol sakte ho ki mere kuch leaves available hain."
+    },
+    {
+      "from": 62.942,
+      "to": 66.682,
+      "text": "Jo aap notice period mein use kar sakte ho."
+    },
+    {
+      "from": 66.741,
+      "to": 71.902,
+      "text": "Aur ye bhi sahi hai ki har company aapke liye wait nahi karegi. 90 days notice period matlab automatic rejection nahi hota."
+    },
+    {
+      "from": 71.961,
+      "to": 74.282,
+      "text": "Video relatable lage toh save and share karna."
+    }
+  ],
+  "elements": [
+    {
+      "type": "pop_bg",
+      "pattern": "stripes",
+      "from": 0,
+      "to": 3.62
+    },
+    {
+      "type": "keyword",
+      "small": "Notice period",
+      "big": "90 DAYS",
+      "at": 0.26,
+      "dur": 1.7,
+      "size": 135,
+      "y": 190
+    },
+    {
+      "type": "keyword",
+      "small": "HR wants",
+      "big": "IMMEDIATE",
+      "at": 2,
+      "dur": 1.5,
+      "size": 106,
+      "y": 1300
+    },
+    {
+      "type": "keyword",
+      "small": "Candidate",
+      "big": "90 DAYS",
+      "at": 5.2,
+      "dur": 1.6,
+      "size": 122,
+      "y": 1320
+    },
+    {
+      "type": "keyword",
+      "small": "Finally",
+      "big": "JOINED",
+      "at": 27,
+      "dur": 1.6,
+      "size": 126,
+      "y": 1320
+    },
+    {
+      "type": "keyword",
+      "small": "Recruiter is",
+      "big": "MORE THAN CV",
+      "at": 30.5,
+      "dur": 1.9,
+      "size": 102,
+      "y": 1305
+    },
+    {
+      "type": "keyword",
+      "small": "If you are",
+      "big": "RIGHT FIT",
+      "at": 34.5,
+      "dur": 1.8,
+      "size": 112,
+      "y": 1320
+    },
+    {
+      "type": "keyword",
+      "small": "Keep",
+      "big": "COMMUNICATING",
+      "at": 38.5,
+      "dur": 1.6,
+      "size": 87,
+      "y": 1320
+    },
+    {
+      "type": "keyword",
+      "small": "Your recruiter",
+      "big": "CAN ADVOCATE",
+      "at": 42.7,
+      "dur": 1.6,
+      "size": 92,
+      "y": 1320
+    },
+    {
+      "type": "keyword",
+      "small": "Next time",
+      "big": "NOTICE PERIOD?",
+      "at": 47.2,
+      "dur": 1.8,
+      "size": 94,
+      "y": 1310
+    },
+    {
+      "type": "keyword",
+      "small": "Avoid",
+      "big": "FALSE PROMISES",
+      "at": 50.8,
+      "dur": 1.7,
+      "size": 96,
+      "y": 1310
+    },
+    {
+      "type": "typing_box",
+      "label": "Ask the recruiter",
+      "text": "Kya joining date flexible ho sakta hai?",
+      "from": 54.96,
+      "to": 59.36,
+      "type_dur": 0.22,
+      "y": 170,
+      "size": 29,
+      "w": 850
+    },
+    {
+      "type": "keyword",
+      "small": "Available",
+      "big": "LEAVES?",
+      "at": 60,
+      "dur": 1.6,
+      "size": 122,
+      "y": 1320
+    },
+    {
+      "type": "keyword",
+      "small": "Not every company",
+      "big": "CAN WAIT",
+      "at": 67,
+      "dur": 1.4,
+      "size": 113,
+      "y": 1320
+    },
+    {
+      "type": "keyword",
+      "small": "90 days is",
+      "big": "NOT AUTO REJECT",
+      "at": 69.2,
+      "dur": 2.1,
+      "size": 94,
+      "y": 1330
+    },
+    {
+      "type": "pop_bg",
+      "pattern": "stripes",
+      "from": 71.95,
+      "to": 74.35
+    },
+    {
+      "type": "myth",
+      "myth": "90 DAYS = REJECTED?",
+      "truth": "NOT ALWAYS",
+      "from": 8.75,
+      "to": 12.75,
+      "strike_at": 9.55,
+      "truth_at": 10.35,
+      "y": 220,
+      "size": 62
+    },
+    {
+      "type": "number_slam",
+      "value": 90,
+      "start": 0,
+      "suffix": " DAYS",
+      "from": 13.05,
+      "to": 15.9,
+      "roll": 0.32,
+      "y": 125,
+      "size": 110
+    }
+  ],
+  "bigwords": [],
+  "stickers": [],
+  "broll": [],
+  "shakes": [
+    14
+  ],
+  "save": {
+    "at": 72.7,
+    "text": "Save & Share",
+    "share_icon": true,
+    "handle": "@iamprafz"
+  },
+  "sfx": [
+    [
+      "whoosh",
+      0.22
+    ],
+    [
+      "pop",
+      0.26
+    ],
+    [
+      "pop",
+      2
+    ],
+    [
+      "pop",
+      5.2
+    ],
+    [
+      "pop",
+      9.1
+    ],
+    [
+      "pop",
+      13.1
+    ],
+    [
+      "pop",
+      17.2
+    ],
+    [
+      "pop",
+      23
+    ],
+    [
+      "pop",
+      27
+    ],
+    [
+      "pop",
+      30.5
+    ],
+    [
+      "pop",
+      34.5
+    ],
+    [
+      "pop",
+      38.5
+    ],
+    [
+      "pop",
+      42.7
+    ],
+    [
+      "pop",
+      47.2
+    ],
+    [
+      "pop",
+      50.8
+    ],
+    [
+      "tick",
+      54.96
+    ],
+    [
+      "pop",
+      60
+    ],
+    [
+      "pop",
+      67
+    ],
+    [
+      "pop",
+      69.2
+    ],
+    [
+      "whoosh",
+      71.95
+    ],
+    [
+      "chime",
+      72.7
+    ],
+    [
+      "whoosh",
+      8.75
+    ],
+    [
+      "pop",
+      9.55
+    ],
+    [
+      "pop",
+      10.35
+    ],
+    [
+      "whoosh",
+      13.05
+    ],
+    [
+      "pop",
+      13.85
+    ],
+    [
+      "tick",
+      16.55
+    ],
+    [
+      "tick",
+      21.25
+    ],
+    [
+      "tick",
+      23.1
+    ]
+  ],
+  "zoom_levels": [
+    [
+      1,
+      1.02
+    ],
+    [
+      1.02,
+      1.04
+    ]
+  ],
+  "bg_replace": {
+    "mode": "image",
+    "image": "tools/templates/bgA.png",
+    "clip": [
+      0.4,
+      0.85
+    ],
+    "feather": 2,
+    "band": 71,
+    "spill_ratio": 1.5
+  },
+  "chips": {
+    "y": 240,
+    "size": 35,
+    "gap": 28,
+    "to": 25.8,
+    "chips": [
+      {
+        "text": "CLEAR TALK",
+        "at": 16.55
+      },
+      {
+        "text": "MANAGER",
+        "at": 21.25
+      },
+      {
+        "text": "JOINING",
+        "at": 23.1
+      }
+    ]
+  },
+  "production_status": "Delivered 2026-11-19. Stock B-roll omitted. Pink matte fringing remains.",
+  "render_notes": "Actual footage and approved native style classes used; graphics generated at 10 fps composited over 30 fps footage; interpolated U2Net mattes; H.264 1080x1920 30fps and AAC at -14.6 LUFS."
+}
