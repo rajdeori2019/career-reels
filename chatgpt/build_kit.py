@@ -22,7 +22,7 @@ def main():
     wheels = Path(a[a.index("--wheels") + 1]) if "--wheels" in a else None
     if wheels is None:
         wheels = Path(tempfile.mkdtemp())
-        for v in ("3.11", "3.12"):
+        for v in ("3.11", "3.12", "3.13", "3.14"):   # ChatGPT sandbox was 3.13 on 23 Nov 2026
             subprocess.run([sys.executable, "-m", "pip", "download", "onnxruntime", "--no-deps", "--only-binary=:all:",
                             "--python-version", v, "--platform", "manylinux_2_28_x86_64", "-d", str(wheels), "-q"], check=True)
         subprocess.run([sys.executable, "-m", "pip", "download", "flatbuffers", "protobuf", "packaging", "--no-deps",
