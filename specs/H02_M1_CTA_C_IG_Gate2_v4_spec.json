@@ -1,0 +1,398 @@
+{
+  "speed": 1.2,
+  "time_base": "source",
+  "style_codes": [
+    "H6",
+    "C5",
+    "L1",
+    "P6",
+    "B6",
+    "B9",
+    "B10",
+    "B11",
+    "E1",
+    "M3",
+    "S1",
+    "S2",
+    "G1",
+    "A1",
+    "B1",
+    "R1",
+    "K7",
+    "E2"
+  ],
+  "look": {
+    "brightness": 0.045,
+    "contrast": 1.12,
+    "saturation": 1.15,
+    "vibrance": 0.2,
+    "gamma": 1.05,
+    "warm": 0.03,
+    "vignette": 0.2
+  },
+  "caption_style": {
+    "style": "minimal",
+    "y": 1480,
+    "size": 52,
+    "max_words": 5
+  },
+  "lufs": -14,
+  "sfx_db": -22,
+  "source": "Raw Videos/H02_M1_CTA_C_IG_source.mp4",
+  "segments": [
+    [
+      1.82,
+      3.83
+    ],
+    [
+      4.65,
+      6.7
+    ],
+    [
+      14.48,
+      17.42
+    ],
+    [
+      25.31,
+      25.97
+    ],
+    [
+      26.43,
+      29.01
+    ],
+    [
+      29.59,
+      30.11
+    ],
+    [
+      34.27,
+      35.05
+    ],
+    [
+      35.42,
+      36.28
+    ],
+    [
+      45.84,
+      48.61
+    ],
+    [
+      55.09,
+      57.55
+    ],
+    [
+      63.97,
+      65.64
+    ],
+    [
+      71.75,
+      74.11
+    ],
+    [
+      90.27,
+      94.1
+    ],
+    [
+      103.55,
+      106.9
+    ]
+  ],
+  "captions": [
+    {
+      "from": 4.65,
+      "to": 6.7,
+      "text": "Aapne apna minimum bata diya."
+    },
+    {
+      "from": 14.48,
+      "to": 17.42,
+      "text": "Aapne likha 18 lakh se 22 lakh."
+    },
+    {
+      "from": 34.27,
+      "to": 36.28,
+      "text": "Sirf 18 lakh."
+    },
+    {
+      "from": 45.84,
+      "to": 48.61,
+      "text": "Offer aksar wahin se shuru hota hai."
+    },
+    {
+      "from": 55.09,
+      "to": 57.55,
+      "text": "Round one mein bas ye poocho."
+    },
+    {
+      "from": 63.97,
+      "to": 65.64,
+      "text": "Approved budget kya hai?"
+    },
+    {
+      "from": 71.75,
+      "to": 74.11,
+      "text": "Us hisaab se number doonga."
+    },
+    {
+      "from": 90.27,
+      "to": 94.1,
+      "text": "Agli baar form pe 18 lakh se 22 lakh mat likhna."
+    },
+    {
+      "from": 103.55,
+      "to": 106.9,
+      "text": "Comment SCRIPT aur main exact script DM karta hoon."
+    }
+  ],
+  "elements": [
+    {
+      "type": "pop_bg",
+      "pattern": "ink",
+      "from": 1.82,
+      "to": 6.7,
+      "doodles": false
+    },
+    {
+      "type": "keyword",
+      "small": "salary range",
+      "big": "MINIMUM?",
+      "at": 1.85,
+      "dur": 1.8,
+      "size": 125
+    },
+    {
+      "type": "keyword",
+      "small": "aapne apna",
+      "big": "MINIMUM",
+      "at": 4.75,
+      "dur": 1.5,
+      "size": 130
+    },
+    {
+      "type": "build_card",
+      "title": "Salary range",
+      "subtitle": "Example form entry",
+      "icon": "₹",
+      "chips": [
+        {
+          "text": "18 lakh",
+          "at": 14.75
+        },
+        {
+          "text": "22 lakh",
+          "at": 16
+        }
+      ],
+      "badge": {
+        "text": "Range",
+        "at": 16.75
+      },
+      "from": 14.48,
+      "to": 17.42,
+      "y": 300
+    },
+    {
+      "type": "keyword",
+      "small": "recruiter kya dekhega?",
+      "big": "18 LAKH",
+      "at": 26.43,
+      "dur": 2.2,
+      "size": 130
+    },
+    {
+      "type": "keyword",
+      "small": "sirf",
+      "big": "18 LAKH",
+      "at": 34.27,
+      "dur": 1.7,
+      "size": 138
+    },
+    {
+      "type": "keyword",
+      "small": "offer aksar",
+      "big": "WAHIN SE",
+      "at": 46.1,
+      "dur": 1.9,
+      "size": 128
+    },
+    {
+      "type": "header",
+      "items": [
+        {
+          "num": "#1",
+          "text": "Round one",
+          "from": 55.09,
+          "to": 74.11
+        }
+      ],
+      "y": 150
+    },
+    {
+      "type": "keyword",
+      "small": "interview mein",
+      "big": "BUDGET?",
+      "at": 55.14,
+      "dur": 1.8,
+      "size": 137
+    },
+    {
+      "type": "typing_box",
+      "label": "Ask the recruiter",
+      "text": "Approved budget kya hai?",
+      "from": 63.97,
+      "to": 65.64,
+      "type_dur": 1.2,
+      "y": 300
+    },
+    {
+      "type": "keyword",
+      "small": "us hisaab se",
+      "big": "NUMBER",
+      "at": 71.75,
+      "dur": 1.7,
+      "size": 138
+    },
+    {
+      "type": "keyword",
+      "small": "agli baar form pe",
+      "big": "MAT LIKHNA",
+      "at": 90.4,
+      "dur": 2,
+      "size": 110
+    },
+    {
+      "type": "pop_bg",
+      "pattern": "ink",
+      "from": 103.55,
+      "to": 106.9,
+      "doodles": false
+    },
+    {
+      "type": "comment_keyword",
+      "keyword": "SCRIPT",
+      "from": 104.8,
+      "y": 1590
+    },
+    {
+      "type": "pop_bg",
+      "pattern": "stripes",
+      "from": 26.43,
+      "to": 30.11,
+      "doodles": false
+    },
+    {
+      "type": "pop_bg",
+      "pattern": "stripes",
+      "from": 45.84,
+      "to": 48.61,
+      "doodles": false
+    },
+    {
+      "type": "pop_bg",
+      "pattern": "stripes",
+      "from": 90.27,
+      "to": 94.1,
+      "doodles": false
+    }
+  ],
+  "bigwords": [
+    {
+      "text": "SIRF 18 LAKH",
+      "at": 34.27,
+      "dur": 0.9,
+      "behind": true,
+      "size": 100,
+      "y": 390
+    }
+  ],
+  "stickers": [],
+  "broll": [],
+  "shakes": [
+    34.27
+  ],
+  "save": {
+    "at": 106.65,
+    "text": "Save & Share",
+    "share_icon": true,
+    "handle": "@iamprafz",
+    "y": 1330
+  },
+  "sfx": [
+    [
+      "pop",
+      4.75
+    ],
+    [
+      "tick",
+      14.48
+    ],
+    [
+      "tick",
+      14.75
+    ],
+    [
+      "tick",
+      16
+    ],
+    [
+      "pop",
+      26.43
+    ],
+    [
+      "pop",
+      34.27
+    ],
+    [
+      "pop",
+      46.1
+    ],
+    [
+      "pop",
+      55.14
+    ],
+    [
+      "tick",
+      63.97
+    ],
+    [
+      "pop",
+      71.75
+    ],
+    [
+      "pop",
+      90.4
+    ],
+    [
+      "chime",
+      106.4
+    ]
+  ],
+  "zoom_levels": [
+    [
+      1.08,
+      1.1
+    ],
+    [
+      1.1,
+      1.12
+    ]
+  ],
+  "approvals": {
+    "gate1": "2026-11-23: user OK with edits; one B-roll maximum; exact words for 2 subtitles not confirmed and omitted.",
+    "gate2": "2026-11-23 user: \"approved\" after full Gate 2 v4 storyboard, with exact approved H6 stripes on 3 selected panels."
+  },
+  "bg_replace": {
+    "mode": "image",
+    "image": "tools/templates/bgA.png",
+    "clip": [
+      0.4,
+      0.85
+    ],
+    "feather": 2,
+    "band": 71,
+    "spill_ratio": 1.5
+  },
+  "approved_overrides": {
+    "navy_ink": "2026-11-23 user approved exact H6 stripes background on 18 LAKH, WAHIN SE, MAT LIKHNA; remaining shots retain navy studio."
+  }
+}
