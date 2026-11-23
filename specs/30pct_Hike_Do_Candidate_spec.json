@@ -1,0 +1,612 @@
+{
+ "speed": 1.2,
+ "time_base": "source",
+ "style_codes": [
+  "H6",
+  "C5",
+  "L1",
+  "P6",
+  "B6",
+  "B9",
+  "B10",
+  "B11",
+  "E1",
+  "M3",
+  "S1",
+  "S2",
+  "G1",
+  "A1",
+  "X2",
+  "B1",
+  "E2",
+  "R1"
+ ],
+ "look": {
+  "brightness": 0.045,
+  "contrast": 1.12,
+  "saturation": 1.15,
+  "vibrance": 0.2,
+  "gamma": 1.05,
+  "warm": 0.03,
+  "vignette": 0.2
+ },
+ "caption_style": {
+  "style": "minimal",
+  "y": 1480,
+  "size": 52,
+  "max_words": 5
+ },
+ "lufs": -14,
+ "sfx_db": -22,
+ "source": "Raw: H08.mp4 7.5-14.0 + M4.mp4 6.4-114.6 + CTA_A.mp4 5.0-16.4 concatenated (combined.mov, 30 fps)",
+ "bg_replace": {
+  "mode": "image",
+  "image": "tools/templates/bgA.png",
+  "clip": [
+   0.4,
+   0.85
+  ],
+  "feather": 2,
+  "band": 71,
+  "spill_ratio": 1.5
+ },
+ "segments": [
+  [
+   0.34,
+   2.06
+  ],
+  [
+   4.5,
+   6.08
+  ],
+  [
+   6.78,
+   7.7
+  ],
+  [
+   7.96,
+   8.8
+  ],
+  [
+   11.98,
+   12.98
+  ],
+  [
+   14.28,
+   15.82
+  ],
+  [
+   16.05,
+   17.02
+  ],
+  [
+   23.86,
+   25.0
+  ],
+  [
+   25.32,
+   26.44
+  ],
+  [
+   32.96,
+   34.37
+  ],
+  [
+   34.82,
+   35.76
+  ],
+  [
+   36.1,
+   38.52
+  ],
+  [
+   38.86,
+   39.54
+  ],
+  [
+   46.25,
+   47.64
+  ],
+  [
+   51.53,
+   53.09
+  ],
+  [
+   56.3,
+   58.42
+  ],
+  [
+   64.72,
+   67.6
+  ],
+  [
+   69.88,
+   71.17
+  ],
+  [
+   82.04,
+   82.68
+  ],
+  [
+   82.93,
+   83.57
+  ],
+  [
+   93.26,
+   96.42
+  ],
+  [
+   101.39,
+   103.85
+  ],
+  [
+   110.91,
+   111.89
+  ],
+  [
+   112.21,
+   112.61
+  ],
+  [
+   112.94,
+   114.36
+  ],
+  [
+   114.92,
+   117.36
+  ],
+  [
+   121.5,
+   126.15
+  ]
+ ],
+ "captions": [
+  {
+   "from": 0.42,
+   "to": 1.98,
+   "text": "30% hike maanga."
+  },
+  {
+   "from": 4.58,
+   "to": 6.0,
+   "text": "Yahin galti ho gayi."
+  },
+  {
+   "from": 6.86,
+   "to": 8.72,
+   "text": "Same sawaal, do candidate."
+  },
+  {
+   "from": 12.06,
+   "to": 12.9,
+   "text": "Aur dono ka"
+  },
+  {
+   "from": 14.36,
+   "to": 16.94,
+   "text": "current salary 15 LPA."
+  },
+  {
+   "from": 23.94,
+   "to": 24.92,
+   "text": "HR poochta hai,"
+  },
+  {
+   "from": 25.4,
+   "to": 26.36,
+   "text": "expected salary?"
+  },
+  {
+   "from": 33.04,
+   "to": 34.3,
+   "text": "Candidate A bolta hai,"
+  },
+  {
+   "from": 34.9,
+   "to": 35.7,
+   "text": "30% hike."
+  },
+  {
+   "from": 36.18,
+   "to": 39.46,
+   "text": "Matlab 19.5 LPA tak."
+  },
+  {
+   "from": 46.33,
+   "to": 47.56,
+   "text": "Candidate B bolta hai,"
+  },
+  {
+   "from": 51.61,
+   "to": 53.0,
+   "text": "approved range kya hai?"
+  },
+  {
+   "from": 56.38,
+   "to": 58.34,
+   "text": "Usi hisaab se number doonga."
+  },
+  {
+   "from": 64.8,
+   "to": 67.52,
+   "text": "Kya lagta hai, bada offer kisko mila?"
+  },
+  {
+   "from": 69.96,
+   "to": 71.1,
+   "text": "A ya B?"
+  },
+  {
+   "from": 82.12,
+   "to": 83.5,
+   "text": "B ko. Aksar."
+  },
+  {
+   "from": 93.34,
+   "to": 96.34,
+   "text": "A ne apni purani salary se number banaya."
+  },
+  {
+   "from": 101.47,
+   "to": 103.77,
+   "text": "B ne naya role ke budget se."
+  },
+  {
+   "from": 110.99,
+   "to": 111.81,
+   "text": "To aap batao,"
+  },
+  {
+   "from": 112.29,
+   "to": 114.28,
+   "text": "aap A ho ki B?"
+  },
+  {
+   "from": 115.0,
+   "to": 117.28,
+   "text": "Apna expected CTC comment karo,"
+  },
+  {
+   "from": 121.58,
+   "to": 124.8,
+   "text": "aur main bataunga sahi hai ya reject."
+  }
+ ],
+ "elements": [
+  {
+   "type": "pop_bg",
+   "pattern": "ink",
+   "from": 0.34,
+   "to": 6.08
+  },
+  {
+   "type": "keyword",
+   "small": "maanga",
+   "big": "30% HIKE",
+   "at": 0.5,
+   "dur": 1.5,
+   "size": 150
+  },
+  {
+   "type": "keyword",
+   "small": "yahin",
+   "big": "GALTI HO GAYI",
+   "at": 4.6,
+   "dur": 1.45,
+   "size": 120,
+   "color": "white"
+  },
+  {
+   "type": "keyword",
+   "small": "same sawaal",
+   "big": "DO CANDIDATE",
+   "at": 7.0,
+   "dur": 1.75,
+   "size": 120
+  },
+  {
+   "type": "number_slam",
+   "value": 15,
+   "suffix": " LPA",
+   "from": 14.36,
+   "to": 16.6,
+   "roll": 1.0,
+   "y": 260,
+   "size": 150
+  },
+  {
+   "type": "typing_box",
+   "label": "HR",
+   "text": "Expected salary?",
+   "from": 23.94,
+   "to": 26.44,
+   "y": 300,
+   "type_dur": 0.9
+  },
+  {
+   "type": "keyword",
+   "small": "candidate A",
+   "big": "30% HIKE",
+   "at": 34.85,
+   "dur": 0.9,
+   "size": 140
+  },
+  {
+   "type": "number_slam",
+   "value": 19.5,
+   "start": 15,
+   "decimals": 1,
+   "suffix": " LPA",
+   "from": 36.2,
+   "to": 39.54,
+   "roll": 1.0,
+   "y": 260,
+   "size": 150
+  },
+  {
+   "type": "keyword",
+   "small": "candidate",
+   "big": "B",
+   "at": 46.33,
+   "dur": 1.25,
+   "size": 170
+  },
+  {
+   "type": "typing_box",
+   "label": "Candidate B",
+   "text": "Approved range kya hai?",
+   "from": 51.55,
+   "to": 53.09,
+   "y": 300,
+   "type_dur": 1.0
+  },
+  {
+   "type": "keyword",
+   "small": "usi hisaab se",
+   "big": "NUMBER DOONGA",
+   "at": 56.9,
+   "dur": 1.45,
+   "size": 115
+  },
+  {
+   "type": "keyword",
+   "small": "kisko mila",
+   "big": "BADA OFFER?",
+   "at": 65.9,
+   "dur": 1.65,
+   "size": 130
+  },
+  {
+   "type": "keyword",
+   "small": "aap batao",
+   "big": "A YA B?",
+   "at": 69.96,
+   "dur": 1.15,
+   "size": 160
+  },
+  {
+   "type": "keyword",
+   "small": "aksar",
+   "big": "B KO",
+   "at": 82.1,
+   "dur": 1.45,
+   "size": 170
+  },
+  {
+   "type": "keyword",
+   "small": "A ne",
+   "big": "PURANI SALARY",
+   "at": 94.4,
+   "dur": 1.95,
+   "size": 115,
+   "color": "white"
+  },
+  {
+   "type": "keyword",
+   "small": "B ne",
+   "big": "ROLE KA BUDGET",
+   "at": 102.3,
+   "dur": 1.5,
+   "size": 110
+  },
+  {
+   "type": "keyword",
+   "small": "aap",
+   "big": "A YA B?",
+   "at": 112.95,
+   "dur": 1.4,
+   "size": 160
+  },
+  {
+   "type": "pop_bg",
+   "pattern": "ink",
+   "from": 114.92,
+   "to": 126.15
+  },
+  {
+   "type": "comment_keyword",
+   "keyword": "CTC",
+   "from": 115.6,
+   "y": 300
+  },
+  {
+   "type": "keyword",
+   "small": "main bataunga",
+   "big": "SAHI YA REJECT?",
+   "at": 123.0,
+   "dur": 1.8,
+   "size": 105
+  }
+ ],
+ "chips": {
+  "chips": [
+   {
+    "text": "A: purani salary",
+    "at": 93.34
+   },
+   {
+    "text": "B: role budget",
+    "at": 101.47
+   }
+  ],
+  "to": 103.85,
+  "y": 215,
+  "size": 44
+ },
+ "bigwords": [],
+ "stickers": [],
+ "broll": [
+  {
+   "start": 23.9,
+   "end": 25.9,
+   "clip": "shot01.mp4"
+  },
+  {
+   "start": 65.0,
+   "end": 67.55,
+   "clip": "shot02.mp4"
+  },
+  {
+   "start": 101.45,
+   "end": 103.8,
+   "clip": "shot03.mp4"
+  }
+ ],
+ "shakes": [
+  37.4
+ ],
+ "save": {
+  "at": 124.85,
+  "text": "Save & Share",
+  "share_icon": true,
+  "handle": "@iamprafz"
+ },
+ "sfx": [
+  [
+   "whoosh",
+   0.34
+  ],
+  [
+   "pop",
+   0.5
+  ],
+  [
+   "pop",
+   4.6
+  ],
+  [
+   "pop",
+   7.0
+  ],
+  [
+   "tick",
+   14.36
+  ],
+  [
+   "pop",
+   15.36
+  ],
+  [
+   "tick",
+   24.0
+  ],
+  [
+   "pop",
+   34.85
+  ],
+  [
+   "tick",
+   36.2
+  ],
+  [
+   "pop",
+   37.2
+  ],
+  [
+   "pop",
+   46.33
+  ],
+  [
+   "tick",
+   51.6
+  ],
+  [
+   "pop",
+   56.9
+  ],
+  [
+   "pop",
+   65.9
+  ],
+  [
+   "pop",
+   69.96
+  ],
+  [
+   "pop",
+   82.1
+  ],
+  [
+   "tick",
+   93.34
+  ],
+  [
+   "pop",
+   94.4
+  ],
+  [
+   "tick",
+   101.47
+  ],
+  [
+   "pop",
+   102.3
+  ],
+  [
+   "pop",
+   112.95
+  ],
+  [
+   "whoosh",
+   114.92
+  ],
+  [
+   "tick",
+   115.6
+  ],
+  [
+   "pop",
+   123.0
+  ],
+  [
+   "chime",
+   124.85
+  ],
+  [
+   "whoosh",
+   23.9
+  ],
+  [
+   "whoosh",
+   65.0
+  ],
+  [
+   "whoosh",
+   101.45
+  ]
+ ],
+ "zoom_levels": [
+  [
+   1.08,
+   1.1
+  ],
+  [
+   1.1,
+   1.12
+  ]
+ ],
+ "approvals": {
+  "gate1": "23 Nov 2026 18:15 IST: \"ok\" (Gate 1 table, Do Candidate reel)",
+  "gate2": "23 Nov 2026 18:37 IST: \"ok\" (full storyboard v2 + B-roll picks)"
+ }
+}

@@ -686,6 +686,13 @@ def compose(spec, els, t, frame):
     dx, dy = shake_at(spec, t)
     if dx or dy:
         zf = np.asarray(Image.fromarray(zf).transform((W, H), Image.AFFINE, (1, 0, -dx, 0, 1, -dy), Image.BILINEAR))
+    bgr = spec.get("bg_replace"); _bg_done = False
+    if bgr and spec.get("_broll") and spec.get("_mattes") and any(r["start"] <= t < r["end"] for r in spec.get("broll", [])):
+        _m = spec["_mattes"].get(t)                  # 23 Nov 2026: navy swap BEFORE the B-roll fade, else the real room shows in the fade-out
+        if _m is not None:
+            _m = Image.fromarray(apply_zoom(np.stack([np.asarray(_m)] * 3, -1), z, ox, oy)[..., 0])
+            if dx or dy: _m = _m.transform((W, H), Image.AFFINE, (1, 0, -dx, 0, 1, -dy), Image.BILINEAR)
+            zf = np.asarray(bg_replace(Image.fromarray(zf).convert("RGBA"), _m, bgr).convert("RGB")); _bg_done = True
     br = spec["_broll"].frame(t, zf) if spec.get("_broll") else None
     arr = br if br is not None else zf
     for fx in spec.get("effects", []):
@@ -700,12 +707,11 @@ def compose(spec, els, t, frame):
     behind = [e for e in els if getattr(e, "behind", False)]
     behind.sort(key=lambda e: 0 if type(e).__name__ == "PopBackground" else 1)   # pop_bg first, titles on top of it
     front = [e for e in els if not getattr(e, "behind", False)]
-    bgr = spec.get("bg_replace")
     if STRICT and br is None and any(a <= t <= b for a, b in behind_windows(spec)) \
             and (not spec.get("_mattes") or spec["_mattes"].get(t) is None):
         raise SystemExit(f"CR_STRICT: no person matte for t={t:.2f}s. Run `matte` (u2net_human_seg.onnx) over this range first. "
                          "Never replace it with a colour key.")
-    if bgr and br is None and spec.get("_mattes"):
+    if bgr and br is None and not _bg_done and spec.get("_mattes"):
         m0 = spec["_mattes"].get(t)
         if m0 is not None:
             m0 = Image.fromarray(apply_zoom(np.stack([np.asarray(m0)] * 3, -1), z, ox, oy)[..., 0])

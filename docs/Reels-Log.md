@@ -4,6 +4,7 @@ Every rendered reel gets a row here, pushed to GitHub right after the render (SO
 
 | Date | Reel | Handle | Base + extra styles | Background | Status | Spec |
 | --- | --- | --- | --- | --- | --- | --- |
+| 2026-11-23 | 30pct_Hike_Do_Candidate_Reel_v3_navy | @iamprafz | H6 C5 L1 P6 B6 B9 B10 B11 E1 M3 S1 S2 G1 A1 X2 B1 E2 R1 | Navy studio | Delivered | — |
 | 2026-11-19 | Notice_Period_Reel_v1 | @iamprafz | Energy v3 + H6 B9 H4 X2 B1 P6 E1 C1 | Navy studio + approved orange/white pop-out | Rejected (made in ChatGPT: colour-key matte halo, DejaVu font, pop captions, no cuts, stripes on navy; fails spec_lint). Redo | `specs/Notice_Period_Reel_v1_spec.json` |
 | 2026-11-18 | Salary_Negotiation_Playbook_Ad_1080x1350_4x5 | None displayed | Approved Energy v3 (format conversion, no visual edits) | Original room centered + blurred side fill | Approved final (4:5); delivered, not published | `specs/Salary_Negotiation_Playbook_Ad_1080x1350_4x5_spec.json` |
 | 2026-11-18 | Salary_Negotiation_Playbook_Ad_Energy_v3 | Not displayed (paid job-seeker ad) | Energy v3 derived H6 P6 H4 B9 B10 B11 L3 X2 E1 M3 S1 S2 G1 A1; no secondary captions | Real room | Delivered (voice, inspiring music and SFX restored) | `specs/Salary_Negotiation_Playbook_Ad_Energy_v3_spec.json` |
