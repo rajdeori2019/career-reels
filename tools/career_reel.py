@@ -22,6 +22,10 @@ INK = (17, 17, 17, 255)
 WHITE = (255, 255, 255, 255)
 
 
+# CR_STRICT=1 (always set by ChatGPT / non-Claude runs): stop instead of silently degrading
+# (fallback font, missing person mattes -> no navy swap / text over the face).
+STRICT = os.environ.get("CR_STRICT", "") not in ("", "0")
+
 # ---------------- fonts ----------------
 def font(size, weight="bold"):
     cands = {
@@ -32,10 +36,14 @@ def font(size, weight="bold"):
             "/usr/share/fonts/truetype/google-fonts", "/usr/share/fonts/truetype/dejavu",
             "C:/Windows/Fonts", "/Library/Fonts", "/System/Library/Fonts/Supplemental"]
     for n in cands:
+        if STRICT and not n.startswith("Poppins"):
+            break                                   # strict: never fall back to DejaVu/default
         for d in dirs:
             p = Path(d) / n
             if d and p.exists():
                 return ImageFont.truetype(str(p), size)
+    if STRICT:
+        raise SystemExit("CR_STRICT: Poppins fonts not found. Put them in tools/fonts/ (they ship in the repo). Do not render with a fallback font.")
     return ImageFont.load_default(size)
 
 
@@ -693,6 +701,10 @@ def compose(spec, els, t, frame):
     behind.sort(key=lambda e: 0 if type(e).__name__ == "PopBackground" else 1)   # pop_bg first, titles on top of it
     front = [e for e in els if not getattr(e, "behind", False)]
     bgr = spec.get("bg_replace")
+    if STRICT and br is None and any(a <= t <= b for a, b in behind_windows(spec)) \
+            and (not spec.get("_mattes") or spec["_mattes"].get(t) is None):
+        raise SystemExit(f"CR_STRICT: no person matte for t={t:.2f}s. Run `matte` (u2net_human_seg.onnx) over this range first. "
+                         "Never replace it with a colour key.")
     if bgr and br is None and spec.get("_mattes"):
         m0 = spec["_mattes"].get(t)
         if m0 is not None:

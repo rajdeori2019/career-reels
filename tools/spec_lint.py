@@ -1,0 +1,162 @@
+#!/usr/bin/env python3
+"""Energy v3 spec checker. Run before the storyboard AND before render, by any AI (Claude, ChatGPT, ...).
+
+    python3 tools/spec_lint.py SPEC.json [--work WORK]
+
+Exit 0 = PASS. Exit 1 = FAIL (fix the spec, never render a FAIL).
+Every value here comes from tools/templates/approved_energy_v3.json and the Daily Reel SOP.
+A rule may only be broken when Prafulla asked for it: list it in the spec as
+    "approved_overrides": {"<rule id>": "<his words / date>"}
+Rule ids are printed in [brackets].
+"""
+import json, sys
+from pathlib import Path
+
+LOOK = {"brightness": 0.045, "contrast": 1.12, "saturation": 1.15, "vibrance": 0.2,
+        "gamma": 1.05, "warm": 0.03, "vignette": 0.2}
+ZOOMS_OK = ([[1.08, 1.10], [1.10, 1.12]], [[1.0, 1.02], [1.02, 1.04]])   # 2nd = face-safe (SOP 16 Nov)
+HANDLES = ("@iamprafz", "@i.am.a.recruiter")
+FORBIDDEN_CAPTION_STYLES = ("pop", "karaoke", "accent")                  # replace v3 parts; only on request
+GRAPHIC_TYPES = {"keyword", "header", "typing_box", "build_card", "pop_bg", "myth", "message_card",
+                 "before_after", "number", "number_slam", "insights", "stamp", "tick_list", "steps",
+                 "side_column", "float_card", "jd_fan", "resume_split", "scissors", "phone_alert",
+                 "skit_label", "rising_headline", "comment_keyword", "part_two"}
+
+errors, warns = [], []
+
+
+def rule(rid, ok, msg, spec, warn=False):
+    if ok or rid in spec.get("approved_overrides", {}):
+        return
+    (warns if warn else errors).append(f"[{rid}] {msg}")
+
+
+def main():
+    a = sys.argv[1:]
+    if not a:
+        sys.exit(__doc__)
+    spec = json.load(open(a[0]))
+    work = Path(a[a.index("--work") + 1]) if "--work" in a else None
+    els = spec.get("elements", [])
+    caps = spec.get("captions", [])
+    cs = spec.get("caption_style", {})
+
+    # --- base look ---
+    rule("speed", abs(spec.get("speed", 0) - 1.2) < 1e-6, f"speed must be 1.2 (got {spec.get('speed')})", spec)
+    rule("time_base", spec.get("time_base") == "source", "time_base must be \"source\" (all times in source seconds)", spec)
+    lk = spec.get("look", {})
+    rule("look", all(abs(lk.get(k, -9) - v) < 1e-6 for k, v in LOOK.items()),
+         f"look must be the Energy v3 grade exactly: {LOOK}", spec)
+    rule("zoom", spec.get("zoom_levels") in [list(map(list, z)) for z in ZOOMS_OK],
+         f"zoom_levels must be {ZOOMS_OK[0]} (or face-safe {ZOOMS_OK[1]}); got {spec.get('zoom_levels')}", spec)
+    rule("no_punch", not spec.get("punches"), "Energy v3 has NO punches (rejected v2_energy look)", spec)
+    rule("no_stickers", not spec.get("stickers"), "Energy v3 has NO clip-art stickers", spec)
+    rule("shakes", len(spec.get("shakes", [])) <= 1, "max ONE shake hit per reel", spec)
+    rule("lufs", spec.get("lufs") == -14, "lufs must be -14", spec)
+    rule("sfx_db", spec.get("sfx_db", -22) == -22, "sfx_db must be -22", spec)
+
+    # --- captions (C5 minimal) ---
+    rule("caption_style", cs.get("style") == "minimal",
+         f"caption_style.style must be \"minimal\" (C5: white text, yellow underline on active word). "
+         f"Got \"{cs.get('style')}\". pop/karaoke/accent boxes are NOT Energy v3", spec)
+    rule("caption_size", cs.get("size") in (48, 52), f"caption size 52 (48 only if a line overflows); got {cs.get('size')}", spec)
+    rule("caption_y", cs.get("y") == 1480 or bool([e for e in spec.get("effects", []) if e.get("type") == "split"]),
+         f"caption y must be 1480; got {cs.get('y')}", spec)
+    rule("caption_words", 3 <= cs.get("max_words", 0) <= 5, f"max_words 4-5; got {cs.get('max_words')}", spec)
+    rule("captions", len(caps) >= 3, "captions missing", spec)
+
+    # --- cuts: pauses and false starts must be removed ---
+    segs = spec.get("segments", [])
+    rule("segments", bool(segs), "segments missing", spec)
+    for s0, s1 in segs:
+        inside = sorted([c for c in caps if c["from"] >= s0 - 0.05 and c["to"] <= s1 + 0.05], key=lambda c: c["from"])
+        for c1, c2 in zip(inside, inside[1:]):
+            gap = c2["from"] - c1["to"]
+            rule("pause_cut", gap <= 0.6,
+                 f"pause of {gap:.2f}s kept inside segment [{s0},{s1}] between \"{c1['text'][:30]}\" and "
+                 f"\"{c2['text'][:30]}\". Split the segment (cut pauses > ~0.35 s)", spec, warn=gap <= 0.9)
+    rule("one_segment", not (len(segs) == 1 and segs[0][1] - segs[0][0] > 25),
+         "one single segment over 25 s = no cuts were made. Cut false starts, repeats and pauses", spec)
+
+    # --- Energy v3 graphics ---
+    pops = sorted([e for e in els if e.get("type") == "pop_bg"], key=lambda e: e["from"])
+    first_cap = min((c["from"] for c in caps), default=0)
+    last_cap = max((c["to"] for c in caps), default=0)
+    rule("hook_pop", bool(pops) and pops[0]["from"] <= first_cap + 1.0,
+         "H6: pop_bg must cover the hook (first spoken line)", spec)
+    rule("cta_pop", len(pops) >= 2 and pops[-1]["to"] >= last_cap - 1.5,
+         "H6: pop_bg must cover the CTA (last spoken line)", spec)
+    if spec.get("bg_replace"):
+        rule("navy_ink", all(p.get("pattern") == "ink" for p in pops),
+             "navy studio (bg_replace) => every pop_bg pattern must be \"ink\" (stripes/paper/brand are for real room)", spec)
+        img = str(spec["bg_replace"].get("image", ""))
+        rule("navy_img", img.endswith("templates/bgA.png"), "bg_replace image must be tools/templates/bgA.png", spec)
+        rule("navy_cfg", spec["bg_replace"].get("clip") == [0.4, 0.85] and spec["bg_replace"].get("band") == 71,
+             "bg_replace must be the approved config {clip:[0.4,0.85], feather:2, band:71, spill_ratio:1.5}", spec)
+    kws = [e for e in els if e.get("type") == "keyword"]
+    rule("keywords", len(kws) >= max(3, len(caps) // 3),
+         f"B9: a keyword slam on the key phrase of most lines (have {len(kws)} for {len(caps)} lines)", spec)
+    splits = [(e["from"], e["to"]) for e in spec.get("effects", []) if e.get("type") == "split"] \
+        + [(b["start"], b["end"]) for b in spec.get("broll", [])]       # face not on screen there
+    in_split = lambda t: any(a - 0.3 <= t <= b + 0.3 for a, b in splits)
+    for k in kws:
+        y, t = k.get("y", 1330), k.get("at", k.get("from", 0))
+        if in_split(t):
+            continue                                   # split screen / B-roll: no face under it (TMAY 16 Nov, approved)
+        rule("keyword_face", not (380 <= y <= 1250),
+             f"keyword \"{k.get('big')}\" at y {y} lands on the FACE (face box ~y 450-1250). Use y 1330", spec)
+        rule("keyword_y", abs(y - 1330) <= 40, f"keyword y should be 1330 (got {y} for {k.get('big')})", spec, warn=True)
+    for e in els:
+        if e.get("type") == "typing_box":
+            rule("typing_key", "type" not in {k for k in e if k != "type"} and "type_dur" in e,
+                 "typing_box needs type_dur (never a second 'type' key)", spec, warn=True)
+        if e.get("type") == "header":
+            rule("header_y", 110 <= e.get("y", 150) <= 250, "header must sit at y 110-250", spec)
+
+    # graphic every 1.5-3 s (allow 4.5 s)
+    times = [e.get("from", e.get("at", 0)) for e in els if e.get("type") in GRAPHIC_TYPES]
+    for e in els:
+        times += [i.get("from", i.get("at")) for i in e.get("items", []) + e.get("chips", []) + e.get("steps", [])
+                  if isinstance(i, dict) and i.get("from", i.get("at")) is not None]
+    times += [b.get("start", 0) for b in spec.get("broll", [])] + [e.get("from", 0) for e in spec.get("effects", [])]
+    times += [b.get("from", b.get("at", 0)) for b in spec.get("bigwords", [])]
+    times = sorted(times)
+    if times and caps:
+        pts = [first_cap] + times + [last_cap]
+        big = [(round(x, 1), round(y, 1)) for x, y in zip(pts, pts[1:]) if y - x > 4.5]
+        rule("graphic_gap", not big, f"no graphic for > 4.5 s at source {big[:4]} (Energy v3 = new graphic every 1.5-3 s)",
+             spec, warn=True)
+
+    # B-roll: never in the first 2 s or over the CTA
+    for b in spec.get("broll", []):
+        t0 = b.get("start", 0)
+        rule("broll_clip", bool(b.get("clip")), "B-roll entry needs a clip path", spec)
+        rule("broll_hook", t0 >= first_cap + 2.0, f"B-roll at {t0} covers the hook (first 2 s)", spec)
+        rule("broll_cta", t0 <= last_cap - 3.0, f"B-roll at {t0} covers the CTA", spec)
+
+    # ending
+    sv = spec.get("save", {})
+    rule("save_text", sv.get("text") == "Save & Share", "E1: ending pill must say \"Save & Share\"", spec)
+    rule("save_icon", sv.get("share_icon") is True, "E1: share_icon must be true", spec)
+    rule("handle", sv.get("handle") in HANDLES, f"handle must be one of {HANDLES}", spec)
+
+    # work dir checks (after cut + matte)
+    if work:
+        rule("cut_done", (work / "base.mp4").exists() or any(work.glob("*.mp4")), f"no cut output in {work}; run cut first", spec)
+        if spec.get("bg_replace") or pops:
+            n = len(list((work / "matte").glob("*.png"))) if (work / "matte").exists() else 0
+            rule("mattes", n > 0, "no person mattes found; run `matte` with u2net_human_seg.onnx before storyboard/render", spec)
+
+    print(f"spec_lint {a[0]}")
+    for w in warns:
+        print("  WARN ", w)
+    for e in errors:
+        print("  FAIL ", e)
+    if errors:
+        print(f"RESULT: FAIL ({len(errors)} errors, {len(warns)} warnings). Fix the spec. Do NOT storyboard or render.")
+        sys.exit(1)
+    print(f"RESULT: PASS ({len(warns)} warnings)")
+
+
+if __name__ == "__main__":
+    main()
