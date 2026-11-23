@@ -948,7 +948,15 @@ def mix_audio(spec, work):
         i = int(at * sr); j = min(len(out), i + len(s))
         if i < j: out[i:j] += s[:j - i]                     # skip SFX past the end of the voice
     if spec.get("music", True):
-        bed = music_bed(len(out) / sr, sr, spec.get("music_bpm", 96))[:len(out)]
+        mf = spec.get("music_file")                         # licensed track (Pixabay Music / own); else synth pad
+        if mf:
+            raw = subprocess.run(["ffmpeg", "-v", "error", "-stream_loop", "-1", "-ss", str(spec.get("music_start", 0)),
+                                  "-i", mf, "-t", f"{len(out) / sr:.3f}", "-f", "s16le", "-ac", "1", "-ar", str(sr), "-"],
+                                 capture_output=True, check=True).stdout
+            bed = np.frombuffer(raw, np.int16).astype(np.float32) / 32768
+            bed = bed / (np.abs(bed).max() + 1e-9) * 0.6
+        else:
+            bed = music_bed(len(out) / sr, sr, spec.get("music_bpm", 96))[:len(out)]
         env = np.abs(v); k = int(0.25 * sr)
         env = np.convolve(env, np.ones(k) / k, mode="same")
         duck = np.where(env > 0.01, spec.get("music_under", 0.05), spec.get("music_gap", 0.10))

@@ -14,7 +14,7 @@ existing, approved system, not a designer. Your job is to fill a spec and run co
   Still keep 4 quality rules: (1) person cutouts only with the kit's `u2net_human_seg.onnx`, never a colour key;
   (2) Poppins from `kit/repo/tools/fonts`, never DejaVu/default; (3) show a few preview stills before a long render;
   (4) export H.264/AAC at the asked size (default 1080x1920, 30 fps, −14 LUFS), never downscaled to save time.
-- Not sure which it is? Ask one line: "Career Reel (Energy v3 system) or a different edit?"
+- Unsure? Ask: "Career Reel or a different edit?"
 
 ## 0. Setup at the start of EVERY Career Reel chat (no exceptions)
 1. Unzip the project file `Career_Reels_ChatGPT_Kit.zip` to `/mnt/data/kit` (if not already there).
@@ -33,16 +33,13 @@ existing, approved system, not a designer. Your job is to fill a spec and run co
 - NEVER keep the whole recording as one segment. Cut false starts, repeats and every pause > 0.35 s.
 - NEVER use `stripes`/`paper`/`brand` pop_bg with the navy studio. Navy => `ink`.
 - NEVER skip a gate, NEVER render without "OK" on the full storyboard, NEVER render a spec that fails `spec_lint.py`.
-- NEVER downscale to 720p to save time. Render 1080x1920 in short chunks instead.
+- NEVER downscale to 720p to save time.
 
-## 2. Sources of truth (read, don't paraphrase from memory)
-`repo/docs/Daily-Reel-SOP.md` (13 steps, 2 gates) · `repo/CLAUDE.md` (same rules apply to you) ·
-`repo/skills/career-reels-editor.SKILL.md` (engine commands, element keys, placement) ·
-`repo/tools/templates/approved_energy_v3.json` (START EVERY SPEC FROM A COPY OF THIS FILE) ·
-`repo/docs/style-frames/*.jpg` (open the frame of every style you use and match it) ·
-`repo/specs/Naukri_Profile_Silent_Reel_v1_spec.json` (approved navy-studio reel = the model answer for navy).
-Where the skill text mentions Claude tools (device_bash, add_repo, SendUserFile, Drive copy tricks), use your own
-equivalent: files in `/mnt/data`, download links, your GitHub connector.
+## 2. Sources of truth (read them, don't work from memory)
+`repo/docs/Daily-Reel-SOP.md` · `repo/CLAUDE.md` · `repo/skills/career-reels-editor.SKILL.md` (commands, element keys,
+placement) · `repo/tools/templates/approved_energy_v3.json` (copy it for every spec) · `repo/docs/style-frames/*.jpg`
+(match each style's frame) · `repo/specs/Naukri_Profile_Silent_Reel_v1_spec.json` (model answer for navy).
+Claude-only tools named in the skill → use your equivalents (/mnt/data, download links, GitHub connector).
 
 ## 3. The run (SOP order)
 0. **Parts recorded separately (hook + MEAT + CTA)?** Batch folders look like `Raw Videos/<week>/01 Hooks/Hxx.mp4`,
@@ -78,8 +75,18 @@ equivalent: files in `/mnt/data`, download links, your GitHub connector.
     in `docs/Reels-Log.md`. Never commit videos, raw footage, proof screenshots, `broll.env` or any `.env`.
     Report the commit link. If you can't push, say so; never claim a push you didn't make.
 
+## B-roll, music, transitions (all edits)
+- **B-roll:** your sandbox has no internet. Write `<Reel>_shots.json` (`[{"id","start","end","line","query","alt":[..]}]`,
+  3-5 shots, source seconds, never the first 2 s or the CTA) and give it as a download. Prafulla saves it in
+  `Career Reels\B-roll\_queue\` and double-clicks `tools\windows\Fetch-Broll.cmd` (own clips → Pexels → Pixabay),
+  then uploads `<Reel>_broll.zip` (clips + picks.png + credits.txt). Put clips in spec `broll` [{start,end,clip}].
+- **Music:** default = the engine's soft bed. A licensed track (Pixabay Music, `Career Reels\Music\`) → spec
+  `"music_file": path` (+ `music_start`); it is ducked under the voice. NEVER download or embed trending/film songs:
+  Prafulla adds trending audio in the Instagram app at posting (licensed + counts for the trend). Ads: Meta Sound Collection only.
+- **Transitions:** Energy v3 = clean cuts + gentle zoom; B-roll enters with the built-in flash + whoosh; SFX are built in.
+  No zoom punches, flash cuts or glitch packs on Career Reels (rejected look). Other edits: as he asks.
+
 ## 4. Style in one line
-Energy v3 = white minimal Poppins captions with a yellow underline at y 1480 · ink/stripes pop-out background on hook
-and CTA · a yellow keyword slam at y 1330 on almost every line · numbered headers at the top (y 110-250) · typing box
-for quoted questions · build card for lists · speed 1.2x · gentle zoom 1.08-1.12, no punches, no stickers ·
-"Save & Share" + handle at the end · −14 LUFS. Nothing ever on the face.
+Energy v3: minimal Poppins captions + yellow underline (y 1480) · pop-out bg on hook + CTA · yellow keyword slam (y 1330)
+on most lines · headers y 110-250 · typing box / build card · 1.2x · zoom 1.08-1.12 · "Save & Share" + handle · −14 LUFS.
+Nothing ever on the face.

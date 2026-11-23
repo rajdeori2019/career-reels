@@ -85,6 +85,7 @@ Use when no computer is linked (no mcp__remote-devices tools, or they report no 
 - **Clip-art stickers** (kinds: chat, question, link, doc, check, cross, briefcase, share) at shoulder height y 1170, x 150 or 930, never over the face; one per relevant line, 2-4 s each.
 - **B-roll:** white flash + whoosh on entry, slow 8% push-in.
 - **Ending:** "Save & Share" pill with bookmark + share icons and the topic handle (see Handle rule), after the last word; the last caption must match what he says (e.g. "save and share karna").
+- **Music file (23 Nov 2026):** `"music_file": "<licensed mp3>"` (+ `music_start`) replaces the synth bed, ducked the same way. Never trending/film songs: he adds trending audio in the Instagram app. B-roll from a sandbox without internet: `tools/windows/Fetch-Broll.cmd` on the laptop.
 - **Sound:** SFX at -22 dB (whoosh on hook/B-roll, pop on stickers/big words, tick on chips, chime on CTA); music bed 0.05 under voice, 0.10 in gaps.
 
 ## Energy v3 preset (approved, default)
