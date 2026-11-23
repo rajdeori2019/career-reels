@@ -10,5 +10,5 @@ This repo and the laptop folder `D:\Prafulla Goal\Career Reels` are the real hom
    `python3 tools/repo_sync.py "<Career Reels folder or staged copy>" <clone> --reel <Name> --date <YYYY-MM-DD> --handle <@...> --styles "<codes>" --bg "<Real room|Navy studio>" --status Delivered`,
    commit and push to `main`. Then tell Prafulla the commit. The laptop has no GitHub login, so the push always runs from Claude's session.
 6. **Never commit** videos, `broll.env`, any `*.env`, raw footage or other people's private details. The repo is public.
-7. **Checks (23 Nov 2026):** run `tools/spec_lint.py spec.json` before the storyboard and before render (must PASS), and `tools/qa_check.py` on the final file. ChatGPT runs the same engine from `chatgpt/` with `CR_STRICT=1`; see `chatgpt/README.md`.
+7. **Checks (23 Nov 2026):** every spec carries `style_codes` (Gate 1 codes) and `approvals.gate1/gate2` (his words). Run `tools/spec_lint.py spec.json` before the storyboard and before render (must PASS), and `tools/qa_check.py` on the final file. ChatGPT runs the same engine from `chatgpt/` with `CR_STRICT=1`; see `chatgpt/README.md`.
 8. Keep this project separate from every other project (ads use `reel-video-editor`, not this repo).

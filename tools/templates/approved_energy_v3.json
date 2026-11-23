@@ -1,6 +1,22 @@
 {
  "speed": 1.2,
  "time_base": "source",
+ "style_codes": [
+  "H6",
+  "C5",
+  "L1",
+  "P6",
+  "B6",
+  "B9",
+  "B10",
+  "B11",
+  "E1",
+  "M3",
+  "S1",
+  "S2",
+  "G1",
+  "A1"
+ ],
  "look": {
   "brightness": 0.045,
   "contrast": 1.12,
@@ -418,5 +434,9 @@
    1.1,
    1.12
   ]
- ]
+ ],
+ "approvals": {
+  "gate1": "",
+  "gate2": ""
+ }
 }

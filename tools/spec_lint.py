@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Energy v3 spec checker. Run before the storyboard AND before render, by any AI (Claude, ChatGPT, ...).
 
-    python3 tools/spec_lint.py SPEC.json [--work WORK]
+    python3 tools/spec_lint.py SPEC.json [--work WORK] [--render]
 
 Exit 0 = PASS. Exit 1 = FAIL (fix the spec, never render a FAIL).
 Every value here comes from tools/templates/approved_energy_v3.json and the Daily Reel SOP.
@@ -133,6 +133,37 @@ def main():
         rule("broll_clip", bool(b.get("clip")), "B-roll entry needs a clip path", spec)
         rule("broll_hook", t0 >= first_cap + 2.0, f"B-roll at {t0} covers the hook (first 2 s)", spec)
         rule("broll_cta", t0 <= last_cap - 3.0, f"B-roll at {t0} covers the CTA", spec)
+
+    # style codes vs TRI Reel Style Guide (Proven only; Energy v3 base always included)
+    guide = Path(__file__).resolve().parent.parent / "docs" / "TRI-Reel-Style-Guide.md"
+    status = {}
+    if guide.exists():
+        import re
+        for code, st in re.findall(r"\|\s*\*\*([A-Z]\d+)\*\*\s*\|.*?\|\s*(Proven|Ready)\s*\|", guide.read_text()):
+            status[code] = st
+    codes = spec.get("style_codes", [])
+    rule("style_codes", bool(codes), "spec needs \"style_codes\": [...] (every code named in Gate 1, from the TRI Reel Style Guide)", spec)
+    base = ["H6", "C5", "L1", "P6", "B6", "B9", "B10", "B11", "E1", "M3", "S1", "S2", "G1", "A1"]
+    if codes:
+        missing = [c for c in base if c not in codes]
+        rule("energy_v3_base", not missing, f"Energy v3 base codes missing from style_codes: {missing}", spec)
+        for c in codes:
+            rule(f"style_{c}", status.get(c) == "Proven",
+                 f"{c} is {status.get(c, 'not in the TRI Reel Style Guide')}: use Proven styles only (Ready only if he asked)", spec)
+            fr = guide.parent / "style-frames" / f"{c}.jpg"
+            rule(f"frame_{c}", c in base or fr.exists() or status.get(c) != "Proven",
+                 f"no reference frame docs/style-frames/{c}.jpg: check the style guide HTML before using {c}", spec, warn=True)
+        for bad, code in (("karaoke", "C3"), ("accent", "C4")):
+            if cs.get("style") == bad and code not in codes:
+                errors.append(f"[caption_code] caption style {bad} = {code}, not in style_codes")
+
+    # SOP gates: his own words, pasted into the spec (gate2 required for --render)
+    ap = spec.get("approvals", {})
+    rule("gate1", bool(str(ap.get("gate1", "")).strip()),
+         "approvals.gate1 empty: send the Gate 1 reply and paste his OK (date + words) before building the storyboard", spec)
+    if "--render" in a:
+        rule("gate2", bool(str(ap.get("gate2", "")).strip()),
+             "approvals.gate2 empty: no render without his OK on the FULL storyboard", spec)
 
     # ending
     sv = spec.get("save", {})

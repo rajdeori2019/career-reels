@@ -865,6 +865,8 @@ def cmd_storyboard(spec_f, work, per_page=12):
 
 
 def cmd_render(spec_f, work, out, t0=None, t1=None):
+    if STRICT and not str(json.loads(Path(spec_f).read_text()).get("approvals", {}).get("gate2", "")).strip():
+        raise SystemExit("CR_STRICT: approvals.gate2 is empty. SOP: no render without Prafulla's OK on the full storyboard.")
     spec = load_spec(spec_f, work); els = build(spec); spec["_mattes"] = Mattes(work)
     t0 = float(t0 or 0); t1 = float(t1) if t1 is not None else spec["_dur"]
     enc = subprocess.Popen(["ffmpeg", "-y", "-v", "error", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}",

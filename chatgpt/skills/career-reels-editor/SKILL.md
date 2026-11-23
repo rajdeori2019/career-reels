@@ -1,6 +1,6 @@
 ---
 name: "career-reels-editor"
-description: "Career Reels only: edit Prafulla's own talking-head reels into approved 1080x1920 Energy v3 reels by running HIS engine (tools/career_reel.py) from Career_Reels_ChatGPT_Kit.zip, with preflight, spec_lint, Gate 1 and Gate 2. Handles single recordings and hook + MEAT + CTA batches. Use for make reel, edit this reel, re-render, storyboard. Not for ads or other edits."
+description: "Career Reels only: edit Prafulla's own talking-head reels into approved 1080x1920 Energy v3 reels by running HIS engine (tools/career_reel.py) from Career_Reels_ChatGPT_Kit.zip, following the Daily Reel SOP and TRI Reel Style Guide, with preflight, spec_lint, Gate 1 and Gate 2. Handles single recordings and hook + MEAT + CTA batches. Not for ads or other edits."
 ---
 
 You edit Prafulla's talking-head reels with HIS engine, exactly like Claude does. You are an operator of an
@@ -36,7 +36,7 @@ existing, approved system, not a designer. Your job is to fill a spec and run co
 - NEVER downscale to 720p to save time.
 
 ## 2. Sources of truth (read them, don't work from memory)
-`repo/docs/Daily-Reel-SOP.md` · `repo/CLAUDE.md` · `repo/skills/career-reels-editor.SKILL.md` (commands, element keys,
+`repo/docs/Daily-Reel-SOP.md` · `repo/docs/TRI-Reel-Style-Guide.md` + `-interactive.html` (61 styles; Proven only) · `repo/CLAUDE.md` · `repo/skills/career-reels-editor.SKILL.md` (commands, element keys,
 placement) · `repo/tools/templates/approved_energy_v3.json` (copy it for every spec) · `repo/docs/style-frames/*.jpg`
 (match each style's frame) · `repo/specs/Naukri_Profile_Silent_Reel_v1_spec.json` (model answer for navy).
 Claude-only tools named in the skill → use your equivalents (/mnt/data, download links, GitHub connector).
@@ -45,12 +45,8 @@ Claude-only tools named in the skill → use your equivalents (/mnt/data, downlo
 0. **Parts recorded separately (hook + MEAT + CTA)?** Batch folders look like `Raw Videos/<week>/01 Hooks/Hxx.mp4`,
    `02 MEATs/Mx.mp4`, `03 CTAs/CTA_x_IG.mp4` (IG = Instagram, YT = YouTube). One reel = ONE hook + its MEAT + ONE CTA.
    If Prafulla didn't say which, ask: "Which hook, MEAT and CTA (IG or YT)?" Then join them into one source first:
-   `python3 tools/assemble.py /mnt/data/src.mp4 H.mp4 M.mp4 CTA.mp4` (if missing in the kit, do the same by hand:
-   per part `ffmpeg -i P -vf "scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,fps=30,setsar=1"
-   -c:v libx264 -preset veryfast -crf 14 -pix_fmt yuv420p -af aresample=48000 -ac 1 -c:a aac pN.mp4`, then
-   `ffmpeg -f concat -safe 0 -i list.txt -c copy src.mp4`). Note where each part starts. Use `src.mp4` as the spec
-   `source`. The hook part gets the first `pop_bg`, the CTA part the last `pop_bg`. Cut the dead air at each join.
-   Show the chosen parts in Gate 1.
+   `python3 tools/assemble.py /mnt/data/src.mp4 H.mp4 M.mp4 CTA.mp4`. Use `src.mp4` as `source`; hook part = first `pop_bg`,
+   CTA part = last. Cut dead air at joins. Show the chosen parts in Gate 1.
 1. Inspect: `ffprobe`; `a.wav` 16 kHz mono; `silencedetect=n=-32dB:d=0.35`.
 2. Transcript: use the Descript connector (upload, get the transcript), then write Roman Hinglish exactly as spoken,
    ⚠ on unsure words. If no transcription route works, ask Prafulla; never guess captions.
@@ -58,16 +54,17 @@ Claude-only tools named in the skill → use your equivalents (/mnt/data, downlo
    style codes and their reference frames, handle (@iamprafz job seekers / @i.am.a.recruiter recruiters),
    background (navy if the wall is red/pink/busy/dark, with the reason), asset plan. Wait for OK.
 4. Spec: copy `approved_energy_v3.json`, change only: `source`, `segments`, `captions`, `elements` (same element types,
-   placements from the template), `broll`, `save.handle`, and `bg_replace` + `ink` if navy (copy the block from the
-   Naukri spec; image = `/mnt/data/kit/repo/tools/templates/bgA.png`). Use absolute paths.
+   placements from the template), `broll`, `save.handle`, `bg_replace` + `ink` if navy (block from the Naukri spec;
+   image `/mnt/data/kit/repo/tools/templates/bgA.png`), `style_codes` (exactly the Gate 1 codes) and
+   `approvals.gate1` = his OK, quoted with date. Absolute paths.
 5. `python3 tools/spec_lint.py spec.json` → must say PASS. Fix every FAIL. (Exceptions only if Prafulla asked:
    put them in `"approved_overrides"`.)
 6. `python3 tools/career_reel.py cut spec.json w`, then `matte spec.json w <model> --from A --to B` in ~4-6 s output
    chunks until the whole reel is covered (navy needs every frame), then `spec_lint.py spec.json --work w`.
 7. **Gate 2**: `python3 tools/career_reel.py storyboard spec.json w` → show EVERY `w/storyboard_N.png` page + B-roll
-   picks. Before sending, compare panels with the style frames yourself. Wait for OK. Any fix = new storyboard.
+   picks. Before sending, compare panels with the style frames yourself. Wait for OK, quote it in `approvals.gate2`. Any fix = new storyboard.
 8. Render: `render spec.json w w/pNN.mp4 --from A --to B` in 5-8 s chunks (stay inside your execution time limit),
-   then `join spec.json w /mnt/data/<Name>.mp4 w/p01.mp4 w/p02.mp4 ...`.
+   (`spec_lint.py spec.json --render` first; engine refuses without gate2), then `join spec.json w /mnt/data/<Name>.mp4 w/p01.mp4 w/p02.mp4 ...`.
 9. QA: `python3 tools/qa_check.py /mnt/data/<Name>.mp4` → PASS, and look at the contact sheet next to
    `docs/style-frames/_all-proven-styles.jpg`. If anything differs from the approved look, fix and re-render that chunk.
 10. Deliver the MP4 as a download link and tell Prafulla to save it in `D:\Prafulla Goal\Career Reels\Finished`.
