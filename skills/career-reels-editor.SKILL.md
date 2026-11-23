@@ -110,6 +110,7 @@ All go in the spec; times are SOURCE seconds with `time_base: source` (keys from
 
 ## Rules
 - Never put text or graphics over the face; check the storyboard panels at the strongest zoom.
+- Hook + MEAT + CTA recorded as separate files (batch folders `01 Hooks`, `02 MEATs`, `03 CTAs`): join the picked parts with `tools/assemble.py` first and use the joined file as `source`; hook part = first `pop_bg`, CTA part = last.
 - Captions only from his confirmed words; mark guesses ⚠ and ask.
 - Cut false starts and repeated takes; ask which take when unsure.
 - Real proof (his screens) beats stock B-roll; no logos/brand marks in clip-art.

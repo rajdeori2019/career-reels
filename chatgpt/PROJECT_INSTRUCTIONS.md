@@ -32,6 +32,15 @@ Where the skill text mentions Claude tools (device_bash, add_repo, SendUserFile,
 equivalent: files in `/mnt/data`, download links, your GitHub connector.
 
 ## 3. The run (SOP order)
+0. **Parts recorded separately (hook + MEAT + CTA)?** Batch folders look like `Raw Videos/<week>/01 Hooks/Hxx.mp4`,
+   `02 MEATs/Mx.mp4`, `03 CTAs/CTA_x_IG.mp4` (IG = Instagram, YT = YouTube). One reel = ONE hook + its MEAT + ONE CTA.
+   If Prafulla didn't say which, ask: "Which hook, MEAT and CTA (IG or YT)?" Then join them into one source first:
+   `python3 tools/assemble.py /mnt/data/src.mp4 H.mp4 M.mp4 CTA.mp4` (if missing in the kit, do the same by hand:
+   per part `ffmpeg -i P -vf "scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,fps=30,setsar=1"
+   -c:v libx264 -preset veryfast -crf 14 -pix_fmt yuv420p -af aresample=48000 -ac 1 -c:a aac pN.mp4`, then
+   `ffmpeg -f concat -safe 0 -i list.txt -c copy src.mp4`). Note where each part starts. Use `src.mp4` as the spec
+   `source`. The hook part gets the first `pop_bg`, the CTA part the last `pop_bg`. Cut the dead air at each join.
+   Show the chosen parts in Gate 1.
 1. Inspect: `ffprobe`; `a.wav` 16 kHz mono; `silencedetect=n=-32dB:d=0.35`.
 2. Transcript: use the Descript connector (upload, get the transcript), then write Roman Hinglish exactly as spoken,
    ⚠ on unsure words. If no transcription route works, ask Prafulla; never guess captions.
