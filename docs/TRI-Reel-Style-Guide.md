@@ -8,6 +8,10 @@ Pick a reel type, or pick single styles by code. Then tell Claude: "Make a caree
 
 **Every edit:** Claude first sends your caption lines and planned cuts to confirm and asks the speed · your face is never covered by graphics (proof cutaways P2/P4 cover you for a moment, like B-roll) · text stays inside Instagram and LinkedIn safe zones · your own voice is kept · a full storyboard (every graphic moment, with time and caption) to approve before the final render · one Showpiece effect per reel at most.
 
+**With Energy v3 (24 Nov 2026):** every reel uses Energy v3 as the base plus **at least 4 extra Proven styles, 2 of them not used in the last 3 reels**, picked line by line (map in the Daily Reel SOP, or `python3 tools/style_map.py menu`). The reel types below are starting ideas, not limits.
+- Allowed within limits: **K1–K8** max 2 per reel at shoulder height; **M1** max 2 punch-ins on key lines.
+- Not with Energy v3: **C1**, **C2** (they replace C5 captions) and **X1** (ads pipeline only).
+
 ---
 
 ## Reel types (presets)
@@ -47,8 +51,8 @@ Readable with the sound off. Never on your face.
 
 | Code | Style | What it does | Best for | Status |
 |---|---|---|---|---|
-| **C1** | Pop Captions | Two or three big words at a time pop in. The word you are saying sits on a yellow box; key words stay yellow. Roman Hinglish, exactly as you said it. | Default for talking reels | Proven |
-| **C2** | Keywords Only | No full captions. Three words or fewer per beat, animated, so the screen stays clean. | Ads, punchy 7–10s reels | Proven |
+| **C1** | Pop Captions | Two or three big words at a time pop in. The word you are saying sits on a yellow box; key words stay yellow. Roman Hinglish, exactly as you said it. | Default for talking reels | Proven · not with Energy v3 |
+| **C2** | Keywords Only | No full captions. Three words or fewer per beat, animated, so the screen stays clean. | Ads, punchy 7–10s reels | Proven · not with Energy v3 |
 | **C3** | Frosted Pill Karaoke | Words sit on a frosted dark pill. Upcoming words are faded, the current word turns gold. | Calm story reels | Ready |
 | **C4** | Accent Phrase | Plain sans for most words, the key phrase in a serif italic with a thin underline on the payoff. | Premium, senior-level talk | Ready |
 | **C5** | Minimal Underline | Small clean captions low on the screen. The word you are saying gets a yellow underline. They step aside while a keyword slam is on. | Default with Energy v3 | Proven |
@@ -122,7 +126,7 @@ One per reel at most. Check the plain wall note first.
 
 | Code | Style | What it does | Best for | Status |
 |---|---|---|---|---|
-| **X1** | Whip Flash Transition | A fast whip blur, white flash and warm light leak into the big reveal. | The reveal moment | Proven |
+| **X1** | Whip Flash Transition | A fast whip blur, white flash and warm light leak into the big reveal. | The reveal moment | Proven · ads only, not with Energy v3 |
 | **X2** | Number Slam | A number lands with rays, a ring and a short camera shake. | Price, salary hike, big stat | Proven |
 | **X3** | Spotlight | The room goes dark and one soft light finds you on the big line. | Emotional turning point | Proven |
 | **X4** | Quick Glitch | One second of glitch, then a clean frame on the next idea. | Topic change | Proven |
@@ -132,7 +136,7 @@ One per reel at most. Check the plain wall note first.
 
 ## Clip-Art
 
-Small icons pop in beside you at shoulder height, never over your face. One per line that needs it.
+Small icons pop in beside you at shoulder height, never over your face. One per line that needs it, max 2 per reel on Energy v3.
 
 | Code | Style | What it does | Best for | Status |
 |---|---|---|---|---|
@@ -166,7 +170,7 @@ The feel of the whole video.
 
 | Code | Style | What it does | Best for | Status |
 |---|---|---|---|---|
-| **M1** | Punch-In Cuts | Small zooms on each jump cut and on the result line keep the shot moving. | Default for tips | Proven |
+| **M1** | Punch-In Cuts | Small zooms on each jump cut and on the result line keep the shot moving. | Default for tips | Proven · max 2 on Energy v3 |
 | **M2** | Calm & Warm | Fewer cuts and slower pushes, so it feels like a warm chat. | Stories, career breaks | Ready |
 | **M3** | Graphics-Led Energy | Gentle zoom (1.08–1.12), no punch-ins or flashes. A new graphic tied to your words every 1.5–3 seconds keeps it moving. | Default pace (Energy v3) | Proven |
 | **S1** | Light SFX | Soft whoosh, pop and chime on big moments, always under your voice. | Default | Proven |

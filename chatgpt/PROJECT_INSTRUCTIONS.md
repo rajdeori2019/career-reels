@@ -22,15 +22,14 @@ existing, approved system, not a designer. Your job is to fill a spec and run co
 4. If preflight says FAIL: STOP. Tell Prafulla the exact FAIL line. Do NOT continue with a substitute.
 
 ## 1. Hard bans (each one caused the rejected Notice Period reel, 19 Nov 2026)
-- NEVER write your own renderer, compositor, caption burner or ffmpeg drawtext pipeline. Only `tools/career_reel.py`.
-- NEVER make person mattes with a colour key / chroma / "pink-wall mask" / blur. Only `career_reel.py matte` with
+- NEVER write your own renderer, compositor, caption burner or drawtext pipeline. Only `tools/career_reel.py`.
+- NEVER make mattes with a colour key / chroma / "pink-wall mask" / blur. Only `career_reel.py matte` with
   `u2net_human_seg.onnx`. (Colour keys gave the pink halo and smeared face.)
 - NEVER render with DejaVu or a default font. Poppins only (it is in `tools/fonts/`; CR_STRICT enforces it).
 - NEVER use caption style `pop`, `karaoke` or `accent` (yellow word boxes). Energy v3 = `minimal`, size 52, y 1480.
-- NEVER keep the whole recording as one segment. Cut false starts, repeats and every pause > 0.35 s.
+- NEVER downscale to 720p or keep the whole recording as one segment. Cut false starts, repeats and every pause > 0.35 s.
 - NEVER use `stripes`/`paper`/`brand` pop_bg with the navy studio. Navy => `ink`.
 - NEVER skip a gate, NEVER render without "OK" on the full storyboard, NEVER render a spec that fails `spec_lint.py`.
-- NEVER downscale to 720p to save time.
 
 ## 2. Sources of truth (read them, don't work from memory)
 `repo/docs/Daily-Reel-SOP.md` · `repo/docs/TRI-Reel-Style-Guide.md` + `-interactive.html` (61 styles; Proven only) · `repo/CLAUDE.md` · `repo/skills/career-reels-editor.SKILL.md` (commands, element keys,
@@ -48,12 +47,13 @@ Claude-only tools named in the skill → use your equivalents (/mnt/data, downlo
 2. Transcript: use the Descript connector (upload, get the transcript), then write Roman Hinglish exactly as spoken,
    ⚠ on unsure words. If no transcription route works, ask Prafulla; never guess captions.
 3. **Gate 1** (one reply): caption table with source times, cuts, speed 1.2x, `Design: Energy v3 (+ codes)` with the
-   style codes and their reference frames, handle (@iamprafz job seekers / @i.am.a.recruiter recruiters),
+   codes per line + reference frames + the `style_map.py recent` line, handle (@iamprafz job seekers / @i.am.a.recruiter recruiters),
    background (navy if the wall is red/pink/busy/dark, with the reason), asset plan. Wait for OK.
-4. Spec: copy `approved_energy_v3.json`, change only: `source`, `segments`, `captions`, `elements` (same element types,
-   placements from the template), `broll`, `save.handle`, `bg_replace` + `ink` if navy (block from the Naukri spec;
+4. Spec: copy `approved_energy_v3.json`, change only: `source`, `segments`, `captions`, `elements` (picked line by line from
+   `python3 tools/style_map.py menu`; 4+ extra Proven styles, 2+ of them from `style_map.py recent`, every
+   claimed code really in the spec; placements from the template), `broll`, `save.handle`, `bg_replace` + `ink` if navy (block from the Naukri spec;
    image `/mnt/data/kit/repo/tools/templates/bgA.png`), `style_codes` (exactly the Gate 1 codes) and
-   `approvals.gate1` = his OK, quoted with date. Absolute paths.
+   `approvals.gate1` = his OK with date. Absolute paths.
 5. `python3 tools/spec_lint.py spec.json` → must say PASS. Fix every FAIL. (Exceptions only if Prafulla asked:
    put them in `"approved_overrides"`.)
 6. `python3 tools/career_reel.py cut spec.json w`, then `matte spec.json w <model> --from A --to B` in ~4-6 s output
@@ -78,7 +78,7 @@ Claude-only tools named in the skill → use your equivalents (/mnt/data, downlo
   `"music_file": path` (+ `music_start`); it is ducked under the voice. NEVER download or embed trending/film songs:
   Prafulla adds trending audio in the Instagram app at posting (licensed + counts for the trend). Ads: Meta Sound Collection only.
 - **Transitions:** Energy v3 = clean cuts + gentle zoom; B-roll enters with the built-in flash + whoosh; SFX are built in.
-  No zoom punches, flash cuts or glitch packs on Career Reels (rejected look). Other edits: as he asks.
+  No flash cuts or glitch packs. Limits: M1 punches max 2, K clip-art max 2 at shoulder, 1 showpiece. Other edits: as he asks.
 
 ## 4. Style in one line
 Energy v3: minimal Poppins captions + yellow underline (y 1480) · pop-out bg on hook + CTA · yellow keyword slam (y 1330)

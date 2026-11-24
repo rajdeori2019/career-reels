@@ -10,6 +10,7 @@ A rule may only be broken when Prafulla asked for it: list it in the spec as
 Rule ids are printed in [brackets].
 """
 import json, sys
+sys.path.insert(0, str(__import__("pathlib").Path(__file__).resolve().parent))
 from pathlib import Path
 
 LOOK = {"brightness": 0.045, "contrast": 1.12, "saturation": 1.15, "vibrance": 0.2,
@@ -49,8 +50,16 @@ def main():
          f"look must be the Energy v3 grade exactly: {LOOK}", spec)
     rule("zoom", spec.get("zoom_levels") in [list(map(list, z)) for z in ZOOMS_OK],
          f"zoom_levels must be {ZOOMS_OK[0]} (or face-safe {ZOOMS_OK[1]}); got {spec.get('zoom_levels')}", spec)
-    rule("no_punch", not spec.get("punches"), "Energy v3 has NO punches (rejected v2_energy look)", spec)
-    rule("no_stickers", not spec.get("stickers"), "Energy v3 has NO clip-art stickers", spec)
+    # M1 punch-ins and K clip-art: allowed on Energy v3 only within limits (decided 24 Nov 2026)
+    pun = spec.get("punches", [])
+    rule("punch_limit", len(pun) <= 2, f"M1 punch-ins: max 2 per reel on key lines (got {len(pun)})", spec)
+    rule("punch_code", not pun or "M1" in spec.get("style_codes", []), "punches used: add M1 to style_codes", spec)
+    stk = spec.get("stickers", [])
+    rule("sticker_limit", len(stk) <= 2, f"K clip-art: max 2 per reel (got {len(stk)})", spec)
+    for st in stk:
+        y, x = st.get("y", 900), st.get("x", 170)
+        rule("sticker_place", 1000 <= y <= 1250 and (x <= 200 or x >= 880),
+             f"sticker {st.get('kind')} at x {x}, y {y}: shoulder height only (y 1000-1250, x <= 200 or >= 880)", spec)
     rule("shakes", len(spec.get("shakes", [])) <= 1, "max ONE shake hit per reel", spec)
     rule("lufs", spec.get("lufs") == -14, "lufs must be -14", spec)
     rule("sfx_db", spec.get("sfx_db", -22) == -22, "sfx_db must be -22", spec)
@@ -139,7 +148,7 @@ def main():
     status = {}
     if guide.exists():
         import re
-        for code, st in re.findall(r"\|\s*\*\*([A-Z]\d+)\*\*\s*\|.*?\|\s*(Proven|Ready)\s*\|", guide.read_text()):
+        for code, st in re.findall(r"\|\s*\*\*([A-Z]\d+)\*\*\s*\|.*?\|\s*(Proven|Ready)[^|]*\|", guide.read_text()):
             status[code] = st
     codes = spec.get("style_codes", [])
     rule("style_codes", bool(codes), "spec needs \"style_codes\": [...] (every code named in Gate 1, from the TRI Reel Style Guide)", spec)
@@ -156,6 +165,31 @@ def main():
         for bad, code in (("karaoke", "C3"), ("accent", "C4")):
             if cs.get("style") == bad and code not in codes:
                 errors.append(f"[caption_code] caption style {bad} = {code}, not in style_codes")
+
+    # --- style variety (24 Nov 2026): Claude and ChatGPT kept reusing the same 4-6 extras out of 54 Proven ---
+    if codes:
+        import style_map as sm
+        have = sm.detect(spec)
+        extras = [c for c in codes if c not in sm.BASE]
+        for c in codes:
+            if c in sm.NOT_WITH_V3:
+                errors.append(f"[not_with_v3] {c}: {sm.NOT_WITH_V3[c]} Remove it (see style_map.py menu)")
+        fake = [c for c in extras if c not in have]
+        rule("code_vs_reel", not fake, f"style_codes claims {fake} but the spec has no element for them. "
+             "Add the element or drop the code (python3 tools/style_map.py check SPEC)", spec)
+        unclaimed = sorted(c for c in have - set(codes) if c not in sm.BASE)
+        rule("codes_unclaimed", not unclaimed, f"spec uses {unclaimed} but style_codes doesn't list them", spec, warn=True)
+        rule("variety_count", len(extras) >= 4,
+             f"only {len(extras)} extra styles on top of Energy v3 ({extras}); need >= 4 picked from the line-to-style map "
+             "(python3 tools/style_map.py menu)", spec)
+        rows, used = sm.recent_extras(3, exclude=spec.get("reel"))
+        fresh = [c for c in extras if c not in used]
+        rule("variety_fresh", len(fresh) >= 2,
+             f"only {len(fresh)} extra style(s) not used in the last 3 reels ({fresh}); need >= 2. Recent extras: "
+             f"{' '.join(sorted(used))}. Fresh options: python3 tools/style_map.py recent", spec)
+        shows = [c for c in sm.SHOWPIECES if c in have]
+        rule("one_showpiece", len(shows) <= 1, f"one showpiece per reel, got {shows}", spec)
+    rule("reel_name", bool(spec.get("reel")), "spec needs \"reel\": \"<Name>\" (same name as the Reels-Log row)", spec, warn=True)
 
     # SOP gates: his own words, pasted into the spec (gate2 required for --render)
     ap = spec.get("approvals", {})

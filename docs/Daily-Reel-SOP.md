@@ -24,7 +24,7 @@ Every reel goes through the same 13 steps and two approval gates. Claude never m
 | 2 | Upload and send `make reel <link or file name>` + thumbnail, proof or screen recording if any | You | The request |
 | 3 | Load the system (Start of every chat), start from `tools/templates/approved_energy_v3.json` | Claude | Same base every day |
 | 4 | Inspect, find pauses, transcribe (Hindi + English pass), write Roman Hinglish captions | Claude | Timed caption lines |
-| 5 | **Pick the styles from the recording**: reel type and style codes from the TRI Reel Style Guide (Proven only), checked against the reference frames | Claude | Style codes |
+| 5 | **Pick the styles from the recording**: line by line from the line-to-style map (Proven only), at least 4 extras with 2 not used in the last 3 reels, checked against the reference frames | Claude | Style codes |
 | 6 | **Check the background**: if the wall doesn't fit, switch to the navy studio automatically | Claude | Background choice |
 | 7 | Plan cuts, handle, proof and B-roll moments | Claude | Draft plan |
 | 8 | **Gate 1: confirmation reply.** Captions, cuts, speed, styles, handle, background, asset plan | You approve | "OK" or corrections |
@@ -70,6 +70,7 @@ Claude picks the design itself after the transcript and sends one reply that cov
 | Cuts | False starts, repeated takes, repeated phrases, pauses over ~0.35 s | If two takes exist, Claude asks which one to keep |
 | Speed | 1.2x | Change only if you say so |
 | Design line | `Design: Energy v3 (+ header, typing box, …) at 1.2x` | Reel type, every style code picked from the recording and the reel its reference frame comes from. Reply OK, or name other codes |
+| Styles not used recently | Output of `python3 tools/style_map.py recent`, and which of them this reel uses | At least 4 extra Proven styles on top of Energy v3, at least 2 not in the last 3 reels |
 | Handle | `@iamprafz` or `@i.am.a.recruiter` | Job-seeker topic → @iamprafz; recruiter topic → @i.am.a.recruiter |
 | Background | Real room or navy studio | Chosen automatically from the wall, with the reason (see Background change) |
 | Asset plan | Which line gets proof, a screen recording, B-roll or a split screen | Proof first, stock last |
@@ -126,23 +127,58 @@ Claude decides the styles itself from the raw recording. You don't pick codes un
 2. **Read the content:** what kind of reel it is, and which lines hold a quote, steps, a list, a number, a before/after or a turn.
 3. **Read the frame:** room above your head, how much of the frame your face fills, hands in shot, and the wall (see Background change).
 4. **Check what proof exists** in `Proof/` and `Screen Recordings/` for this topic.
-5. **Pick the reel type** from the table below and add its extra styles on top of Energy v3. Where a preset style clashes with Energy v3 (C1 vs C5, M1 vs M3, H5 vs H6), the Energy v3 one stays.
+5. **Pick styles line by line** from the line-to-style map below, on top of Energy v3, meeting the variety rule.
 6. **Match the look** to each style's reference frame (below) so it renders like the approved version.
 
-| The recording is… | Reel type | Extra styles on top of Energy v3 |
-| --- | --- | --- |
-| One job-search tip or mistake | Job Search Tip | B1 framework chips, K clip-art at shoulder height, R1 B-roll |
-| An interview question and how to answer it | Interview Answer | H2 skit labels, P6 typing boxes for weak vs strong answer, B1 chips, B-roll split screen |
-| A resume, LinkedIn or Naukri fix with screens | Resume Fix | L2 screen top, H4 myth, P2 before/after, B3 or B4 |
-| Who you are and the role you want | Hire-Me Intro | P1 message card, B5 tick list, E2 comment keyword |
-| A result first, then how it happened | Offer Win Story | P5 stamp, P3 roll-up or X2 slam |
-| A career switch story | Career Switch Story | R2 office B-roll, P3, X3 spotlight |
-| A recruiter topic (clients, candidates, sourcing) | Energy v3 + recruiter beats | H2 skit labels, B7 WhatsApp alert, B5 tick list, handle @i.am.a.recruiter |
-| A walkthrough of something built | Project Showcase | L2, R3 screen recording, B8 step tracker |
+**Line-to-style map (24 Nov 2026).** Go line by line through the transcript and pick from this map. It covers all 54 Proven styles. The reel type is just a label now; the lines decide the styles. Same map in code: `python3 tools/style_map.py menu`.
+
+| The line is… | Proven styles that fit |
+| --- | --- |
+| Hook (first spoken line) | H6 always + one of H1 question pill, H3 rising headline, H4 myth, H5 title behind you (needs headroom), B9 keyword |
+| Recruiter / HR asks something, a skit | H2 skit labels, P6 typing box, K2 question mark |
+| Quoted message, DM, email, pitch line | P6 typing box, P1 message card, K1 chat bubble |
+| Reply, invite or result arrives | B7 phone alert, P1 message card, P5 stamp |
+| Myth / wrong belief | H4 myth crossed out, K6 red cross |
+| Right way / do this | K5 green tick, B5 tick list, B11 build card |
+| Wrong way / don't | K6 red cross, H4 myth |
+| A list or checklist | B5 tick list, B11 build card, B8 step tracker |
+| Numbered steps / method | B10 section header, B8 step tracker, B1 chips |
+| Framework or comparison (problem->result, A vs B) | B1 chips, B11 build card, L3 side column |
+| A number: salary, %, views, calls | P3 number roll-up, X2 number slam (showpiece), P5 stamp |
+| Offer / win / cleared a round | P5 stamp, B7 phone alert, K7 briefcase |
+| Jobs, roles, JDs | B2 JD cards fan out, K7 briefcase |
+| Resume / CV | K4 resume page, B3 one resume three versions, P2 before/after |
+| Tailor / cut / shorten | B4 scissors tailor, B3 resume split |
+| Link / profile / URL | K3 link, L2 screen top, P4 insights pointer |
+| Proof on a screen (LinkedIn, Naukri, dashboard) | L2 screen top you below, P4 insights pointer, R3 screen recording, L4 floating proof card |
+| Showing a document / product | L3 side column, L4 floating proof card |
+| The turn (lekin, iske badle, but) | B6 big word behind you, X4 quick glitch (showpiece) |
+| Emotional big line | X3 spotlight (showpiece) |
+| Office, commute, first-job story | R2 office & commute B-roll, R1 stock B-roll |
+| Concept with no footage of your own | R1 auto stock B-roll |
+| Key phrase of any line | B9 keyword slam |
+| Share / send / forward | K8 share icon, E1 save & share |
+| Ending: useful tip | E1 save & share |
+| Ending: comment a keyword | E2 comment keyword (+ E1) |
+| Ending: series | E3 follow for part 2 (+ E1) |
+| Result line that needs a push | M1 punch-in (max 2) |
+| Always (Energy v3 base) | C5 L1 M3 S1 S2 G1 A1 |
+
+**Variety rule (checked by `spec_lint.py`, a FAIL blocks the storyboard):**
+- At least **4 extra Proven styles** on top of the Energy v3 base.
+- At least **2 of them not used in the last 3 reels** in `docs/Reels-Log.md`. Run `python3 tools/style_map.py recent` to see the fresh ones.
+- **Every code in `style_codes` must really be in the spec** (`python3 tools/style_map.py check spec.json`). No listing a code that is not on screen.
+- **One showpiece** (X2, X3 or X4) per reel.
+- Add `"reel": "<Name>"` to the spec (same name as the log row).
+
+**Energy v3 status of every Proven style:**
+- Allowed within limits: **K1–K8 clip-art** max 2 per reel at shoulder height (y 1000–1250, x ≤ 200 or ≥ 880, never on the face); **M1 punch-ins** max 2 per reel, only on key lines.
+- Not with Energy v3: **C1 Pop captions** and **C2 Keywords only** (they replace C5), **X1 Whip flash** (ads pipeline only). Listing them fails the check.
+- Every other Proven style is fine on Energy v3. H5 needs room above your head; with no headroom use B9 instead.
 
 **Frame rules:** no room above your head → no behind-you title (H5/H7), use a keyword slam. Face fills the frame → lower zoom or a split screen. Hands out of shot → keep the bottom-anchored zoom low. Only Proven styles by default; Ready ones (H7, C3, C4, M2, R4, E4, X5) only when you ask.
 
-**In the Gate 1 reply** Claude names the reel type and every code it picked, and for each extra style the approved reel its reference frame comes from (e.g. "P2 → Resume No Calls proof reel").
+**In the Gate 1 reply** Claude names the reel type, every code it picked with the line it sits on, the "styles not used recently" line, and for each extra style the approved reel its reference frame comes from (e.g. "P2 → Resume No Calls proof reel").
 
 ### Style reference frames
 

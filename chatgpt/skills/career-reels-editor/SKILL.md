@@ -51,10 +51,10 @@ Claude-only tools named in the skill → use your equivalents (/mnt/data, downlo
 2. Transcript: use the Descript connector (upload, get the transcript), then write Roman Hinglish exactly as spoken,
    ⚠ on unsure words. If no transcription route works, ask Prafulla; never guess captions.
 3. **Gate 1** (one reply): caption table with source times, cuts, speed 1.2x, `Design: Energy v3 (+ codes)` with the
-   style codes and their reference frames, handle (@iamprafz job seekers / @i.am.a.recruiter recruiters),
+   style codes with the line each sits on, their reference frames, the `style_map.py recent` line, handle (@iamprafz job seekers / @i.am.a.recruiter recruiters),
    background (navy if the wall is red/pink/busy/dark, with the reason), asset plan. Wait for OK.
-4. Spec: copy `approved_energy_v3.json`, change only: `source`, `segments`, `captions`, `elements` (same element types,
-   placements from the template), `broll`, `save.handle`, `bg_replace` + `ink` if navy (block from the Naukri spec;
+4. Spec: copy `approved_energy_v3.json`, change only: `source`, `segments`, `captions`, `elements` (picked line by line from
+   `python3 tools/style_map.py menu`; at least 4 extra Proven styles on top of Energy v3, at least 2 of them not used in the last 3 reels (`python3 tools/style_map.py recent`), picked line by line from the line-to-style map (`python3 tools/style_map.py menu`), and every code in `style_codes` really in the spec (`python3 tools/style_map.py check spec.json`); spec_lint FAILs otherwise; placements from the template and the style frames), `broll`, `save.handle`, `bg_replace` + `ink` if navy (block from the Naukri spec;
    image `/mnt/data/kit/repo/tools/templates/bgA.png`), `style_codes` (exactly the Gate 1 codes) and
    `approvals.gate1` = his OK, quoted with date. Absolute paths.
 5. `python3 tools/spec_lint.py spec.json` → must say PASS. Fix every FAIL. (Exceptions only if Prafulla asked:
@@ -81,7 +81,8 @@ Claude-only tools named in the skill → use your equivalents (/mnt/data, downlo
   `"music_file": path` (+ `music_start`); it is ducked under the voice. NEVER download or embed trending/film songs:
   Prafulla adds trending audio in the Instagram app at posting (licensed + counts for the trend). Ads: Meta Sound Collection only.
 - **Transitions:** Energy v3 = clean cuts + gentle zoom; B-roll enters with the built-in flash + whoosh; SFX are built in.
-  No zoom punches, flash cuts or glitch packs on Career Reels (rejected look). Other edits: as he asks.
+  No flash cuts or glitch packs (rejected look). Allowed within limits: M1 punch-ins max 2 on key lines, one X4 glitch
+  as the reel's single showpiece, K clip-art max 2 at shoulder height. Other edits: as he asks.
 
 ## 4. Style in one line
 Energy v3: minimal Poppins captions + yellow underline (y 1480) · pop-out bg on hook + CTA · yellow keyword slam (y 1330)
