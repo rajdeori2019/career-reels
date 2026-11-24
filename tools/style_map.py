@@ -64,6 +64,19 @@ LINE_MAP = [
 ]
 
 
+def guide_path():
+    """Repo: docs/TRI-Reel-Style-Guide.md. Laptop folder: 'TRI Reel Style Guide.md' at the top (must be the FULL guide)."""
+    for p in (ROOT / "docs" / "TRI-Reel-Style-Guide.md", ROOT / "TRI Reel Style Guide.md"):
+        if p.exists(): return p
+    return ROOT / "docs" / "TRI-Reel-Style-Guide.md"
+
+
+def log_path():
+    for p in (ROOT / "docs" / "Reels-Log.md", ROOT / "Reels-Log.md"):
+        if p.exists(): return p
+    return None
+
+
 def _els(spec, t):
     return [e for e in spec.get("elements", []) if e.get("type") == t]
 
@@ -113,9 +126,10 @@ def detect(spec):
 
 def log_rows(log=None):
     """[(reel, handle, codes)] from docs/Reels-Log.md, newest first, real reels only (handle starts with @)."""
-    log = Path(log or ROOT / "docs" / "Reels-Log.md")
+    log = log or log_path()
     rows = []
-    if not log.exists(): return rows
+    if not log or not Path(log).exists(): return rows
+    log = Path(log)
     for line in log.read_text(encoding="utf-8").splitlines():
         c = [x.strip() for x in line.strip().strip("|").split("|")]
         if len(c) < 5 or not re.match(r"\d{4}-\d{2}-\d{2}", c[0]) or not c[2].startswith("@"): continue
@@ -131,8 +145,10 @@ def recent_extras(n=3, exclude=None):
 
 
 def proven():
-    g = (ROOT / "docs" / "TRI-Reel-Style-Guide.md").read_text(encoding="utf-8")
-    return {c: n.strip() for c, n, s in re.findall(r"\|\s*\*\*([A-Z]\d+)\*\*\s*\|\s*([^|]*)\|.*?\|\s*(Proven)[^|]*\|", g)}
+    g = guide_path().read_text(encoding="utf-8")
+    out = {c: n.strip() for c, n, s in re.findall(r"\|\s*\*\*([A-Z]\d+)\*\*\s*\|\s*([^|]*)\|.*?\|\s*(Proven)[^|]*\|", g)}
+    if len(out) < 40: sys.exit(f"style guide parse found only {len(out)} Proven styles: the style guide file is a stub? Use the full guide from GitHub docs/")
+    return out
 
 
 def main():

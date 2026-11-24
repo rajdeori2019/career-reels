@@ -144,7 +144,8 @@ def main():
         rule("broll_cta", t0 <= last_cap - 3.0, f"B-roll at {t0} covers the CTA", spec)
 
     # style codes vs TRI Reel Style Guide (Proven only; Energy v3 base always included)
-    guide = Path(__file__).resolve().parent.parent / "docs" / "TRI-Reel-Style-Guide.md"
+    import style_map as _sm
+    guide = _sm.guide_path()
     status = {}
     if guide.exists():
         import re
@@ -183,6 +184,8 @@ def main():
              f"only {len(extras)} extra styles on top of Energy v3 ({extras}); need >= 4 picked from the line-to-style map "
              "(python3 tools/style_map.py menu)", spec)
         rows, used = sm.recent_extras(3, exclude=spec.get("reel"))
+        if not sm.log_path():
+            warns.append("[variety_log] no Reels-Log.md found (docs/ or the Career Reels folder): freshness not checked here")
         fresh = [c for c in extras if c not in used]
         rule("variety_fresh", len(fresh) >= 2,
              f"only {len(fresh)} extra style(s) not used in the last 3 reels ({fresh}); need >= 2. Recent extras: "

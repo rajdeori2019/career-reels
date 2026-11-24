@@ -15,6 +15,7 @@ from pathlib import Path
 ENGINE = ["career_reel.py", "career_styles2.py", "broll.py", "hinglish_asr.py", "repo_sync.py"]
 DOCS = {  # file in the Career Reels folder -> path in the repo
     "Career Reels - Daily Reel SOP.md": "docs/Daily-Reel-SOP.md",
+    "Career Reels — Daily Reel SOP.md": "docs/Daily-Reel-SOP.md",   # laptop file uses an em dash
     "TRI Reel Style Guide.md": "docs/TRI-Reel-Style-Guide.md",
     "TRI Reel Style Guide.html": "docs/TRI-Reel-Style-Guide-interactive.html",
 }
@@ -31,6 +32,9 @@ def copy(src, dst, changed):
         return
     dst.parent.mkdir(parents=True, exist_ok=True)
     if not dst.exists() or dst.read_bytes() != src.read_bytes():
+        if dst.exists() and dst.suffix in (".md", ".html") and src.stat().st_size < 0.5 * dst.stat().st_size:
+            print(f"SKIP {dst.name}: source is under half the size of the repo copy (stub/export?). Fix the laptop copy.")
+            return
         shutil.copyfile(src, dst)
         changed.append(str(dst))
 
