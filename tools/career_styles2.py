@@ -344,7 +344,8 @@ class InsightsPointer:    # P4 screenshot zooms to the number + self-drawing arr
 class OfferStamp:         # P5 stamp lands with a ring
     def __init__(self, s):
         self.s = s; f = font(s.get("size", 96))
-        im = text_block([s.get("text", "OFFER").upper()], f, RED, pad=(40, 18), radius=20)
+        im = text_block([s.get("text", "OFFER").upper()], f, RED, pad=(40, 18), radius=20,
+                        bg=(255, 255, 255, 240) if s.get("plate") else None)
         fr = Image.new("RGBA", (im.width + 24, im.height + 24), (0, 0, 0, 0)); d = ImageDraw.Draw(fr)
         d.rounded_rectangle([4, 4, fr.width - 5, fr.height - 5], 24, outline=RED, width=10); fr.alpha_composite(im, (12, 12))
         self.img = fr.rotate(-8, expand=True, resample=Image.BICUBIC)
@@ -353,8 +354,9 @@ class OfferStamp:         # P5 stamp lands with a ring
         if not window(s, t): return
         k = clamp((t - s["from"]) / 0.22); sc = 2.4 - 1.4 * (k ** 3)
         y = s.get("y", 330)
-        if k >= 1:
-            r = ease_out((t - s["from"] - 0.22) / 0.5); d = ImageDraw.Draw(c)
+        r = ease_out((t - s["from"] - 0.22) / 0.5)
+        if k >= 1 and r < 0.98 and s.get("ring", True):   # ring fades out; ImageDraw writes pixels (no blend), so skip once faded
+            d = ImageDraw.Draw(c)
             d.ellipse([W / 2 - 220 - 260 * r, y - 140 - 200 * r, W / 2 + 220 + 260 * r, y + 140 + 200 * r],
                       outline=(226, 75, 59, int(200 * (1 - r))), width=8)
         place(c, self.img, W / 2, y, scale=sc, alpha=min(1, k * 2) * fade_out(s, t))
@@ -685,6 +687,11 @@ class KeywordSlam:        # big two-tone keyword in the middle (small lead-in li
         if small: d.text(((w - sw) / 2, 0), small, font=fs, fill=WHITE, stroke_width=4, stroke_fill=(0, 0, 0, 180))
         col = YELLOW if s.get("color", "yellow") == "yellow" else WHITE
         d.text(((w - bw) / 2, 50 if small else 0), big, font=fb, fill=col, stroke_width=8, stroke_fill=(0, 0, 0, 200))
+        if s.get("plate"):   # dark rounded plate so the keyword reads on stripes / bright B-roll
+            pw, ph = im.width + 40, im.height + 30
+            pl = Image.new("RGBA", (pw, ph), (0, 0, 0, 0))
+            ImageDraw.Draw(pl).rounded_rectangle([0, 0, pw - 1, ph - 1], 34, fill=(14, 18, 32, 225))
+            pl.alpha_composite(im, (20, 18)); im = pl
         self.img = fit(shadow(im, 16, 170)[0], 1040)
     def draw(self, c, t):
         s = self.s; a = s["at"]; b = a + s.get("dur", 1.2)

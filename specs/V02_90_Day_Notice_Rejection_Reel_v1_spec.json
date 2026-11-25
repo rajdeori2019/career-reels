@@ -1,0 +1,638 @@
+{
+ "speed": 1.2,
+ "time_base": "source",
+ "style_codes": [
+  "H6",
+  "C5",
+  "L1",
+  "P6",
+  "B6",
+  "B9",
+  "B10",
+  "B11",
+  "E1",
+  "M3",
+  "S1",
+  "S2",
+  "G1",
+  "A1",
+  "P1",
+  "K6",
+  "X4",
+  "B7",
+  "P5",
+  "K8",
+  "H2",
+  "R1"
+ ],
+ "look": {
+  "brightness": 0.045,
+  "contrast": 1.12,
+  "saturation": 1.15,
+  "vibrance": 0.2,
+  "gamma": 1.05,
+  "warm": 0.03,
+  "vignette": 0.2
+ },
+ "caption_style": {
+  "style": "minimal",
+  "y": 1480,
+  "size": 52,
+  "max_words": 5
+ },
+ "lufs": -14,
+ "sfx_db": -22,
+ "source": "Raw Videos/2026-W48 Salary + Notice/V02_H11_M5_CTA_B_source.mp4 (tools/assemble.py: 01 Hooks/H11.mp4 + 02 MEATs/M5.mp4 + 03 CTAs/CTA_B.mp4)",
+ "segments": [
+  [
+   7.6,
+   10.48
+  ],
+  [
+   10.9,
+   11.52
+  ],
+  [
+   12.14,
+   13.95
+  ],
+  [
+   30.8,
+   33.45
+  ],
+  [
+   39.2,
+   44.85
+  ],
+  [
+   54.55,
+   56.2
+  ],
+  [
+   89.86,
+   93.2
+  ],
+  [
+   104.96,
+   108.25
+  ],
+  [
+   109.4,
+   110.65
+  ],
+  [
+   129.76,
+   131.68
+  ],
+  [
+   136.06,
+   137.88
+  ],
+  [
+   149.6,
+   152.0
+  ],
+  [
+   164.34,
+   166.3
+  ],
+  [
+   167.74,
+   170.02
+  ],
+  [
+   174.86,
+   175.5
+  ],
+  [
+   182.16,
+   183.3
+  ],
+  [
+   184.42,
+   185.92
+  ],
+  [
+   187.22,
+   188.42
+  ],
+  [
+   194.42,
+   196.0
+  ],
+  [
+   215.86,
+   220.6
+  ]
+ ],
+ "captions": [
+  {
+   "from": 7.6,
+   "to": 10.48,
+   "text": "Manager ne likha: \"Next candidate dekho.\""
+  },
+  {
+   "from": 10.9,
+   "to": 13.95,
+   "text": "Wajah? 90 days notice period."
+  },
+  {
+   "from": 30.8,
+   "to": 33.45,
+   "text": "Interview ke baad, manager ka message:"
+  },
+  {
+   "from": 39.2,
+   "to": 44.85,
+   "text": "\"Candidate strong hai, but 90 days ka notice period."
+  },
+  {
+   "from": 54.55,
+   "to": 56.2,
+   "text": "Next candidate dekho.\""
+  },
+  {
+   "from": 89.86,
+   "to": 93.2,
+   "text": "90 days wale candidates yahin kat jaate hain."
+  },
+  {
+   "from": 104.96,
+   "to": 108.25,
+   "text": "Lekin ek line ne ye poori chat badal di."
+  },
+  {
+   "from": 109.4,
+   "to": 110.05,
+   "text": "Kaunsi?"
+  },
+  {
+   "from": 129.76,
+   "to": 131.68,
+   "text": "\"Notice period 90 days hai."
+  },
+  {
+   "from": 136.06,
+   "to": 137.88,
+   "text": "Early release maangunga."
+  },
+  {
+   "from": 149.6,
+   "to": 152.0,
+   "text": "Policy allow karta hai to buyout bhi.\""
+  },
+  {
+   "from": 164.34,
+   "to": 166.3,
+   "text": "Uske baad manager ka reply:"
+  },
+  {
+   "from": 167.74,
+   "to": 170.02,
+   "text": "\"Okay, final round schedule karo.\""
+  },
+  {
+   "from": 174.86,
+   "to": 185.92,
+   "text": "Dekha? Bas ek line ne poora game change kar di."
+  },
+  {
+   "from": 187.22,
+   "to": 188.42,
+   "text": "Wahi 90 days."
+  },
+  {
+   "from": 194.42,
+   "to": 196.0,
+   "text": "Bas ek alag line."
+  },
+  {
+   "from": 215.86,
+   "to": 219.3,
+   "text": "Us dost ko bhejo jiska kal HR round hai."
+  }
+ ],
+ "elements": [
+  {
+   "type": "pop_bg",
+   "pattern": "stripes",
+   "from": 7.6,
+   "to": 13.95,
+   "doodles": true
+  },
+  {
+   "type": "keyword",
+   "small": "manager ne likha",
+   "big": "NEXT CANDIDATE DEKHO",
+   "at": 7.7,
+   "dur": 1.9,
+   "size": 96,
+   "y": 300,
+   "plate": true
+  },
+  {
+   "type": "keyword",
+   "small": "wajah?",
+   "big": "90 DAYS NOTICE",
+   "at": 11.0,
+   "dur": 2.2,
+   "size": 115,
+   "y": 300,
+   "plate": true
+  },
+  {
+   "type": "header",
+   "items": [
+    {
+     "num": "#1",
+     "text": "Manager ka message",
+     "from": 32.75,
+     "to": 56.2
+    },
+    {
+     "num": "#2",
+     "text": "Candidate ka reply",
+     "from": 129.76,
+     "to": 151.7
+    }
+   ],
+   "y": 150
+  },
+  {
+   "type": "message_card",
+   "lines": [
+    "Candidate strong hai,",
+    "but 90 days ka notice period.",
+    "Next candidate dekho."
+   ],
+   "highlight": 1,
+   "from": 32.75,
+   "to": 56.2,
+   "y": 340
+  },
+  {
+   "type": "keyword",
+   "small": "90 days wale",
+   "big": "YAHIN KAT JAATE",
+   "at": 91.7,
+   "dur": 1.1,
+   "size": 110,
+   "y": 300,
+   "plate": true
+  },
+  {
+   "type": "keyword",
+   "small": "ek line ne",
+   "big": "CHAT BADAL DI",
+   "at": 106.55,
+   "dur": 1.5,
+   "size": 115,
+   "y": 300,
+   "plate": true
+  },
+  {
+   "type": "keyword",
+   "small": "",
+   "big": "KAUNSI?",
+   "at": 109.45,
+   "dur": 0.85,
+   "size": 120,
+   "color": "white",
+   "y": 300,
+   "plate": true
+  },
+  {
+   "type": "typing_box",
+   "label": "Candidate",
+   "text": "Notice period 90 days hai. Early release maangunga. Policy allow karta hai to buyout bhi.",
+   "from": 129.76,
+   "to": 151.7,
+   "y": 340,
+   "type_dur": 4.0
+  },
+  {
+   "type": "keyword",
+   "small": "uske baad",
+   "big": "MANAGER KA REPLY",
+   "at": 164.4,
+   "dur": 1.6,
+   "size": 105,
+   "y": 300,
+   "plate": true
+  },
+  {
+   "type": "phone_alert",
+   "app": "WhatsApp",
+   "title": "Manager",
+   "body": "Okay, final round schedule karo.",
+   "from": 167.74,
+   "to": 170.02,
+   "y": 220
+  },
+  {
+   "type": "stamp",
+   "text": "FINAL ROUND",
+   "from": 175.15,
+   "to": 183.0,
+   "y": 300,
+   "size": 110,
+   "ring": false,
+   "plate": true
+  },
+  {
+   "type": "keyword",
+   "small": "bas ek line ne",
+   "big": "POORA GAME CHANGE",
+   "at": 184.42,
+   "dur": 1.4,
+   "size": 105,
+   "y": 300,
+   "plate": true
+  },
+  {
+   "type": "pop_bg",
+   "pattern": "stripes",
+   "from": 215.86,
+   "to": 220.6,
+   "doodles": true
+  },
+  {
+   "type": "keyword",
+   "small": "us dost ko bhejo",
+   "big": "KAL HR ROUND",
+   "at": 217.6,
+   "dur": 1.4,
+   "size": 120,
+   "y": 300,
+   "plate": true
+  },
+  {
+   "type": "build_card",
+   "title": "Wahi 90 days",
+   "subtitle": "Bas ek alag line",
+   "icon": "90",
+   "chips": [
+    {
+     "text": "Early release",
+     "at": 187.6
+    },
+    {
+     "text": "Buyout",
+     "at": 194.5
+    }
+   ],
+   "badge": {
+    "text": "Final",
+    "at": 195.2
+   },
+   "from": 187.22,
+   "to": 196.0,
+   "y": 320
+  },
+  {
+   "type": "pop_bg",
+   "pattern": "stripes",
+   "from": 104.96,
+   "to": 108.25,
+   "doodles": true
+  },
+  {
+   "type": "pop_bg",
+   "pattern": "stripes",
+   "from": 182.16,
+   "to": 185.92,
+   "doodles": true
+  },
+  {
+   "type": "skit_label",
+   "text": "Manager",
+   "from": 32.75,
+   "to": 56.2,
+   "x": 60,
+   "y": 1200
+  },
+  {
+   "type": "skit_label",
+   "text": "Candidate",
+   "from": 129.76,
+   "to": 151.7,
+   "x": 60,
+   "y": 1200
+  },
+  {
+   "type": "skit_label",
+   "text": "Manager",
+   "from": 167.74,
+   "to": 170.02,
+   "x": 60,
+   "y": 1200
+  }
+ ],
+ "bigwords": [
+  {
+   "text": "LEKIN",
+   "at": 104.98,
+   "dur": 0.9,
+   "behind": true,
+   "size": 190,
+   "y": 390,
+   "plate": true
+  }
+ ],
+ "stickers": [
+  {
+   "kind": "cross",
+   "from": 89.9,
+   "to": 92.0,
+   "x": 960,
+   "y": 1200
+  },
+  {
+   "kind": "share",
+   "from": 216.9,
+   "to": 219.3,
+   "x": 930,
+   "y": 1120
+  }
+ ],
+ "broll": [
+  {
+   "start": 30.85,
+   "end": 32.75,
+   "clip": "B-roll/_queue/V02/shot01.mp4"
+  },
+  {
+   "start": 89.9,
+   "end": 92.4,
+   "clip": "B-roll/office-laptop-frustrated-pexels10040707.mp4"
+  },
+  {
+   "start": 164.36,
+   "end": 166.3,
+   "clip": "B-roll/indian-man-phone-office.mp4"
+  }
+ ],
+ "shakes": [
+  104.98
+ ],
+ "save": {
+  "at": 219.35,
+  "text": "Save & Share",
+  "share_icon": true,
+  "handle": "@iamprafz"
+ },
+ "sfx": [
+  [
+   "whoosh",
+   7.6
+  ],
+  [
+   "pop",
+   7.7
+  ],
+  [
+   "pop",
+   11.0
+  ],
+  [
+   "whoosh",
+   30.8
+  ],
+  [
+   "whoosh",
+   30.85
+  ],
+  [
+   "whoosh",
+   32.1
+  ],
+  [
+   "whoosh",
+   89.9
+  ],
+  [
+   "pop",
+   89.9
+  ],
+  [
+   "pop",
+   91.7
+  ],
+  [
+   "whoosh",
+   104.96
+  ],
+  [
+   "pop",
+   104.98
+  ],
+  [
+   "pop",
+   106.55
+  ],
+  [
+   "pop",
+   109.45
+  ],
+  [
+   "whoosh",
+   129.76
+  ],
+  [
+   "tick",
+   129.8
+  ],
+  [
+   "whoosh",
+   164.34
+  ],
+  [
+   "pop",
+   164.4
+  ],
+  [
+   "whoosh",
+   167.74
+  ],
+  [
+   "pop",
+   175.15
+  ],
+  [
+   "whoosh",
+   182.16
+  ],
+  [
+   "pop",
+   184.42
+  ],
+  [
+   "pop",
+   187.25
+  ],
+  [
+   "tick",
+   187.6
+  ],
+  [
+   "tick",
+   194.5
+  ],
+  [
+   "pop",
+   195.2
+  ],
+  [
+   "whoosh",
+   215.86
+  ],
+  [
+   "pop",
+   216.9
+  ],
+  [
+   "pop",
+   217.6
+  ],
+  [
+   "chime",
+   219.35
+  ]
+ ],
+ "zoom_levels": [
+  [
+   1.08,
+   1.1
+  ],
+  [
+   1.1,
+   1.12
+  ]
+ ],
+ "approvals": {
+  "gate1": "2026-11-25 user: confirmed lines 2,8,10,17 ('Kaunsi? Pause'); one version for YT & IG; design 'ok. go ahead' after style preview sheet.",
+  "gate2": "2026-11-25 user: \"ok render\" after storyboard v4 (keywords above head with dark plates, stamp plate, 3 B-roll)"
+ },
+ "reel": "V02_90_Day_Notice_Rejection_Reel_v1",
+ "effects": [
+  {
+   "type": "glitch",
+   "at": 104.96,
+   "dur": 0.5
+  }
+ ],
+ "bg_replace": {
+  "mode": "image",
+  "image": "tools/templates/bgA.png",
+  "clip": [
+   0.4,
+   0.85
+  ],
+  "feather": 2,
+  "band": 71,
+  "spill_ratio": 1.5
+ },
+ "approved_overrides": {
+  "navy_ink": "2026-11-25 user: 'what you have shown and what you have created are completely different' (preview showed stripes pop-out); stripes on navy as approved on H02 23 Nov"
+ }
+}

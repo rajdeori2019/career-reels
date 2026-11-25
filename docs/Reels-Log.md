@@ -4,6 +4,7 @@ Every rendered reel gets a row here, pushed to GitHub right after the render (SO
 
 | Date | Reel | Handle | Base + extra styles | Background | Status | Spec |
 | --- | --- | --- | --- | --- | --- | --- |
+| 2026-11-25 | V02_90_Day_Notice_Rejection_Reel_v1 | @iamprafz | H6 C5 L1 P6 B6 B9 B10 B11 E1 M3 S1 S2 G1 A1 P1 K6 X4 B7 P5 K8 H2 R1 | Navy studio + stripes pop-outs | Delivered | `specs/V02_90_Day_Notice_Rejection_Reel_v1_spec.json` |
 | 2026-11-23 | H02_M1_CTA_C_IG_Gate2_v4 | @iamprafz | Energy v3 + H6 C5 L1 P6 B6 B9 B10 B11 E1 M3 S1 S2 G1 A1 B1 R1 K7 E2 | Navy studio + approved H6 stripes on 3 panels | Review render QA PASS; salary-form proof clip and 2 unconfirmed subtitle lines pending; not posted | `specs/H02_M1_CTA_C_IG_Gate2_v4_spec.json` |
 | 2026-11-23 | 30pct_Hike_Do_Candidate_Reel_v3_navy | @iamprafz | H6 C5 L1 P6 B6 B9 B10 B11 E1 M3 S1 S2 G1 A1 X2 B1 E2 R1 | Navy studio | Delivered | — |
 | 2026-11-19 | Notice_Period_Reel_v1 | @iamprafz | Energy v3 + H6 B9 H4 X2 B1 P6 E1 C1 | Navy studio + approved orange/white pop-out | Rejected (made in ChatGPT: colour-key matte halo, DejaVu font, pop captions, no cuts, stripes on navy; fails spec_lint). Redo | `specs/Notice_Period_Reel_v1_spec.json` |

@@ -254,7 +254,8 @@ class BehindWord(BigWord):  # B6 big turn word, behind you, with shake
     behind = True
     def __init__(self, spec, y=560):
         self.s = spec; self.y = spec.get("y", y)
-        img = text_block([spec["text"].upper()], font(spec.get("size", 230)), YELLOW, pad=(20, 10))
+        img = text_block([spec["text"].upper()], font(spec.get("size", 230)), YELLOW, pad=(20, 10),
+                         bg=(14, 18, 32, 225) if spec.get("plate") else None, radius=34)
         self.img, _ = shadow(img, 28, 190, (0, 12))
 
 
