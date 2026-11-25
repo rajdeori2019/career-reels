@@ -62,6 +62,10 @@
   ],
   [
    39.2,
+   40.75
+  ],
+  [
+   42.5,
    44.85
   ],
   [
@@ -611,7 +615,8 @@
  ],
  "approvals": {
   "gate1": "2026-11-25 user: confirmed lines 2,8,10,17 ('Kaunsi? Pause'); one version for YT & IG; design 'ok. go ahead' after style preview sheet.",
-  "gate2": "2026-11-25 user: \"ok render\" after storyboard v4 (keywords above head with dark plates, stamp plate, 3 B-roll)"
+  "gate2": "2026-11-25 user: \"ok render\" after storyboard v4 (keywords above head with dark plates, stamp plate, 3 B-roll)",
+  "post_delivery": "2026-11-25 user: \"in 9s it is repeating few words\" -> cut false start 40.75-42.5 src"
  },
  "reel": "V02_90_Day_Notice_Rejection_Reel_v1",
  "effects": [
