@@ -1,0 +1,540 @@
+{
+ "reel": "V04_HR_Translator_Expected_Salary_IG",
+ "speed": 1.2,
+ "time_base": "source",
+ "style_codes": [
+  "H6",
+  "C5",
+  "L1",
+  "P6",
+  "B6",
+  "B9",
+  "B10",
+  "B11",
+  "E1",
+  "M3",
+  "S1",
+  "S2",
+  "G1",
+  "A1",
+  "H3",
+  "H4",
+  "K2",
+  "K5",
+  "X3",
+  "E3",
+  "H2",
+  "R1"
+ ],
+ "look": {
+  "brightness": 0.045,
+  "contrast": 1.12,
+  "saturation": 1.15,
+  "vibrance": 0.2,
+  "gamma": 1.05,
+  "warm": 0.03,
+  "vignette": 0.2
+ },
+ "caption_style": {
+  "style": "minimal",
+  "y": 1480,
+  "size": 52,
+  "max_words": 5
+ },
+ "lufs": -14,
+ "sfx_db": -22,
+ "source": "Raw Videos/2026-W48 Salary + Notice/V04_H06_M3a_CTA_D_source.mp4 (tools/assemble.py: H06 + M3a + CTA_D_IG + CTA_D_YT)",
+ "segments": [
+  [
+   2.0,
+   3.98
+  ],
+  [
+   10.09,
+   12.32
+  ],
+  [
+   17.35,
+   18.49
+  ],
+  [
+   18.73,
+   21.16
+  ],
+  [
+   27.06,
+   28.77
+  ],
+  [
+   29.03,
+   29.61
+  ],
+  [
+   35.95,
+   36.79
+  ],
+  [
+   62.15,
+   63.01
+  ],
+  [
+   63.19,
+   64.93
+  ],
+  [
+   74.42,
+   77.33
+  ],
+  [
+   98.92,
+   99.43
+  ],
+  [
+   100.02,
+   101.97
+  ],
+  [
+   111.05,
+   113.34
+  ],
+  [
+   118.2,
+   119.29
+  ],
+  [
+   119.53,
+   121.03
+  ],
+  [
+   128.86,
+   131.33
+  ],
+  [
+   145.93,
+   147.82
+  ],
+  [
+   153.77,
+   155.43
+  ],
+  [
+   162.07,
+   162.91
+  ],
+  [
+   165.0,
+   167.4
+  ]
+ ],
+ "captions": [
+  {
+   "from": 2.05,
+   "to": 3.93,
+   "text": "Expected CTC?"
+  },
+  {
+   "from": 10.14,
+   "to": 12.27,
+   "text": "Iska jawab number nahi hai."
+  },
+  {
+   "from": 17.4,
+   "to": 18.44,
+   "text": "HR bolta hai,"
+  },
+  {
+   "from": 18.78,
+   "to": 21.11,
+   "text": "aapka expected CTC kya hai?"
+  },
+  {
+   "from": 27.11,
+   "to": 29.56,
+   "text": "Iska asli matlab kya hai?"
+  },
+  {
+   "from": 36.0,
+   "to": 36.74,
+   "text": "Guess karo!"
+  },
+  {
+   "from": 62.2,
+   "to": 62.96,
+   "text": "Asli matlab:"
+  },
+  {
+   "from": 63.24,
+   "to": 64.88,
+   "text": "aap pehle number bolo,"
+  },
+  {
+   "from": 74.47,
+   "to": 77.28,
+   "text": "taaki budget usi ke paas rahe."
+  },
+  {
+   "from": 98.97,
+   "to": 101.92,
+   "text": "Aur aapko ye reply karna chahiye:"
+  },
+  {
+   "from": 111.1,
+   "to": 113.29,
+   "text": "Approved range share kar dijiye,"
+  },
+  {
+   "from": 118.25,
+   "to": 120.98,
+   "text": "main bata dunga fit hai ya nahi."
+  },
+  {
+   "from": 128.91,
+   "to": 131.28,
+   "text": "HR ki bhasha samjhe?"
+  },
+  {
+   "from": 145.98,
+   "to": 147.77,
+   "text": "Agla episode: Payslips."
+  },
+  {
+   "from": 153.82,
+   "to": 155.38,
+   "text": "Episode 2 kal."
+  },
+  {
+   "from": 162.12,
+   "to": 166.32,
+   "text": "Follow karo, miss mat karna."
+  }
+ ],
+ "elements": [
+  {
+   "type": "pop_bg",
+   "pattern": "stripes",
+   "from": 2.0,
+   "to": 12.32,
+   "doodles": true
+  },
+  {
+   "type": "rising_headline",
+   "text": "EXPECTED\nCTC?",
+   "key": "CTC?",
+   "from": 2.05,
+   "to": 4.0,
+   "y": 300,
+   "size": 120
+  },
+  {
+   "type": "keyword",
+   "small": "iska jawab",
+   "big": "NUMBER NAHI",
+   "at": 10.5,
+   "dur": 1.75,
+   "size": 125,
+   "color": "yellow",
+   "y": 300,
+   "plate": true
+  },
+  {
+   "type": "header",
+   "items": [
+    {
+     "num": "HR",
+     "text": "Translator",
+     "from": 17.35,
+     "to": 77.33
+    }
+   ],
+   "y": 150
+  },
+  {
+   "type": "skit_label",
+   "text": "HR",
+   "from": 18.78,
+   "to": 21.16,
+   "x": 60,
+   "y": 1200
+  },
+  {
+   "type": "typing_box",
+   "label": "HR",
+   "text": "Aapka expected CTC kya hai?",
+   "from": 18.78,
+   "to": 21.16,
+   "y": 340,
+   "type_dur": 1.0
+  },
+  {
+   "type": "keyword",
+   "small": "iska",
+   "big": "ASLI MATLAB?",
+   "at": 27.4,
+   "dur": 2.1,
+   "size": 120,
+   "color": "yellow",
+   "y": 300,
+   "plate": true
+  },
+  {
+   "type": "myth",
+   "myth": "Expected CTC?",
+   "truth": "Pehle aap\nnumber bolo",
+   "from": 62.2,
+   "to": 64.93,
+   "strike_at": 62.75,
+   "truth_at": 63.3,
+   "y": 300
+  },
+  {
+   "type": "keyword",
+   "small": "taaki",
+   "big": "BUDGET USI KE PAAS",
+   "at": 75.2,
+   "dur": 2.0,
+   "size": 95,
+   "color": "yellow",
+   "y": 300,
+   "plate": true
+  },
+  {
+   "type": "keyword",
+   "small": "aur aapka",
+   "big": "REPLY",
+   "at": 100.6,
+   "dur": 1.3,
+   "size": 170,
+   "color": "white",
+   "y": 300,
+   "plate": true
+  },
+  {
+   "type": "typing_box",
+   "label": "Aap",
+   "text": "Approved range share kar dijiye.",
+   "from": 111.1,
+   "to": 113.34,
+   "y": 340,
+   "type_dur": 1.3
+  },
+  {
+   "type": "keyword",
+   "small": "main bata dunga",
+   "big": "FIT HAI YA NAHI?",
+   "at": 119.6,
+   "dur": 1.4,
+   "size": 105,
+   "color": "yellow",
+   "y": 300,
+   "plate": true
+  },
+  {
+   "type": "keyword",
+   "small": "samjhe?",
+   "big": "HR KI BHASHA",
+   "at": 129.3,
+   "dur": 1.9,
+   "size": 115,
+   "color": "yellow",
+   "y": 300,
+   "plate": true
+  },
+  {
+   "type": "keyword",
+   "small": "agla episode",
+   "big": "PAYSLIPS",
+   "at": 146.3,
+   "dur": 1.5,
+   "size": 140,
+   "color": "yellow",
+   "y": 300,
+   "plate": true
+  },
+  {
+   "type": "pop_bg",
+   "pattern": "stripes",
+   "from": 153.77,
+   "to": 167.4,
+   "doodles": true
+  },
+  {
+   "type": "keyword",
+   "small": "",
+   "big": "EPISODE 2 KAL",
+   "at": 153.9,
+   "dur": 1.4,
+   "size": 120,
+   "color": "white",
+   "y": 300,
+   "plate": true
+  },
+  {
+   "type": "part_two",
+   "text": "EPISODE 2: PAYSLIPS",
+   "handle": "",
+   "from": 155.5,
+   "y": 1290
+  }
+ ],
+ "bigwords": [],
+ "stickers": [
+  {
+   "kind": "question",
+   "from": 35.97,
+   "to": 36.8,
+   "x": 930,
+   "y": 1150
+  },
+  {
+   "kind": "check",
+   "from": 111.3,
+   "to": 113.3,
+   "x": 150,
+   "y": 1150
+  }
+ ],
+ "broll": [
+  {
+   "start": 17.38,
+   "end": 18.48,
+   "clip": "broll/clips/shot01.mp4"
+  },
+  {
+   "start": 111.08,
+   "end": 113.32,
+   "clip": "broll/clips/shot02.mp4"
+  }
+ ],
+ "shakes": [
+  100.6
+ ],
+ "effects": [
+  {
+   "type": "spotlight",
+   "from": 62.15,
+   "to": 64.93,
+   "x": 0.5,
+   "y": 0.36
+  }
+ ],
+ "save": {
+  "at": 166.4,
+  "text": "Save & Share",
+  "share_icon": true,
+  "handle": "@iamprafz"
+ },
+ "sfx": [
+  [
+   "whoosh",
+   2.0
+  ],
+  [
+   "pop",
+   2.1
+  ],
+  [
+   "pop",
+   10.5
+  ],
+  [
+   "whoosh",
+   17.38
+  ],
+  [
+   "tick",
+   18.8
+  ],
+  [
+   "pop",
+   27.4
+  ],
+  [
+   "pop",
+   35.97
+  ],
+  [
+   "whoosh",
+   62.15
+  ],
+  [
+   "pop",
+   62.75
+  ],
+  [
+   "pop",
+   63.3
+  ],
+  [
+   "pop",
+   75.2
+  ],
+  [
+   "whoosh",
+   100.6
+  ],
+  [
+   "whoosh",
+   111.08
+  ],
+  [
+   "tick",
+   111.15
+  ],
+  [
+   "pop",
+   119.6
+  ],
+  [
+   "pop",
+   129.3
+  ],
+  [
+   "pop",
+   146.3
+  ],
+  [
+   "whoosh",
+   153.77
+  ],
+  [
+   "pop",
+   153.9
+  ],
+  [
+   "pop",
+   155.5
+  ],
+  [
+   "chime",
+   166.4
+  ]
+ ],
+ "zoom_levels": [
+  [
+   1.08,
+   1.1
+  ],
+  [
+   1.1,
+   1.12
+  ]
+ ],
+ "bg_replace": {
+  "mode": "image",
+  "image": "tools/templates/bgA.png",
+  "clip": [
+   0.4,
+   0.85
+  ],
+  "feather": 2,
+  "band": 71,
+  "spill_ratio": 1.5
+ },
+ "approvals": {
+  "gate1": "2026-11-26 14:43 IST user: confirmed \u26a01 'Expected CTC?' alone, \u26a07 'usi ke paas', \u26a011 'HR ki bhasha samjhe?'; 'show me the design'",
+  "gate2": "2026-11-26 16:28 IST user: \"ok\" after storyboard (Part 2 card moved to chest y 1290) + B-roll picks"
+ },
+ "approved_overrides": {
+  "navy_ink": "stripes pop-outs on navy, as approved on V02 (25 Nov) and H02 (23 Nov)"
+ }
+}
