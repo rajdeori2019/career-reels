@@ -4,6 +4,8 @@ Every rendered reel gets a row here, pushed to GitHub right after the render (SO
 
 | Date | Reel | Handle | Base + extra styles | Background | Status | Spec |
 | --- | --- | --- | --- | --- | --- | --- |
+| 2026-11-27 | V05_HR_Translator_Payslips_YT | @iamprafz | Energy v3 + H1, H2, B1, P5, K4, X4, E3, R1 | Navy studio | Delivered | `specs/V05_HR_Translator_Payslips_YT_spec.json` |
+| 2026-11-27 | V05_HR_Translator_Payslips_IG | @iamprafz | Energy v3 + H1, H2, B1, P5, K4, X4, E2, E3, R1 | Navy studio | Delivered | `specs/V05_HR_Translator_Payslips_IG_spec.json` |
 | 2026-11-26 | V04_HR_Translator_Expected_Salary_YT | @iamprafz | H6 C5 L1 P6 B6 B9 B10 B11 E1 M3 S1 S2 G1 A1 H3 H4 K2 K5 X3 E3 H2 R1 | Navy studio + stripes pop-outs | Delivered (0.5 s cover at start) | `specs/V04_HR_Translator_Expected_Salary_YT_spec.json` |
 | 2026-11-26 | V04_HR_Translator_Expected_Salary_IG | @iamprafz | H6 C5 L1 P6 B6 B9 B10 B11 E1 M3 S1 S2 G1 A1 H3 H4 K2 K5 X3 E3 H2 R1 | Navy studio + stripes pop-outs | Delivered (0.5 s cover at start) | `specs/V04_HR_Translator_Expected_Salary_IG_spec.json` |
 | 2026-11-25 | V02_90_Day_Notice_Rejection_Reel_v1 | @iamprafz | H6 C5 L1 P6 B6 B9 B10 B11 E1 M3 S1 S2 G1 A1 P1 K6 X4 B7 P5 K8 H2 R1 | Navy studio + stripes pop-outs | Delivered | `specs/V02_90_Day_Notice_Rejection_Reel_v1_spec.json` |

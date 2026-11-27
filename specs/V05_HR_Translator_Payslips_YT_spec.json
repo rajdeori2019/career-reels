@@ -1,0 +1,601 @@
+{
+ "speed": 1.2,
+ "time_base": "source",
+ "look": {
+  "brightness": 0.045,
+  "contrast": 1.12,
+  "saturation": 1.15,
+  "vibrance": 0.2,
+  "gamma": 1.05,
+  "warm": 0.03,
+  "vignette": 0.2
+ },
+ "caption_style": {
+  "style": "minimal",
+  "y": 1480,
+  "size": 52,
+  "max_words": 5
+ },
+ "lufs": -14,
+ "sfx_db": -22,
+ "zoom_levels": [
+  [
+   1.08,
+   1.1
+  ],
+  [
+   1.1,
+   1.12
+  ]
+ ],
+ "bg_replace": {
+  "mode": "image",
+  "image": "tools/templates/bgA.png",
+  "clip": [
+   0.4,
+   0.85
+  ],
+  "feather": 2,
+  "band": 71,
+  "spill_ratio": 1.5
+ },
+ "approved_overrides": {
+  "navy_ink": "stripes pop-outs on navy, as approved on V02 (25 Nov), H02 (23 Nov) and V04 (26 Nov)"
+ },
+ "reel": "V05_HR_Translator_Payslips_YT",
+ "source": "Raw Videos/2026-W48 Salary + Notice/V05_H07_M3b_CTA_C_source.mp4 (tools/assemble.py: H07 + M3b + CTA_C_IG + CTA_C_YT)",
+ "style_codes": [
+  "H6",
+  "C5",
+  "L1",
+  "P6",
+  "B6",
+  "B9",
+  "B10",
+  "B11",
+  "E1",
+  "M3",
+  "S1",
+  "S2",
+  "G1",
+  "A1",
+  "H1",
+  "H2",
+  "B1",
+  "P5",
+  "K4",
+  "X4",
+  "E3",
+  "R1"
+ ],
+ "segments": [
+  [
+   2.37,
+   3.09
+  ],
+  [
+   3.39,
+   4.39
+  ],
+  [
+   12.22,
+   12.98
+  ],
+  [
+   13.52,
+   15.01
+  ],
+  [
+   25.55,
+   28.22
+  ],
+  [
+   33.03,
+   35.06
+  ],
+  [
+   35.81,
+   36.48
+  ],
+  [
+   45.52,
+   46.44
+  ],
+  [
+   56.62,
+   60.04
+  ],
+  [
+   66.72,
+   68.68
+  ],
+  [
+   74.91,
+   77.34
+  ],
+  [
+   86.7,
+   89.31
+  ],
+  [
+   95.61,
+   96.19
+  ],
+  [
+   99.16,
+   100.2
+  ],
+  [
+   100.47,
+   101.68
+  ],
+  [
+   113.29,
+   115.09
+  ],
+  [
+   134.67,
+   135.71
+  ],
+  [
+   136.06,
+   136.51
+  ],
+  [
+   136.86,
+   138.6
+  ]
+ ],
+ "captions": [
+  {
+   "from": 2.42,
+   "to": 4.34,
+   "text": "HR ne payslips maangi?"
+  },
+  {
+   "from": 12.27,
+   "to": 12.93,
+   "text": "Abhi nahi."
+  },
+  {
+   "from": 13.57,
+   "to": 14.96,
+   "text": "Sirf offer stage pe."
+  },
+  {
+   "from": 25.6,
+   "to": 26.6,
+   "text": "HR bolta hai,"
+  },
+  {
+   "from": 26.65,
+   "to": 28.17,
+   "text": "current payslip bhej dijiye."
+  },
+  {
+   "from": 33.08,
+   "to": 35.01,
+   "text": "Iska asli matlab kya hai?"
+  },
+  {
+   "from": 35.86,
+   "to": 36.43,
+   "text": "Guess karo!"
+  },
+  {
+   "from": 45.57,
+   "to": 46.39,
+   "text": "Asli matlab:"
+  },
+  {
+   "from": 56.67,
+   "to": 58.2,
+   "text": "aapki current salary se"
+  },
+  {
+   "from": 58.25,
+   "to": 59.99,
+   "text": "offer anchor karna."
+  },
+  {
+   "from": 66.77,
+   "to": 68.63,
+   "text": "Aapko ye reply karna chahiye:"
+  },
+  {
+   "from": 74.96,
+   "to": 77.29,
+   "text": "Offer stage pe zaroor share karunga."
+  },
+  {
+   "from": 86.75,
+   "to": 89.26,
+   "text": "Abhi salary range pe baat karein?"
+  },
+  {
+   "from": 95.66,
+   "to": 96.14,
+   "text": "Payslip?"
+  },
+  {
+   "from": 99.21,
+   "to": 100.15,
+   "text": "Payslip denge,"
+  },
+  {
+   "from": 100.52,
+   "to": 101.63,
+   "text": "bas sahi time pe."
+  },
+  {
+   "from": 113.34,
+   "to": 115.04,
+   "text": "Agla episode: Budget fix."
+  },
+  {
+   "from": 134.72,
+   "to": 137.57,
+   "text": "Full script pinned comment mein hai."
+  }
+ ],
+ "hook": {
+  "text": "HR ne payslips\nmaangi?",
+  "from": 2.42,
+  "to": 4.39,
+  "y": 300,
+  "size": 72
+ },
+ "elements": [
+  {
+   "type": "pop_bg",
+   "pattern": "stripes",
+   "from": 2.37,
+   "to": 15.01,
+   "doodles": true
+  },
+  {
+   "type": "keyword",
+   "small": "abhi",
+   "big": "NAHI",
+   "at": 12.3,
+   "dur": 0.65,
+   "size": 170,
+   "color": "white",
+   "y": 300,
+   "plate": true
+  },
+  {
+   "type": "keyword",
+   "small": "sirf",
+   "big": "OFFER STAGE PE",
+   "at": 13.65,
+   "dur": 1.35,
+   "size": 110,
+   "color": "yellow",
+   "y": 300,
+   "plate": true
+  },
+  {
+   "type": "header",
+   "items": [
+    {
+     "num": "HR",
+     "text": "Translator",
+     "from": 25.55,
+     "to": 36.48
+    },
+    {
+     "num": "HR",
+     "text": "Translator",
+     "from": 74.91,
+     "to": 89.31
+    }
+   ],
+   "y": 150
+  },
+  {
+   "type": "skit_label",
+   "text": "HR",
+   "from": 25.6,
+   "to": 28.22,
+   "x": 60,
+   "y": 1200
+  },
+  {
+   "type": "typing_box",
+   "label": "HR",
+   "text": "Current payslip bhej dijiye.",
+   "from": 25.6,
+   "to": 28.22,
+   "y": 340,
+   "type_dur": 1.0
+  },
+  {
+   "type": "keyword",
+   "small": "iska",
+   "big": "ASLI MATLAB?",
+   "at": 33.3,
+   "dur": 1.7,
+   "size": 120,
+   "color": "yellow",
+   "y": 300,
+   "plate": true
+  },
+  {
+   "type": "keyword",
+   "small": "",
+   "big": "GUESS KARO!",
+   "at": 35.86,
+   "dur": 0.45,
+   "size": 130,
+   "color": "white",
+   "y": 300,
+   "plate": true
+  },
+  {
+   "type": "keyword",
+   "small": "aapka",
+   "big": "REPLY",
+   "at": 67.0,
+   "dur": 1.6,
+   "size": 170,
+   "color": "white",
+   "y": 300,
+   "plate": true
+  },
+  {
+   "type": "typing_box",
+   "label": "Aap",
+   "text": "Offer stage pe zaroor share karunga.",
+   "from": 74.96,
+   "to": 77.34,
+   "y": 340,
+   "type_dur": 1.3
+  },
+  {
+   "type": "stamp",
+   "text": "OFFER STAGE",
+   "from": 76.2,
+   "to": 77.34,
+   "y": 1340
+  },
+  {
+   "type": "typing_box",
+   "label": "Aap",
+   "text": "Abhi salary range pe baat karein?",
+   "from": 86.75,
+   "to": 89.31,
+   "y": 340,
+   "type_dur": 1.3
+  },
+  {
+   "type": "keyword",
+   "small": "",
+   "big": "PAYSLIP?",
+   "at": 95.66,
+   "dur": 0.4,
+   "size": 150,
+   "color": "yellow",
+   "y": 300,
+   "plate": true
+  },
+  {
+   "type": "keyword",
+   "small": "payslip",
+   "big": "DENGE",
+   "at": 99.3,
+   "dur": 0.85,
+   "size": 160,
+   "color": "white",
+   "y": 300,
+   "plate": true
+  },
+  {
+   "type": "keyword",
+   "small": "bas",
+   "big": "SAHI TIME PE",
+   "at": 100.6,
+   "dur": 1.05,
+   "size": 125,
+   "color": "yellow",
+   "y": 300,
+   "plate": true
+  },
+  {
+   "type": "keyword",
+   "small": "agla episode",
+   "big": "BUDGET FIX",
+   "at": 113.45,
+   "dur": 1.6,
+   "size": 140,
+   "color": "yellow",
+   "y": 300,
+   "plate": true
+  },
+  {
+   "type": "pop_bg",
+   "pattern": "stripes",
+   "from": 134.67,
+   "to": 138.6,
+   "doodles": true
+  },
+  {
+   "type": "part_two",
+   "text": "EPISODE 3: BUDGET FIX",
+   "handle": "",
+   "from": 113.6,
+   "y": 1290
+  },
+  {
+   "type": "keyword",
+   "small": "full script",
+   "big": "PINNED COMMENT",
+   "at": 135.0,
+   "dur": 2.5,
+   "size": 105,
+   "color": "yellow",
+   "y": 300,
+   "plate": true
+  }
+ ],
+ "chips": {
+  "chips": [
+   {
+    "text": "Current salary",
+    "at": 56.9
+   },
+   {
+    "text": "Offer anchor",
+    "at": 58.6
+   }
+  ],
+  "to": 60.04,
+  "y": 210,
+  "size": 46
+ },
+ "bigwords": [
+  {
+   "text": "ASLI MATLAB",
+   "at": 45.6,
+   "dur": 0.8,
+   "behind": true,
+   "y": 390,
+   "size": 125
+  }
+ ],
+ "shakes": [
+  45.6
+ ],
+ "effects": [
+  {
+   "type": "glitch",
+   "at": 45.55,
+   "dur": 0.35
+  }
+ ],
+ "stickers": [
+  {
+   "kind": "doc",
+   "from": 95.66,
+   "to": 100.2,
+   "x": 930,
+   "y": 1150
+  }
+ ],
+ "broll": [
+  {
+   "start": 56.75,
+   "end": 59.0,
+   "clip": "broll/clips/shot01.mp4"
+  },
+  {
+   "start": 99.25,
+   "end": 101.55,
+   "clip": "broll/clips/shot02.mp4"
+  }
+ ],
+ "save": {
+  "at": 137.65,
+  "text": "Save & Share",
+  "share_icon": true,
+  "handle": "@iamprafz"
+ },
+ "sfx": [
+  [
+   "whoosh",
+   2.37
+  ],
+  [
+   "pop",
+   12.3
+  ],
+  [
+   "pop",
+   13.65
+  ],
+  [
+   "whoosh",
+   25.55
+  ],
+  [
+   "tick",
+   25.65
+  ],
+  [
+   "pop",
+   33.3
+  ],
+  [
+   "pop",
+   35.86
+  ],
+  [
+   "whoosh",
+   45.57
+  ],
+  [
+   "pop",
+   45.6
+  ],
+  [
+   "whoosh",
+   56.75
+  ],
+  [
+   "tick",
+   56.9
+  ],
+  [
+   "tick",
+   58.6
+  ],
+  [
+   "pop",
+   67.0
+  ],
+  [
+   "tick",
+   75.0
+  ],
+  [
+   "pop",
+   76.2
+  ],
+  [
+   "tick",
+   86.8
+  ],
+  [
+   "pop",
+   95.66
+  ],
+  [
+   "whoosh",
+   99.25
+  ],
+  [
+   "pop",
+   100.6
+  ],
+  [
+   "pop",
+   113.45
+  ],
+  [
+   "whoosh",
+   134.67
+  ],
+  [
+   "pop",
+   135.0
+  ],
+  [
+   "chime",
+   137.65
+  ]
+ ],
+ "approvals": {
+  "gate1": "2026-11-27 14:40 IST user: \"ok\" (\u26a0 'range' and 'bas' accepted as proposed; take 2 of hook kept)",
+  "gate2": "2026-11-27 16:22 IST user: \"ok render\" after storyboard v2 (navy studio, overlap fixes) + B-roll picks"
+ }
+}
