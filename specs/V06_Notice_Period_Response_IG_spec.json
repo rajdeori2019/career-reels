@@ -1,0 +1,654 @@
+{
+ "speed": 1.2,
+ "time_base": "source",
+ "look": {
+  "brightness": 0.045,
+  "contrast": 1.12,
+  "saturation": 1.15,
+  "vibrance": 0.2,
+  "gamma": 1.05,
+  "warm": 0.03,
+  "vignette": 0.2
+ },
+ "caption_style": {
+  "style": "minimal",
+  "y": 1480,
+  "size": 52,
+  "max_words": 5
+ },
+ "lufs": -14,
+ "sfx_db": -22,
+ "zoom_levels": [
+  [
+   1.08,
+   1.1
+  ],
+  [
+   1.1,
+   1.12
+  ]
+ ],
+ "bg_replace": {
+  "mode": "image",
+  "image": "tools/templates/bgA.png",
+  "clip": [
+   0.4,
+   0.85
+  ],
+  "feather": 2,
+  "band": 71,
+  "spill_ratio": 1.5
+ },
+ "approved_overrides": {
+  "navy_ink": "stripes pop-outs on navy, as approved on V02 (25 Nov), H02 (23 Nov) and V04 (26 Nov)"
+ },
+ "segments": [
+  [
+   3.39,
+   4.58
+  ],
+  [
+   5.23,
+   6.9
+  ],
+  [
+   12.55,
+   14.32
+  ],
+  [
+   42.51,
+   44.51
+  ],
+  [
+   49.89,
+   51.53
+  ],
+  [
+   61.6,
+   63.05
+  ],
+  [
+   64.59,
+   65.4
+  ],
+  [
+   72.47,
+   73.57
+  ],
+  [
+   75.71,
+   77.21
+  ],
+  [
+   84.14,
+   86.17
+  ],
+  [
+   101.74,
+   102.96
+  ],
+  [
+   115.83,
+   119.36
+  ],
+  [
+   128.89,
+   129.73
+  ],
+  [
+   133.93,
+   135.65
+  ],
+  [
+   140.54,
+   142.22
+  ],
+  [
+   160.28,
+   162.36
+  ],
+  [
+   166.81,
+   168.42
+  ],
+  [
+   182.23,
+   185.68
+  ],
+  [
+   198.1,
+   202.8
+  ]
+ ],
+ "captions": [
+  {
+   "from": 3.44,
+   "to": 4.53,
+   "text": "Kuch nahi ho sakta."
+  },
+  {
+   "from": 5.28,
+   "to": 6.85,
+   "text": "Notice pe ye bola,"
+  },
+  {
+   "from": 12.6,
+   "to": 14.27,
+   "text": "aur shortlist se gaya."
+  },
+  {
+   "from": 42.56,
+   "to": 44.46,
+   "text": "Recruiter phone pe poochta hai:"
+  },
+  {
+   "from": 49.94,
+   "to": 51.48,
+   "text": "Notice period kitna hai?"
+  },
+  {
+   "from": 61.65,
+   "to": 63.0,
+   "text": "Candidate bolta hai:"
+  },
+  {
+   "from": 64.64,
+   "to": 65.35,
+   "text": "90 days."
+  },
+  {
+   "from": 72.52,
+   "to": 73.52,
+   "text": "Kuch nahi ho sakta."
+  },
+  {
+   "from": 75.76,
+   "to": 77.16,
+   "text": "Company strict hai."
+  },
+  {
+   "from": 84.19,
+   "to": 86.12,
+   "text": "Apni galti pakdi?"
+  },
+  {
+   "from": 101.79,
+   "to": 102.91,
+   "text": "Kuch nahi ho sakta."
+  },
+  {
+   "from": 115.88,
+   "to": 117.55,
+   "text": "Sunte hi recruiter"
+  },
+  {
+   "from": 117.65,
+   "to": 119.31,
+   "text": "next profile open kar leta hai."
+  },
+  {
+   "from": 128.94,
+   "to": 129.68,
+   "text": "Take 2."
+  },
+  {
+   "from": 133.98,
+   "to": 135.6,
+   "text": "Candidate reply:"
+  },
+  {
+   "from": 140.59,
+   "to": 142.17,
+   "text": "90 days ka notice period hai."
+  },
+  {
+   "from": 160.33,
+   "to": 162.31,
+   "text": "Early release, buyout,"
+  },
+  {
+   "from": 166.86,
+   "to": 168.37,
+   "text": "agar policy allow kare."
+  },
+  {
+   "from": 182.28,
+   "to": 183.95,
+   "text": "Same 90 days notice period,"
+  },
+  {
+   "from": 184.05,
+   "to": 185.63,
+   "text": "but alag jawab."
+  },
+  {
+   "from": 198.15,
+   "to": 201.48,
+   "text": "Comment SCRIPT, aur main exact words DM karta hoon."
+  }
+ ],
+ "elements": [
+  {
+   "type": "pop_bg",
+   "pattern": "stripes",
+   "from": 3.39,
+   "to": 14.32,
+   "doodles": true
+  },
+  {
+   "type": "keyword",
+   "small": "candidate:",
+   "big": "KUCH NAHI HO SAKTA",
+   "at": 3.45,
+   "dur": 1.1,
+   "size": 100,
+   "color": "white",
+   "y": 300,
+   "plate": true
+  },
+  {
+   "type": "keyword",
+   "small": "notice pe",
+   "big": "YE BOLA",
+   "at": 5.3,
+   "dur": 1.5,
+   "size": 150,
+   "color": "yellow",
+   "y": 300,
+   "plate": true
+  },
+  {
+   "type": "keyword",
+   "small": "aur",
+   "big": "SHORTLIST SE OUT",
+   "at": 12.6,
+   "dur": 1.65,
+   "size": 105,
+   "color": "yellow",
+   "y": 300,
+   "plate": true
+  },
+  {
+   "type": "skit_label",
+   "text": "RECRUITER",
+   "from": 42.51,
+   "to": 51.53,
+   "x": 60,
+   "y": 1200
+  },
+  {
+   "type": "typing_box",
+   "label": "Recruiter",
+   "text": "Notice period kitna hai?",
+   "from": 49.89,
+   "to": 51.53,
+   "y": 340,
+   "type_dur": 0.9
+  },
+  {
+   "type": "skit_label",
+   "text": "CANDIDATE",
+   "from": 61.6,
+   "to": 65.4,
+   "x": 60,
+   "y": 1200
+  },
+  {
+   "type": "number",
+   "value": 90,
+   "suffix": " DAYS",
+   "roll": 0.5,
+   "from": 64.59,
+   "to": 65.4,
+   "y": 300,
+   "size": 150
+  },
+  {
+   "type": "keyword",
+   "small": "",
+   "big": "KUCH NAHI HO SAKTA",
+   "at": 72.52,
+   "dur": 1.0,
+   "size": 100,
+   "color": "white",
+   "y": 300,
+   "plate": true
+  },
+  {
+   "type": "keyword",
+   "small": "company",
+   "big": "STRICT HAI",
+   "at": 75.8,
+   "dur": 1.35,
+   "size": 150,
+   "color": "yellow",
+   "y": 300,
+   "plate": true
+  },
+  {
+   "type": "keyword",
+   "small": "apni",
+   "big": "GALTI PAKDI?",
+   "at": 85.05,
+   "dur": 1.05,
+   "size": 120,
+   "color": "yellow",
+   "y": 300,
+   "plate": true
+  },
+  {
+   "type": "keyword",
+   "small": "",
+   "big": "KUCH NAHI HO SAKTA",
+   "at": 101.8,
+   "dur": 1.1,
+   "size": 100,
+   "color": "white",
+   "y": 300,
+   "plate": true
+  },
+  {
+   "type": "keyword",
+   "small": "recruiter",
+   "big": "NEXT PROFILE",
+   "at": 117.0,
+   "dur": 2.3,
+   "size": 125,
+   "color": "yellow",
+   "y": 300,
+   "plate": true
+  },
+  {
+   "type": "header",
+   "items": [
+    {
+     "num": "TAKE 2",
+     "text": "Sahi jawab",
+     "from": 128.89,
+     "to": 168.42
+    }
+   ],
+   "y": 150
+  },
+  {
+   "type": "skit_label",
+   "text": "CANDIDATE",
+   "from": 133.93,
+   "to": 142.22,
+   "x": 60,
+   "y": 1200
+  },
+  {
+   "type": "typing_box",
+   "label": "Candidate",
+   "text": "90 days ka notice period hai. Early release ya buyout, agar policy allow kare.",
+   "from": 140.54,
+   "to": 168.42,
+   "y": 340,
+   "type_dur": 2.2
+  },
+  {
+   "type": "tick_list",
+   "items": [
+    {
+     "text": "Early release",
+     "at": 160.4
+    },
+    {
+     "text": "Buyout",
+     "at": 161.6
+    },
+    {
+     "text": "Policy allow?",
+     "at": 166.9
+    }
+   ],
+   "from": 160.28,
+   "to": 168.42,
+   "side": "left",
+   "y": 1330,
+   "w": 400
+  },
+  {
+   "type": "build_card",
+   "title": "Same 90 days",
+   "subtitle": "Alag jawab",
+   "icon": "90",
+   "chips": [
+    {
+     "text": "Kuch nahi",
+     "at": 182.4
+    },
+    {
+     "text": "Early release",
+     "at": 183.2
+    },
+    {
+     "text": "Buyout",
+     "at": 183.9
+    }
+   ],
+   "badge": {
+    "text": "Pass",
+    "at": 184.6
+   },
+   "from": 182.23,
+   "to": 185.3,
+   "y": 300
+  },
+  {
+   "type": "pop_bg",
+   "pattern": "stripes",
+   "from": 198.1,
+   "to": 202.8,
+   "doodles": true
+  },
+  {
+   "type": "comment_keyword",
+   "keyword": "SCRIPT",
+   "from": 198.3,
+   "y": 300
+  }
+ ],
+ "bigwords": [
+  {
+   "text": "GALTI",
+   "at": 84.2,
+   "dur": 0.8,
+   "behind": true,
+   "y": 390,
+   "size": 170
+  },
+  {
+   "text": "TAKE 2",
+   "at": 128.95,
+   "dur": 0.75,
+   "behind": true,
+   "y": 390,
+   "size": 160
+  }
+ ],
+ "shakes": [
+  84.2
+ ],
+ "stickers": [
+  {
+   "kind": "cross",
+   "from": 3.45,
+   "to": 4.58,
+   "x": 975,
+   "y": 1240
+  },
+  {
+   "kind": "cross",
+   "from": 75.75,
+   "to": 77.21,
+   "x": 975,
+   "y": 1240
+  }
+ ],
+ "broll": [
+  {
+   "start": 42.6,
+   "end": 44.45,
+   "clip": "tools/incoming/v06_broll/clips/shot01.mp4"
+  },
+  {
+   "start": 115.9,
+   "end": 118.6,
+   "clip": "tools/incoming/v06_broll/clips/shot02.mp4"
+  }
+ ],
+ "source": "Raw Videos/2026-W48 Salary + Notice/V06_H13_M6_CTA_C_source.mp4 (tools/assemble.py: H13 + M6 + CTA_C_IG + CTA_C_YT)",
+ "approvals": {
+  "gate1": "2026-11-28 02:14 IST user: \"ok\" (172-177 line cut; hook take 1 kept)",
+  "gate2": "2026-11-28 08:10 IST user: \"ok\" after full storyboards (V06 IG/YT, V07) + B-roll picks"
+ },
+ "reel": "V06_Notice_Period_Response_IG",
+ "sfx": [
+  [
+   "whoosh",
+   3.39
+  ],
+  [
+   "pop",
+   3.45
+  ],
+  [
+   "pop",
+   5.3
+  ],
+  [
+   "pop",
+   12.6
+  ],
+  [
+   "whoosh",
+   42.55
+  ],
+  [
+   "tick",
+   49.95
+  ],
+  [
+   "tick",
+   61.65
+  ],
+  [
+   "pop",
+   64.6
+  ],
+  [
+   "pop",
+   72.52
+  ],
+  [
+   "pop",
+   75.8
+  ],
+  [
+   "pop",
+   84.2
+  ],
+  [
+   "pop",
+   85.05
+  ],
+  [
+   "pop",
+   101.8
+  ],
+  [
+   "whoosh",
+   115.85
+  ],
+  [
+   "pop",
+   117.0
+  ],
+  [
+   "whoosh",
+   128.9
+  ],
+  [
+   "pop",
+   128.95
+  ],
+  [
+   "tick",
+   133.95
+  ],
+  [
+   "tick",
+   140.6
+  ],
+  [
+   "tick",
+   160.4
+  ],
+  [
+   "tick",
+   161.6
+  ],
+  [
+   "tick",
+   166.9
+  ],
+  [
+   "tick",
+   182.4
+  ],
+  [
+   "tick",
+   183.2
+  ],
+  [
+   "pop",
+   184.6
+  ],
+  [
+   "whoosh",
+   198.1
+  ],
+  [
+   "tick",
+   198.3
+  ],
+  [
+   "chime",
+   201.48
+  ],
+  [
+   "tick",
+   183.9
+  ]
+ ],
+ "save": {
+  "at": 201.48,
+  "text": "Save & Share",
+  "share_icon": true,
+  "handle": "@iamprafz"
+ },
+ "style_codes": [
+  "H6",
+  "C5",
+  "L1",
+  "P6",
+  "B6",
+  "B9",
+  "B10",
+  "B11",
+  "E1",
+  "M3",
+  "S1",
+  "S2",
+  "G1",
+  "A1",
+  "H2",
+  "P3",
+  "B5",
+  "K6",
+  "R1",
+  "E2"
+ ]
+}
